@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - ML Model Monitoring</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+
+
+        <div class="layout-container flex h-full w-full ">
+            <!-- SideNavBar -->
+            <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <div class="px-4 py-5 sm:px-8 md:px-16 lg:px-24 xl:px-40">
+                <div class="layout-content-container mx-auto flex max-w-[1280px] flex-1 flex-col">
+
+
+                    <main class="flex flex-col gap-6 py-8">
+                        <div class="flex flex-wrap items-center justify-between gap-4 px-4">
+                            <div class="flex flex-col gap-2">
+                                <p class="text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                                    ML Model
+                                    Monitoring</p>
+                                <p class="text-white/60 text-base font-normal leading-normal">Real-time overview of all
+                                    deployed machine
+                                    learning models.</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                                    <span class="truncate">Deploy New Model</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-white/10 text-white text-sm font-medium leading-normal tracking-[0.015em] hover:bg-white/20 transition-colors">
+                                    <span class="material-symbols-outlined text-lg">calendar_today</span>
+                                    <span class="truncate">Last 24 Hours</span>
+                                    <span class="material-symbols-outlined text-lg">expand_more</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
+                            <div class="flex flex-1 flex-col gap-2 rounded-xl border border-white/10 bg-[#14292B] p-6">
+                                <p class="text-white/80 text-base font-medium leading-normal">Total Models</p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">128</p>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm text-[#0bda54]">arrow_upward</span>
+                                    <p class="text-[#0bda54] text-sm font-medium leading-normal">+2 this week</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-2 rounded-xl border border-white/10 bg-[#14292B] p-6">
+                                <p class="text-white/80 text-base font-medium leading-normal">Models with Errors</p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">4</p>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm text-[#fa5c38]">arrow_upward</span>
+                                    <p class="text-[#fa5c38] text-sm font-medium leading-normal">+1 since yesterday</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-2 rounded-xl border border-white/10 bg-[#14292B] p-6">
+                                <p class="text-white/80 text-base font-medium leading-normal">Avg. Prediction Accuracy
+                                </p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">98.7%</p>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm text-[#fa5c38]">arrow_downward</span>
+                                    <p class="text-[#fa5c38] text-sm font-medium leading-normal">-0.2%</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-2 rounded-xl border border-white/10 bg-[#14292B] p-6">
+                                <p class="text-white/80 text-base font-medium leading-normal">Avg. Inference Latency</p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">22ms</p>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm text-[#0bda54]">arrow_downward</span>
+                                    <p class="text-[#0bda54] text-sm font-medium leading-normal">-5%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4 px-4 py-3">
+
+                            <div class="flex flex-wrap gap-3">
+                                <button
+                                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-4 pr-2 text-white hover:bg-white/20 transition-colors">
+                                    <p class="text-sm font-medium leading-normal">Status: All</p>
+                                    <span class="material-symbols-outlined text-xl">expand_more</span>
+                                </button>
+                                <button
+                                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-4 pr-2 text-white hover:bg-white/20 transition-colors">
+                                    <p class="text-sm font-medium leading-normal">Type: All</p>
+                                    <span class="material-symbols-outlined text-xl">expand_more</span>
+                                </button>
+                                <button
+                                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-4 pr-2 text-white hover:bg-white/20 transition-colors">
+                                    <p class="text-sm font-medium leading-normal">Sort by: Last Update</p>
+                                    <span class="material-symbols-outlined text-xl">expand_more</span>
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                <!-- Model Card: Active -->
+                                <div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#14292B] p-5">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <div class="rounded-full bg-[#0bda54] p-1.5"></div>
+                                            <p class="text-sm font-medium text-[#0bda54]">Active</p>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-white/60">
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">analytics</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">model_training</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">toggle_off</span></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white">Cooling-Tower-Predictive-v2.1</h3>
+                                        <p class="text-sm text-white/60">Predictive Maintenance</p>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm">
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Accuracy</span>
+                                            <span class="font-medium text-white">98.7%</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Latency</span>
+                                            <span class="font-medium text-white">15ms</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Data Drift</span>
+                                            <span class="font-medium text-white">0.02</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img class="w-full"
+                                            data-alt="A green sparkline chart showing stable performance over time."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAryaPX3rCR7IvDrCtSTAPAUpltDXaM9jafj0c06GTPfKWG1bs4od9CTj9yDp1gXDl1Rl4ON4vO0DHsZVTW0_VAeR6uIaCBOyJZFp8sqFIppEm6xH74WxWlXF3UIQbpdJTTZvb9NoSBzQxjUVj01sCRsfz5B0fijI-aQcyKG695Zr7MAYyRKkS5Nc6vGQxCW6peQNEaBy8clHJxzs9BEDW6HR5tJZA4bolGDw1j9HaW-mMkQw-G3VE1TFklzLm4kZ9FHY3UHIHgHFM" />
+                                    </div>
+                                    <p class="text-xs text-white/50">Last update: 2m ago</p>
+                                </div>
+                                <!-- Model Card: Warning -->
+                                <div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#14292B] p-5">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <div class="rounded-full bg-[#FFD60A] p-1.5"></div>
+                                            <p class="text-sm font-medium text-[#FFD60A]">Warning</p>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-white/60">
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">analytics</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">model_training</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">toggle_off</span></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white">Anomaly-Detection-v3</h3>
+                                        <p class="text-sm text-white/60">Security Monitoring</p>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm">
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Accuracy</span>
+                                            <span class="font-medium text-white">92.1%</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Latency</span>
+                                            <span class="font-medium text-white">25ms</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Data Drift</span>
+                                            <span class="font-medium text-white">0.58</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img class="w-full"
+                                            data-alt="A yellow sparkline chart showing declining performance over time."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLriS1wdw39ZVX2W_F-qXBQqBL-_d-S6ZOYTddd1CowdcFNdsB91qWjTidOXh1GXN3itVDvajqKSe7TYZIL1MUEGATz59grs9ok7mqKdtV2Gs9OuvVlEh5x5ps96yaM24STxPKqDrgql4uTF7RPIMRUzXFPXGpOdSfRr83p4v8cceelpBTFATSvm1rp7jeagdfqnulgIAOY0QDjk6nn635x0WdQYmrEol1a4pE74UXXDYSKlOE46yy5OqvoWPP2ixfMR12tfpFFjQ" />
+                                    </div>
+                                    <p class="text-xs text-white/50">Last update: 1h ago</p>
+                                </div>
+                                <!-- Model Card: Error -->
+                                <div class="flex flex-col gap-4 rounded-xl border border-[#FF3B30]/50 bg-[#14292B] p-5">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <div class="rounded-full bg-[#FF3B30] p-1.5"></div>
+                                            <p class="text-sm font-medium text-[#FF3B30]">Error</p>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-white/60">
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">analytics</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">model_training</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">toggle_off</span></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white">Load-Balancer-Optimizer-v1.4</h3>
+                                        <p class="text-sm text-white/60">Resource Allocation</p>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm">
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Accuracy</span>
+                                            <span class="font-medium text-white">45.0%</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Latency</span>
+                                            <span class="font-medium text-white">150ms</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Data Drift</span>
+                                            <span class="font-medium text-white">N/A</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img class="w-full"
+                                            data-alt="A red sparkline chart showing a sharp drop in performance."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm-GduTXSgAvUGQq1nu471fW9vghswtpr7GFgILn-9f7SoWtz57H8aE0WCgEP0uRsfEQcClUqMhaH5TFqVojRSpYGst015NamhViZTHlEFV2UJP2apWPHMrQQkWCJJiTVSc9uqhuoxzXmvqv-WFLgum5MdjJY-MLIGRNg6csLeY1GILDz9Vi_p15YRDHZKbce6DBB7ornPJ1cFbsHcUVTNnQPHgAWiucG_X8OzwBzxDfXXW0BMxHAxiW0UZWrNq5V88BlruXbDUHY" />
+                                    </div>
+                                    <p class="text-xs text-white/50">Last update: 5h ago</p>
+                                </div>
+                                <!-- Model Card: Active -->
+                                <div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#14292B] p-5">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <div class="rounded-full bg-[#0bda54] p-1.5"></div>
+                                            <p class="text-sm font-medium text-[#0bda54]">Active</p>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-white/60">
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">analytics</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">model_training</span></button>
+                                            <button class="rounded-full p-1.5 hover:bg-white/10 transition-colors"><span
+                                                    class="material-symbols-outlined text-lg">toggle_off</span></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white">Power-Forecast-v1</h3>
+                                        <p class="text-sm text-white/60">Energy Consumption</p>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm">
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Accuracy</span>
+                                            <span class="font-medium text-white">99.2%</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Latency</span>
+                                            <span class="font-medium text-white">18ms</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-white/60">Data Drift</span>
+                                            <span class="font-medium text-white">0.01</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img class="w-full"
+                                            data-alt="A green sparkline chart showing stable performance over time."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD_eoI3P-EeYm5UIfobxDRORloYEBzgDp0RuZvPS0fNFIgfqutBJ-fPtqirTi4Wa3dsx66Aw3QVMwmPNsQGXKfV3wtFgN3XgB7dpBxM1k-jdPKrBE3er36BJ7tftajqKVK3vsPih-tKt1isvTgrBTCi6kakHwy2_cC9JwQS4c8NLuNZ8mFm3zU5TBvUhmtfD9Wlc2L0_nN-ipRjwSrsgKw_491F1VLTo7cqq-fxwD9ujNHVVhZhjpJgKfY8Y5IzXQoBeSfHzgS6aU" />
+                                    </div>
+                                    <p class="text-xs text-white/50">Last update: 10m ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3">
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-[#14292B]">
+                                <div class="p-4 border-b border-white/10">
+                                    <h3 class="text-lg font-bold text-white">Event Log &amp; Alerts</h3>
+                                    <p class="text-sm text-white/60">Recent critical model-related events.</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="grid grid-cols-12 items-center gap-4 px-4 py-3 text-sm text-white/60">
+                                        <div class="col-span-1"><span
+                                                class="material-symbols-outlined text-[#FF3B30]">error</span></div>
+                                        <div class="col-span-5"><span
+                                                class="font-semibold text-white">Load-Balancer-Optimizer-v1.4</span>
+                                            failed.</div>
+                                        <div class="col-span-4">Accuracy dropped below threshold (45.0%).</div>
+                                        <div class="col-span-2 text-right">25 min ago</div>
+                                    </div>
+                                    <div
+                                        class="grid grid-cols-12 items-center gap-4 px-4 py-3 bg-white/5 text-sm text-white/60">
+                                        <div class="col-span-1"><span
+                                                class="material-symbols-outlined text-[#FFD60A]">warning</span></div>
+                                        <div class="col-span-5"><span
+                                                class="font-semibold text-white">Anomaly-Detection-v3</span>
+                                            performance degrading.</div>
+                                        <div class="col-span-4">Latency increased by 20% over last hour.</div>
+                                        <div class="col-span-2 text-right">1 hour ago</div>
+                                    </div>
+                                    <div class="grid grid-cols-12 items-center gap-4 px-4 py-3 text-sm text-white/60">
+                                        <div class="col-span-1"><span
+                                                class="material-symbols-outlined text-primary">add_circle</span></div>
+                                        <div class="col-span-5">New model <span
+                                                class="font-semibold text-white">'PUE-Optimization-v1'</span> deployed.
+                                        </div>
+                                        <div class="col-span-4">Initial status: Active.</div>
+                                        <div class="col-span-2 text-right">3 hours ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

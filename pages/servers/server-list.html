@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Servers</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <div class="flex h-full w-full">
+            <!-- SideNavBar -->
+            <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <main class="flex flex-col gap-6 py-6 px-6 flex-1 overflow-y-auto">
+                <!-- PageHeading & Stats -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-wrap justify-between items-center gap-4">
+                        <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">
+                            Servers
+                        </p>
+
+                        <div class="flex flex-wrap justify-between items-center gap-4">
+                            <a href="../servers/tabs/live-logs.html"
+                                class="flex capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+                                <span class="truncate">live logs</span>
+                            </a>
+
+                            <a href="../servers/tabs/performance-history.html"
+                                class="flex  capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+
+                                <span class="truncate">performance history</span>
+                            </a>
+
+                            <a href="../servers/tabs/threshold-configuration.html"
+                                class="flex capitalize  min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+
+                                <span class="truncate">Threshold</span>
+                            </a>
+
+
+                            <a href="#"
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+                                <span class="material-symbols-outlined text-lg">add</span>
+                                <span class="truncate">Add Server</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/70 text-base font-medium leading-normal">Total Servers</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">1,254</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/70 text-base font-medium leading-normal">Online</p>
+                            <p class=" tracking-light text-3xl font-bold leading-tight text-[#39FF14]">
+                                1,200</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/70 text-base font-medium leading-normal">Warning</p>
+                            <p class=" tracking-light text-3xl font-bold leading-tight text-[#FFBF00]">
+                                39</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/70 text-base font-medium leading-normal">Offline</p>
+                            <p class=" tracking-light text-3xl font-bold leading-tight text-[#FF1B1B]">
+                                15</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Toolbar and Filters -->
+                <div class="flex flex-col gap-3 px-2 md:px-0">
+                    <div class="flex flex-wrap justify-between items-center gap-4 py-3 border-y border-white/10">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+                                <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                    <div
+                                        class="text-white/50 flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
+                                        <span class="material-symbols-outlined text-xl">search</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white/5 h-full placeholder:text-white/50 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal"
+                                        placeholder="Filter by name or IP" value="" />
+                                </div>
+                            </label>
+                            <button
+                                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 px-4 transition-colors">
+                                <p class="text-white text-sm font-medium leading-normal">Status: All</p>
+                                <span class="material-symbols-outlined text-white text-xl">expand_more</span>
+                            </button>
+                            <button
+                                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 px-4 transition-colors">
+                                <p class="text-white text-sm font-medium leading-normal">Location: All</p>
+                                <span class="material-symbols-outlined text-white text-xl">expand_more</span>
+                            </button>
+                            <button
+                                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 px-4 transition-colors">
+                                <p class="text-white text-sm font-medium leading-normal">Type: All</p>
+                                <span class="material-symbols-outlined text-white text-xl">expand_more</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button class="p-2.5 rounded-lg text-white bg-white/5 hover:bg-white/10 transition-colors">
+                                <span class="material-symbols-outlined text-xl">grid_view</span>
+                            </button>
+                            <button class="p-2.5 rounded-lg text-primary bg-primary/20 transition-colors">
+                                <span class="material-symbols-outlined text-xl">table_rows</span>
+                            </button>
+                            <button
+                                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-white/5 hover:bg-white/10 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors">
+                                <span class="material-symbols-outlined text-lg">download</span>
+                                <span class="truncate">Export</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Data Table -->
+                <div class="px-4">
+                    <div class="overflow-x-auto rounded-xl border border-white/10 bg-white/5">
+                        <table class="w-full text-sm text-left text-white/80">
+                            <thead class="text-xs text-white uppercase bg-white/5">
+                                <tr>
+                                    <th class="p-4" scope="col"><input
+                                            class="form-checkbox rounded bg-white/10 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></th>
+                                    <th class="px-6 py-3" scope="col">
+                                        <div class="flex items-center gap-1 cursor-pointer">Status <span
+                                                class="material-symbols-outlined text-base">unfold_more</span>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3" scope="col">
+                                        <div class="flex items-center gap-1 cursor-pointer">Server Name <span
+                                                class="material-symbols-outlined text-base">unfold_more</span>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3" scope="col">
+                                        <div class="flex items-center gap-1 cursor-pointer">IP Address <span
+                                                class="material-symbols-outlined text-base">unfold_more</span>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3" scope="col">
+                                        <div class="flex items-center gap-1 cursor-pointer">Location <span
+                                                class="material-symbols-outlined text-base">unfold_more</span>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3" scope="col">CPU Usage</th>
+                                    <th class="px-6 py-3" scope="col">Memory</th>
+                                    <th class="px-6 py-3" scope="col">
+                                        <div class="flex items-center gap-1 cursor-pointer">Last Seen <span
+                                                class="material-symbols-outlined text-base">unfold_more</span>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3" scope="col"><span class="sr-only">Actions</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+                                    <td class="w-4 p-4"><input
+                                            class="form-checkbox rounded bg-white/10 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-[#39FF14]"></div>Online
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-white whitespace-nowrap"><a href="../servers/server-detail.html">WEB-PROD-01</a>
+                                    </td>
+                                    <td class="px-6 py-4">192.168.1.101</td>
+                                    <td class="px-6 py-4">Rack 4B, US-EAST-01</td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-24 bg-white/10 rounded-full h-2.5">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 45%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-24 bg-white/10 rounded-full h-2.5">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">2 min ago</td>
+                                    <td class="px-6 py-4 text-right"><button
+                                            class="text-white/70 hover:text-white"><span
+                                                class="material-symbols-outlined">more_vert</span></button></td>
+                                </tr>
+                                <tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+                                    <td class="w-4 p-4"><input
+                                            class="form-checkbox rounded bg-white/10 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-[#FF1B1B]"></div>Offline
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-white whitespace-nowrap"><a href="../servers/server-detail.html">DB-MASTER-EU-01</a>
+                                    </td>
+                                    
+                                    <td class="px-6 py-4">10.0.5.22</td>
+                                    <td class="px-6 py-4">Rack 1A, EU-WEST-02</td>
+                                    <td class="px-6 py-4 text-white/50">N/A</td>
+                                    <td class="px-6 py-4 text-white/50">N/A</td>
+                                    <td class="px-6 py-4">3 hours ago</td>
+                                    <td class="px-6 py-4 text-right"><button
+                                            class="text-white/70 hover:text-white"><span
+                                                class="material-symbols-outlined">more_vert</span></button></td>
+                                </tr>
+                                <tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+                                    <td class="w-4 p-4"><input
+                                            class="form-checkbox rounded bg-white/10 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-[#FFBF00]"></div>Warning
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-white whitespace-nowrap">CACHE-03-APAC
+                                    </td>
+                                    <td class="px-6 py-4">172.16.32.50</td>
+                                    <td class="px-6 py-4">Rack 8C, APAC-SE-01</td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-24 bg-white/10 rounded-full h-2.5">
+                                            <div class="bg-[#FFBF00] h-2.5 rounded-full" style="width: 92%">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-24 bg-white/10 rounded-full h-2.5">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 60%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">1 min ago</td>
+                                    <td class="px-6 py-4 text-right"><button
+                                            class="text-white/70 hover:text-white"><span
+                                                class="material-symbols-outlined">more_vert</span></button></td>
+                                </tr>
+                                <tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+                                    <td class="w-4 p-4"><input
+                                            class="form-checkbox rounded bg-white/10 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-[#39FF14]"></div>Online
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-white whitespace-nowrap">
+                                        API-GATEWAY-05</td>
+                                    <td class="px-6 py-4">192.168.2.15</td>
+                                    <td class="px-6 py-4">Rack 2D, US-EAST-01</td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-24 bg-white/10 rounded-full h-2.5">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 20%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-24 bg-white/10 rounded-full h-2.5">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 55%"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">30 sec ago</td>
+                                    <td class="px-6 py-4 text-right"><button
+                                            class="text-white/70 hover:text-white"><span
+                                                class="material-symbols-outlined">more_vert</span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="flex justify-between items-center px-4 pt-4">
+                    <span class="text-sm text-white/60">Showing 1-10 of 1254</span>
+                    <div class="inline-flex items-center -space-x-px text-sm">
+                        <a class="flex items-center justify-center px-3 h-8 leading-tight text-white/60 bg-white/5 border border-white/10 rounded-l-lg hover:bg-white/10 hover:text-white"
+                            href="#">Previous</a>
+                        <a class="flex items-center justify-center px-3 h-8 leading-tight text-white/60 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white"
+                            href="#">1</a>
+                        <a aria-current="page"
+                            class="flex items-center justify-center px-3 h-8 leading-tight text-white bg-primary/20 border border-primary/50 hover:bg-primary/30 hover:text-white"
+                            href="#">2</a>
+                        <a class="flex items-center justify-center px-3 h-8 leading-tight text-white/60 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white"
+                            href="#">3</a>
+                        <a class="flex items-center justify-center px-3 h-8 leading-tight text-white/60 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white"
+                            href="#">...</a>
+                        <a class="flex items-center justify-center px-3 h-8 leading-tight text-white/60 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white"
+                            href="#">126</a>
+                        <a class="flex items-center justify-center px-3 h-8 leading-tight text-white/60 bg-white/5 border border-white/10 rounded-r-lg hover:bg-white/10 hover:text-white"
+                            href="#">Next</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Fixed Next Button (Bottom Right) -->
+
+
+</body>
+
+</html>

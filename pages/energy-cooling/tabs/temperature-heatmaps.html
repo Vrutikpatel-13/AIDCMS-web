@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Thermal Heatmap</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-white">
+    <div class="flex h-screen w-full flex-col">
+
+        <div class="flex flex-1 overflow-hidden">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <!-- Main Content -->
+            <main class="flex flex-1 flex-col bg-black/20">
+                <div class="border-b border-solid border-white/10 px-6 py-4">
+                    <!-- Breadcrumbs -->
+                    <div class="flex items-center gap-2">
+                        <a class="text-white/60 text-base font-medium leading-normal" href="#">Data Center 1</a>
+                        <span class="material-symbols-outlined text-white/60 text-base">chevron_right</span>
+                        <a class="text-white/60 text-base font-medium leading-normal" href="#">Floor 2</a>
+                        <span class="material-symbols-outlined text-white/60 text-base">chevron_right</span>
+                        <span class="text-white text-base font-medium leading-normal">Thermal View</span>
+                    </div>
+                </div>
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-4 p-6">
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-white/10 bg-white/5">
+                        <p class="text-white/80 text-sm font-medium leading-normal">Critical Hotspots</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">4</p>
+                        <p class="text-[#fa5f38] text-sm font-medium leading-normal flex items-center gap-1"><span
+                                class="material-symbols-outlined text-base">arrow_upward</span> +1</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-white/10 bg-white/5">
+                        <p class="text-white/80 text-sm font-medium leading-normal">Average Temperature</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">22.5Â°C</p>
+                        <p class="text-[#fa5f38] text-sm font-medium leading-normal flex items-center gap-1"><span
+                                class="material-symbols-outlined text-base">arrow_upward</span> +0.2Â°C</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-white/10 bg-white/5">
+                        <p class="text-white/80 text-sm font-medium leading-normal">Overall PUE</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">1.35</p>
+                        <p class="text-[#0bda57] text-sm font-medium leading-normal flex items-center gap-1"><span
+                                class="material-symbols-outlined text-base">arrow_downward</span> -0.01</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-white/10 bg-white/5">
+                        <p class="text-white/80 text-sm font-medium leading-normal">Cooling Efficiency</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">96%</p>
+                        <p class="text-white/60 text-sm font-medium leading-normal">Stable</p>
+                    </div>
+                </div>
+                <!-- Main Viewport -->
+                <div class="relative flex flex-1 p-6 pt-0">
+                    <div
+                        class="relative  flex h-full w-full grow items-center justify-center overflow-hidden rounded-xl border border-solid border-white/10 bg-black">
+                        <!-- Heatmap Image -->
+                        <div class="w-full h-full bg-center bg-no-repeat bg-contain"
+                            data-alt="A 2D thermal heatmap of a data center floor. Colors range from blue for cool areas, green for normal, yellow for warm, and magenta for critical hotspots, showing temperature distribution across server racks."
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDE0flvvqLlH8ENeAIchs5HowX6nnMidVdwogsG1gLXl958hfkeO_kco-AkfdRhIc8W6ea7l0iKo8sg37xzZNeyrZtDsKejAkLjEYxt8FoNvqsGyGKMyjt7WbCORARPhoaNJ7cWb12HxrghKBiILS_JTFjzxSGdUsmI8qBpdjUqJ4CujYpH_iLTqBVyxRhLsQka4QDsWWo9yfhSdy0yNDG-mkiKLhL_FUAVlF19cPpX4QZjRZ5h8VH8Txc6Tt2a160K0ZaqMw7MJTo");'>
+                        </div>
+
+
+                        <!-- Legend -->
+                        <div
+                            class="absolute bottom-10 right-10 flex flex-col gap-2 rounded-lg border border-white/10 bg-background-dark/80 p-4 backdrop-blur-sm">
+                            <p class="text-sm font-bold text-white">Temperature Legend</p>
+                            <div class="flex items-center gap-3">
+                                <div class="h-4 w-4 rounded-full" style="background-color: #00FFFF;"></div>
+                                <span class="text-xs text-white/80">Cool (&lt;20Â°C)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="h-4 w-4 rounded-full" style="background-color: #39FF14;"></div>
+                                <span class="text-xs text-white/80">Normal (20-24Â°C)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="h-4 w-4 rounded-full" style="background-color: #FFFF00;"></div>
+                                <span class="text-xs text-white/80">Warm (24-27Â°C)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="h-4 w-4 rounded-full" style="background-color: #FF00FF;"></div>
+                                <span class="text-xs text-white/80">Hot (27-30Â°C)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="h-4 w-4 rounded-full" style="background-color: #FF2D55;"></div>
+                                <span class="text-xs text-white/80">Critical (&gt;30Â°C)</span>
+                            </div>
+                        </div>
+                        <!-- Information Panel -->
+                        <div
+                            class="absolute top-4 left-4 flex flex-col gap-4 rounded-xl border border-[#FF00FF] bg-background-dark/80 p-4 backdrop-blur-sm shadow-lg shadow-[#FF00FF]/20 max-w-sm">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Rack A-37</h3>
+                                    <p class="text-sm text-white/60">Status: <span
+                                            class="font-semibold text-[#FF00FF]">Hot</span></p>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-[#FF00FF] text-2xl animate-pulse">local_fire_department</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div class="flex flex-col">
+                                    <span class="text-white/60">Temperature</span>
+                                    <span class="font-bold text-white text-base">28.9Â°C</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white/60">Power Usage</span>
+                                    <span class="font-bold text-white text-base">7.2 kW</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white/60">Airflow</span>
+                                    <span class="font-bold text-white text-base">450 CFM</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white/60">Humidity</span>
+                                    <span class="font-bold text-white text-base">48%</span>
+                                </div>
+                            </div>
+                            <a class="w-full text-center rounded-lg bg-primary/20 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white"
+                                href="#">View Details</a>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI-DCIM - Role & Permission Management</title>
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <div class="w-full max-w-7xl mx-auto">
+                <!-- PageHeading -->
+                <div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] font-display">Role &amp;
+                        Permission Management</h1>
+                    <button
+                        class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                        <span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+                        <span class="truncate">New Role</span>
+                    </button>
+                </div>
+                <!-- Three-panel layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Left Panel: Role List -->
+                    <div class="lg:col-span-3 flex flex-col gap-4">
+                        <div class="bg-[#102322] rounded-xl p-4 flex flex-col gap-4">
+                            <!-- SearchBar -->
+                            <label class="flex flex-col w-full">
+                                <div class="flex w-full flex-1 items-stretch rounded-lg h-12">
+                                    <div
+                                        class="text-primary/70 flex bg-[#214a47] items-center justify-center pl-4 rounded-l-lg">
+                                        <span class="material-symbols-outlined">search</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#214a47] focus:border-none h-full placeholder:text-primary/50 px-4 pl-2 text-base font-normal leading-normal font-display"
+                                        placeholder="Search roles by name" value="" />
+                                </div>
+                            </label>
+                            <!-- Role Items -->
+                            <div class="flex flex-col gap-2">
+                                <div
+                                    class="flex items-center gap-4 bg-primary/20 border border-primary px-4 py-3 min-h-[72px] justify-between rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="text-primary flex items-center justify-center rounded-lg bg-[#214a47] shrink-0 size-12">
+                                            <span class="material-symbols-outlined"
+                                                style="font-size: 28px;">verified_user</span>
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <p
+                                                class="text-primary text-base font-medium leading-normal line-clamp-1 font-display">
+                                                Super Administrator</p>
+                                            <p
+                                                class="text-primary/70 text-sm font-normal leading-normal line-clamp-2 font-display">
+                                                3 Users</p>
+                                        </div>
+                                    </div>
+                                    <div class="shrink-0">
+                                        <div class="text-primary flex size-7 items-center justify-center">
+                                            <span class="material-symbols-outlined">chevron_right</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 bg-transparent hover:bg-primary/10 px-4 py-3 min-h-[72px] justify-between rounded-lg cursor-pointer transition-colors">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="text-white flex items-center justify-center rounded-lg bg-[#214a47] shrink-0 size-12">
+                                            <span class="material-symbols-outlined"
+                                                style="font-size: 28px;">engineering</span>
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <p
+                                                class="text-white text-base font-medium leading-normal line-clamp-1 font-display">
+                                                Data Center Operator</p>
+                                            <p
+                                                class="text-white/60 text-sm font-normal leading-normal line-clamp-2 font-display">
+                                                8 Users</p>
+                                        </div>
+                                    </div>
+                                    <div class="shrink-0">
+                                        <div class="text-white/60 flex size-7 items-center justify-center">
+                                            <span class="material-symbols-outlined">chevron_right</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 bg-transparent hover:bg-primary/10 px-4 py-3 min-h-[72px] justify-between rounded-lg cursor-pointer transition-colors">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="text-white flex items-center justify-center rounded-lg bg-[#214a47] shrink-0 size-12">
+                                            <span class="material-symbols-outlined"
+                                                style="font-size: 28px;">visibility</span>
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <p
+                                                class="text-white text-base font-medium leading-normal line-clamp-1 font-display">
+                                                Viewer</p>
+                                            <p
+                                                class="text-white/60 text-sm font-normal leading-normal line-clamp-2 font-display">
+                                                12 Users</p>
+                                        </div>
+                                    </div>
+                                    <div class="shrink-0">
+                                        <div class="text-white/60 flex size-7 items-center justify-center">
+                                            <span class="material-symbols-outlined">chevron_right</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 bg-transparent hover:bg-primary/10 px-4 py-3 min-h-[72px] justify-between rounded-lg cursor-pointer transition-colors">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="text-white flex items-center justify-center rounded-lg bg-[#214a47] shrink-0 size-12">
+                                            <span class="material-symbols-outlined" style="font-size: 28px;">lan</span>
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <p
+                                                class="text-white text-base font-medium leading-normal line-clamp-1 font-display">
+                                                Network Engineer</p>
+                                            <p
+                                                class="text-white/60 text-sm font-normal leading-normal line-clamp-2 font-display">
+                                                5 Users</p>
+                                        </div>
+                                    </div>
+                                    <div class="shrink-0">
+                                        <div class="text-white/60 flex size-7 items-center justify-center">
+                                            <span class="material-symbols-outlined">chevron_right</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Center Panel: Permissions -->
+                    <div class="lg:col-span-5 flex flex-col gap-4">
+                        <div class="bg-[#102322] rounded-xl p-6">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h2
+                                        class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] font-display">
+                                        Super Administrator</h2>
+                                    <p class="text-white/60 mt-1 text-sm font-display">Full access to all system modules
+                                        and settings. Can manage users and roles.</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="text-white/60 hover:text-white transition-colors p-2"><span
+                                            class="material-symbols-outlined">edit</span></button>
+                                    <button class="text-red-400/70 hover:text-red-400 transition-colors p-2"><span
+                                            class="material-symbols-outlined">delete</span></button>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <!-- Permission Module -->
+                                <div class="bg-[#214a47]/50 rounded-lg p-4">
+                                    <h3 class="text-primary font-semibold mb-3 font-display">Asset Management</h3>
+                                    <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-white/90">
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> View Assets</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Create/Add New</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Edit/Modify</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Delete/Remove</label>
+                                    </div>
+                                </div>
+                                <!-- Permission Module -->
+                                <div class="bg-[#214a47]/50 rounded-lg p-4">
+                                    <h3 class="text-primary font-semibold mb-3 font-display">Power &amp; Cooling</h3>
+                                    <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-white/90">
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> View Data</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Modify Setpoints</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Manage Schedules</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Acknowledge Alarms</label>
+                                    </div>
+                                </div>
+                                <!-- Permission Module -->
+                                <div class="bg-[#214a47]/50 rounded-lg p-4">
+                                    <h3 class="text-primary font-semibold mb-3 font-display">AI Analytics &amp;
+                                        Reporting</h3>
+                                    <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-white/90">
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> View Reports</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Export Reports</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Run Simulation</label>
+                                        <label class="flex items-center gap-3"><input checked=""
+                                                class="form-checkbox bg-[#102322] border-primary/40 rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" /> Configure Models</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-end gap-3 mt-8">
+                                <button
+                                    class="rounded-lg h-10 px-4 text-white/80 bg-transparent border border-white/30 hover:bg-white/10 text-sm font-bold">Cancel</button>
+                                <button
+                                    class="rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold hover:bg-primary/90">Save
+                                    Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Panel: Assigned Users -->
+                    <div class="lg:col-span-4 flex flex-col gap-4">
+                        <div class="bg-[#102322] rounded-xl p-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-white text-lg font-bold font-display">Assigned Users (3)</h3>
+                                <button
+                                    class="flex items-center justify-center gap-2 rounded-lg h-9 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">person_add</span>
+                                    <span>Manage Users</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex items-center gap-4 bg-[#214a47]/50 rounded-lg p-3">
+                                    <img class="size-10 rounded-full object-cover"
+                                        data-alt="Profile picture of Cameron Williamson"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-5ChpDVA92C5oyj5S5fE08CIpcmWHMK2XGJZOylvfus9sDO2VNAmYaKH79qAuulGdB23x9oLYUPCYnFiDNCVXXh0fTBnNDVTTSpuZNvhtvu9lEAF2tVLAcFi0gn6PyQ0r-dzKJRU1SIol0Wg2Q3zkKWlYEgSxssegGy2BakhRRMO24jKf8_ujmVLR6QwbDFekGfutwR8-OhrIIwTE4KhtSz7QENgcauCQ9g219QIY7mS78TN_eKktN4NK_AwzLw15fRxFc9wUnE" />
+                                    <div>
+                                        <p class="text-white font-medium font-display">Cameron Williamson</p>
+                                        <p class="text-white/60 text-sm font-display">c.williamson@email.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 bg-[#214a47]/50 rounded-lg p-3">
+                                    <img class="size-10 rounded-full object-cover"
+                                        data-alt="Profile picture of Robert Fox"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcoLG5BtlZCBMNX8vEb1Tn9ch04F3WtKIORdM-cdHE3PaRWYGBCD8O0L9JY0FDm6AGLisUahZd8Wm5lOJBiH9lgDX4ZzIJa2vt8ipnK-1PwJ6sjXomfsVjtDoq4f6G19jOvvgDHvQtUILx_HV9FNhc3e81Z9I82HEiijDhNd2ecLWKHCp9cG4253FTX1uahB9Vm06f61WZDE-0rC_qrSXWmLsNTdkiKBIgCRhLZuQ-YStwS2_0vxcNFrJtEHJ2bdw0ia2-qo6QrYA" />
+                                    <div>
+                                        <p class="text-white font-medium font-display">Robert Fox</p>
+                                        <p class="text-white/60 text-sm font-display">robert.fox@email.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 bg-[#214a47]/50 rounded-lg p-3">
+                                    <img class="size-10 rounded-full object-cover"
+                                        data-alt="Profile picture of Jane Cooper"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8kZx2wRRO-GrOdc3ZgjSUt3UgWi7vyjrFJedlGrl2iY98lCq5DQ66g9RvZuJzp7eEWh5XbudTIalgvgoOObCHF-P0XOsATHmQEXMxDlynJJ01kMby7zmoqB2uGF2tNZMKieLvSIt6eCTm8BrYO3WcFtDfXmBPxhc-QyZg8gSsVh29RsXjCoAP98DdZCtI7WCa-GwFhKUC3114zu3GmGN7xuWaNAMI6UYVSTdf8FJKq9OxXAzsBspZRjQ7OYau2_mApF-JNiIOzeA" />
+                                    <div>
+                                        <p class="text-white font-medium font-display">Jane Cooper</p>
+                                        <p class="text-white/60 text-sm font-display">jane.cooper@email.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+</html>

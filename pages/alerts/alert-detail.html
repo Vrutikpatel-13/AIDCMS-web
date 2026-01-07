@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Alert Detail</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-white">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex h-full">
+            <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <main class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
+                <div class="flex w-full max-w-7xl flex-col gap-6">
+                    <!-- Header: Breadcrumbs and Primary Actions -->
+                    <header class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <a class="text-text-secondary-dark hover:text-primary text-base font-medium leading-normal"
+                                href="#">Alerts</a>
+                            <span class="text-text-secondary-dark text-base font-medium leading-normal">/</span>
+                            <span
+                                class="text-text-primary-dark text-base font-medium leading-normal">CRITICAL-00451</span>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <button
+                                class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+                                <span class="material-symbols-outlined text-base">task_alt</span>
+                                <span class="truncate">Resolve</span>
+                            </button>
+                            <button
+                                class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-surface-dark text-text-primary-dark border border-border-dark hover:bg-border-dark text-sm font-bold leading-normal tracking-[0.015em]">
+                                <span class="material-symbols-outlined text-base">add_comment</span>
+                                <span class="truncate">Add Note</span>
+                            </button>
+                        </div>
+                    </header>
+                    <!-- Alert Summary Card -->
+                    <div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6">
+                        <div class="flex flex-wrap justify-between gap-4">
+                            <div class="flex flex-col gap-2">
+                                <p
+                                    class="text-text-primary-dark text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                                    CRITICAL-00451: Server Rack 3B - Overheating Threshold Breached</p>
+                                <p class="text-text-secondary-dark text-base font-normal leading-normal">Timestamp:
+                                    2024-10-26 14:32:05
+                                    UTC | Affected Asset: Server Rack 3B</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex items-center gap-2 rounded-full bg-accent-red/10 px-3 py-1 text-sm font-bold text-accent-red">
+                                    <span class="material-symbols-outlined text-base">error</span>
+                                    <span>Critical</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <button
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+                                <span class="truncate">Acknowledge</span>
+                            </button>
+                            <button
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#224649] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-border-dark">
+                                <span class="truncate">Escalate</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tabbed Information Panels -->
+                    <div class="flex flex-col">
+                        <div class="border-b border-border-dark">
+                            <nav aria-label="Tabs" class="flex gap-4 sm:gap-8 -mb-px px-4">
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-[13px] pt-4"
+                                    href="#">
+                                    <p
+                                        class="text-text-primary-dark text-sm font-bold leading-normal tracking-[0.015em]">
+                                        Overview</p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-text-secondary-dark hover:text-text-primary-dark pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Root Cause Analysis
+                                    </p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-text-secondary-dark hover:text-text-primary-dark pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Suggested Actions</p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-text-secondary-dark hover:text-text-primary-dark pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">History</p>
+                                </a>
+                            </nav>
+                        </div>
+                        <!-- Tab Content: Overview -->
+                        <div class="py-6 px-4">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <!-- Left Column: AI Summary & Details -->
+                                <div class="md:col-span-2 flex flex-col gap-6">
+                                    <div class="flex flex-col">
+                                        <h2
+                                            class="text-text-primary-dark text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3">
+                                            AI
+                                            Diagnostic Summary</h2>
+                                        <div class="rounded-lg border border-border-dark bg-surface-dark p-4">
+                                            <p class="text-text-secondary-dark leading-relaxed">The critical temperature
+                                                threshold breach in
+                                                Server Rack 3B was most likely caused by a combination of a failed
+                                                cooling fan on Server SRV-34
+                                                and an unusually high ambient data center temperature. Correlated events
+                                                include a 45% spike in
+                                                CPU load on adjacent servers, indicating potential workload shifting due
+                                                to thermal throttling
+                                                on the affected unit.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <h3 class="text-text-primary-dark text-lg font-bold pb-3">Affected Components
+                                        </h3>
+                                        <ul class="space-y-3">
+                                            <li
+                                                class="flex items-center gap-3 rounded-lg border border-border-dark bg-surface-dark p-3">
+                                                <span class="material-symbols-outlined text-accent-red">dns</span>
+                                                <span class="font-semibold text-text-primary-dark">Server SRV-34</span>
+                                                <span class="text-text-secondary-dark text-sm">Primary affected
+                                                    component</span>
+                                                <span class="ml-auto text-xs text-accent-red font-bold">Fan
+                                                    Failure</span>
+                                            </li>
+                                            <li
+                                                class="flex items-center gap-3 rounded-lg border border-border-dark bg-surface-dark p-3">
+                                                <span class="material-symbols-outlined text-accent-amber">dns</span>
+                                                <span class="font-semibold text-text-primary-dark">Server SRV-35</span>
+                                                <span class="text-text-secondary-dark text-sm">Adjacent component</span>
+                                                <span class="ml-auto text-xs text-accent-amber font-bold">High CPU
+                                                    Load</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Right Column: Activity Log -->
+                                <div class="md:col-span-1 flex flex-col">
+                                    <h2
+                                        class="text-text-primary-dark text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3">
+                                        Activity Log</h2>
+                                    <div class="rounded-lg border border-border-dark bg-surface-dark p-4">
+                                        <ol class="relative border-s border-border-dark space-y-6">
+                                            <li class="ms-6">
+                                                <span
+                                                    class="absolute -start-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary ring-4 ring-primary/20">
+                                                    <span
+                                                        class="material-symbols-outlined text-xs text-background-dark">bolt</span>
+                                                </span>
+                                                <h3
+                                                    class="flex items-center mb-1 text-base font-semibold text-text-primary-dark">
+                                                    Alert
+                                                    Triggered</h3>
+                                                <time
+                                                    class="block mb-2 text-xs font-normal leading-none text-text-secondary-dark">2024-10-26
+                                                    14:32:05 UTC</time>
+                                                <p class="text-sm font-normal text-text-secondary-dark">Temperature
+                                                    exceeded 95Â°C threshold.
+                                                </p>
+                                            </li>
+                                            <li class="ms-6">
+                                                <span
+                                                    class="absolute -start-2 flex h-4 w-4 items-center justify-center rounded-full bg-border-dark ring-4 ring-border-dark/30">
+                                                    <span
+                                                        class="material-symbols-outlined text-xs text-text-primary-dark">visibility</span>
+                                                </span>
+                                                <h3 class="mb-1 text-base font-semibold text-text-primary-dark">Viewed
+                                                    by Admin</h3>
+                                                <time
+                                                    class="block mb-2 text-xs font-normal leading-none text-text-secondary-dark">2024-10-26
+                                                    14:33:10 UTC</time>
+                                            </li>
+                                            <li class="ms-6">
+                                                <span
+                                                    class="absolute -start-2 flex h-4 w-4 items-center justify-center rounded-full bg-border-dark ring-4 ring-border-dark/30">
+                                                    <span
+                                                        class="material-symbols-outlined text-xs text-text-primary-dark">check_circle</span>
+                                                </span>
+                                                <h3 class="mb-1 text-base font-semibold text-text-primary-dark">
+                                                    Acknowledged by J. Doe</h3>
+                                                <time
+                                                    class="block mb-2 text-xs font-normal leading-none text-text-secondary-dark">2024-10-26
+                                                    14:35:01 UTC</time>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

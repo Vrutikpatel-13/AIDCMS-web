@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM Integrations</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full">
+        <!-- Side Navigation -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            
+           
+            <!-- Page Content -->
+            <div class="flex-1 p-8 grid grid-cols-12 gap-8">
+                <!-- Integrations List Column -->
+                <div class="col-span-12 lg:col-span-3">
+                    <div class="bg-background-dark/50 border border-white/10 rounded-xl p-4">
+                        <h3 class="text-white font-semibold mb-4 px-2">Available Integrations</h3>
+                        <div class="flex flex-col gap-1">
+                            <div
+                                class="flex items-center gap-4 bg-primary/20 px-4 min-h-[72px] py-2 rounded-lg border-l-2 border-primary">
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 p-2 bg-white"
+                                    data-alt="ServiceNow logo"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWO_vX3gl8Qa08jl9yqW408yJRH7ZZWgw_pKnnT8xBA6lek5xspKsvkgdLz6z4SoqFg-cu08xZioLwnyIJneAYvK_84vCsAuaBdzzGkgFGxvX_3uoLwLdP99NFNCO5cdaEXp65Zg_hihnfqU_1ZGSAVY8CGiT2zOcf98r9I9Ms6ltSOTsKKwGinI5kCzYEqP4vXGN14uCnw89U3DrPXoQW3nSJzvja_xp515777KQ3ckeK1vXI9KKZ21343u7Ta7HSACNa0fNctCQ");'>
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-white text-base font-medium leading-normal line-clamp-1">ServiceNow
+                                    </p>
+                                    <p class="text-primary/70 text-sm font-normal leading-normal line-clamp-2">IT
+                                        Service Management</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 px-4 min-h-[72px] py-2 rounded-lg hover:bg-white/5 cursor-pointer">
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 p-2 bg-white"
+                                    data-alt="Jira logo"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvEO3gsAuvQjiJWmG2oCH7xZUqhWK4aOE8UpMZUMxvT3qGq4sjOWkfO87mQN2u2cc89i47qlNbbbxivj987cFEHfIBeafV3wS0jDjOk922C0otIai-kCbPrg0qXNO3T6ik15GuKECuYZCOFTFvBR5NwMXSDx-d99sV16RneGbs5oInCutTw570Vd9AilYXD7opx7vi_Lf9E4IdEyo2MEpPknMsOBjpFn7NQkPRc5iDG7acvZY4hRPUSSL-DECt8ENWP18wj4FxiSg");'>
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Jira Service
+                                        Management</p>
+                                    <p class="text-primary/70 text-sm font-normal leading-normal line-clamp-2">IT
+                                        Service Management</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 px-4 min-h-[72px] py-2 rounded-lg opacity-50 cursor-not-allowed">
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 p-2 bg-white"
+                                    data-alt="Zendesk logo"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIMhpf1X5dXui1dDUNuy55aNtkCjsuDPxQWjGAj1C658pfqYW4-p4dduwE-XayVZeiTHx--e722rEJb1Y31JpteztcV5qymSPkVyvmSGrVewfZG1TsvFImU5S-tzqxXJchhFXCLb3IvyhNr6-48AfrLzu2gIuvYs_nKsf_6a3j9QvWqqxL88VeZgblFCHeMPi6G5q9_TQdHvVLboImtVb_H20AiIP6Dc3eaSknoJmH8Y620_fcPtblI8ayCxeX3sLIMpHAbFIBwps");'>
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Zendesk</p>
+                                    <p class="text-primary/70 text-sm font-normal leading-normal line-clamp-2">Coming
+                                        Soon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Configuration Column -->
+                <div class="col-span-12 lg:col-span-9 flex flex-col gap-8">
+                    <div class="flex flex-wrap justify-between items-start gap-3">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">ServiceNow
+                                Configuration</p>
+                            <p class="text-primary/70 text-base font-normal leading-normal">Manage settings for your
+                                ServiceNow integration</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-white/80 font-medium">Enable Integration</span>
+                            <button aria-checked="true"
+                                class="bg-primary relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark"
+                                role="switch" type="button">
+                                <span
+                                    class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- API Credentials Card -->
+                    <div class="bg-background-dark/50 border border-white/10 rounded-xl p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-white text-lg font-semibold">API Credentials</h4>
+                            <div class="flex items-center gap-2">
+                                <div class="size-2 rounded-full bg-green-400"></div>
+                                <span class="text-green-400 text-sm font-medium">Connected</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-white/70 mb-2" for="instance-url">Instance
+                                    URL</label>
+                                <input
+                                    class="w-full bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white focus:ring-primary focus:border-primary"
+                                    id="instance-url" type="text" value="https://your-company.service-now.com" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/70 mb-2" for="api-user">API
+                                    User</label>
+                                <input
+                                    class="w-full bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white focus:ring-primary focus:border-primary"
+                                    id="api-user" type="text" value="api_user_dcim" />
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-white/70 mb-2" for="api-token">API
+                                    Token</label>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white pr-10 focus:ring-primary focus:border-primary"
+                                        id="api-token" type="password" value="supersecretpassword" />
+                                    <button
+                                        class="absolute inset-y-0 right-0 flex items-center pr-3 text-white/50 hover:text-white">
+                                        <span class="material-symbols-outlined text-xl">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-end">
+                            <button
+                                class="bg-primary/20 hover:bg-primary/30 text-primary font-bold py-2 px-4 rounded-lg">
+                                Test Connection
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Incident Creation Card -->
+                    <div class="bg-background-dark/50 border border-white/10 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-white text-lg font-semibold">Incident Creation Rules</h4>
+                            <div class="flex items-center gap-3">
+                                <span class="text-white/80 font-medium">Automated Creation</span>
+                                <button aria-checked="true"
+                                    class="bg-primary relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark"
+                                    role="switch" type="button">
+                                    <span
+                                        class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Define which alerts will automatically generate an
+                            incident in ServiceNow.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                                <p class="text-white">Create incident for alerts with <span
+                                        class="font-bold text-red-400">'Critical'</span> severity</p>
+                                <button aria-checked="true"
+                                    class="bg-primary relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none"
+                                    role="switch" type="button">
+                                    <span
+                                        class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                                <p class="text-white">Create incident for alerts with <span
+                                        class="font-bold text-orange-400">'High'</span> severity</p>
+                                <button aria-checked="false"
+                                    class="bg-gray-600 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none"
+                                    role="switch" type="button">
+                                    <span
+                                        class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Status Synchronization Card -->
+                    <div class="bg-background-dark/50 border border-white/10 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-white text-lg font-semibold">Status Synchronization</h4>
+                            <div class="flex items-center gap-3">
+                                <span class="text-white/80 font-medium">Ticket Status Sync</span>
+                                <button aria-checked="true"
+                                    class="bg-primary relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none"
+                                    role="switch" type="button">
+                                    <span
+                                        class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-white/60 text-sm mb-6">Map AI-DCIM alert statuses to their corresponding
+                            ServiceNow incident states.</p>
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-11 gap-4 items-center">
+                                <div class="col-span-5">
+                                    <p class="text-white/70 text-sm font-semibold mb-2">AI-DCIM Status</p>
+                                    <div class="bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white">
+                                        Critical</div>
+                                </div>
+                                <div class="col-span-1 text-center text-white/50"><span
+                                        class="material-symbols-outlined">arrow_forward</span></div>
+                                <div class="col-span-5">
+                                    <p class="text-white/70 text-sm font-semibold mb-2">ServiceNow State</p>
+                                    <div class="relative">
+                                        <select
+                                            class="w-full appearance-none bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white focus:ring-primary focus:border-primary">
+                                            <option>New</option>
+                                            <option selected="">In Progress</option>
+                                            <option>On Hold</option>
+                                            <option>Resolved</option>
+                                        </select>
+                                        <span
+                                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-white/50 pointer-events-none">expand_more</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-11 gap-4 items-center">
+                                <div class="col-span-5">
+                                    <div class="bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white">
+                                        Resolved</div>
+                                </div>
+                                <div class="col-span-1 text-center text-white/50"><span
+                                        class="material-symbols-outlined">arrow_forward</span></div>
+                                <div class="col-span-5">
+                                    <div class="relative">
+                                        <select
+                                            class="w-full appearance-none bg-white/5 border border-white/20 rounded-lg px-3 py-2 text-white focus:ring-primary focus:border-primary">
+                                            <option>New</option>
+                                            <option>In Progress</option>
+                                            <option>On Hold</option>
+                                            <option selected="">Resolved</option>
+                                        </select>
+                                        <span
+                                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-white/50 pointer-events-none">expand_more</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Action Bar -->
+            <footer
+                class="sticky bottom-0 bg-background-dark/80 backdrop-blur-sm border-t border-white/10 px-8 py-4 mt-auto">
+                <div class="flex justify-end gap-4">
+                    <button class="bg-white/10 hover:bg-white/20 text-white font-bold py-2 px-4 rounded-lg">Discard
+                        Changes</button>
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-2 px-4 rounded-lg">Save
+                        Changes</button>
+                </div>
+            </footer>
+        </main>
+    </div>
+   
+
+</body>
+
+</html>

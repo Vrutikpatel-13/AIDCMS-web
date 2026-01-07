@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI-DCIM IOPS Insights</title>
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-white/90">
+    <div class="relative flex min-h-screen w-full">
+        <!-- SideNavBar -->
+         <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col p-8 gap-6 overflow-y-auto">
+            <!-- Header -->
+            <header>
+                <div class="flex flex-wrap justify-between items-start gap-4">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">IOPS Performance
+                            Insights</h1>
+                        <p class="text-primary/70 text-base font-normal leading-normal">Real-time and historical data
+                            for
+                            infrastructure monitoring</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <p class="text-sm text-white/60">Last updated: 3s ago</p>
+                        <span class="material-symbols-outlined text-primary text-[20px] animate-spin"
+                            style="animation-duration: 2s;">sync</span>
+                    </div>
+                </div>
+                <!-- Chips / Global Filters -->
+                <div class="flex gap-3 pt-6 overflow-x-auto">
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 hover:bg-white/20 px-3 transition-colors">
+                        <span class="material-symbols-outlined text-primary/80 text-[20px]">domain</span>
+                        <p class="text-white text-sm font-medium leading-normal">Data Center: All</p>
+                        <span class="material-symbols-outlined text-white/50 text-[20px]">expand_more</span>
+                    </button>
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 hover:bg-white/20 px-3 transition-colors">
+                        <span class="material-symbols-outlined text-primary/80 text-[20px]">grid_view</span>
+                        <p class="text-white text-sm font-medium leading-normal">Cluster: All</p>
+                        <span class="material-symbols-outlined text-white/50 text-[20px]">expand_more</span>
+                    </button>
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 hover:bg-white/20 px-3 transition-colors">
+                        <span class="material-symbols-outlined text-primary/80 text-[20px]">stacks</span>
+                        <p class="text-white text-sm font-medium leading-normal">Server Group: All</p>
+                        <span class="material-symbols-outlined text-white/50 text-[20px]">expand_more</span>
+                    </button>
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 hover:bg-white/20 px-3 transition-colors">
+                        <span class="material-symbols-outlined text-primary/80 text-[20px]">database</span>
+                        <p class="text-white text-sm font-medium leading-normal">Device Type: All</p>
+                        <span class="material-symbols-outlined text-white/50 text-[20px]">expand_more</span>
+                    </button>
+                </div>
+            </header>
+            <!-- KPI Stats -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white/5 border border-white/10">
+                    <p class="text-white/80 text-base font-medium leading-normal">Current IOPS</p>
+                    <p class="text-white tracking-light text-3xl font-bold leading-tight">1.2M</p>
+                    <p class="text-[#0bda50] text-base font-medium leading-normal flex items-center"><span
+                            class="material-symbols-outlined text-[20px]">arrow_upward</span>+2.1%</p>
+                </div>
+                <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white/5 border border-white/10">
+                    <p class="text-white/80 text-base font-medium leading-normal">24H Avg IOPS</p>
+                    <p class="text-white tracking-light text-3xl font-bold leading-tight">980K</p>
+                    <p class="text-[#fa5c38] text-base font-medium leading-normal flex items-center"><span
+                            class="material-symbols-outlined text-[20px]">arrow_downward</span>-0.5%</p>
+                </div>
+                <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white/5 border border-white/10">
+                    <p class="text-white/80 text-base font-medium leading-normal">Peak IOPS (24H)</p>
+                    <p class="text-white tracking-light text-3xl font-bold leading-tight">2.5M</p>
+                    <p class="text-[#0bda50] text-base font-medium leading-normal flex items-center"><span
+                            class="material-symbols-outlined text-[20px]">arrow_upward</span>+5.0%</p>
+                </div>
+                <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white/5 border border-white/10">
+                    <p class="text-white/80 text-base font-medium leading-normal">Active Storage Devices</p>
+                    <p class="text-white tracking-light text-3xl font-bold leading-tight">1,204</p>
+                    <p class="text-white/60 text-base font-medium leading-normal">of 1,250</p>
+                </div>
+            </section>
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                <!-- Main Visualization Area -->
+                <section class="xl:col-span-2 flex flex-col gap-6">
+                    <div class="rounded-xl p-6 bg-white/5 border border-white/10">
+                        <div class="flex flex-wrap justify-between items-center gap-4 mb-4">
+                            <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Real-time IOPS
+                                Analysis</h2>
+                            <div class="flex items-center gap-1 p-1 rounded-lg bg-black/20">
+                                <button
+                                    class="px-3 py-1 text-sm font-medium rounded-md bg-primary/20 text-primary">Live</button>
+                                <button
+                                    class="px-3 py-1 text-sm font-medium rounded-md text-white/60 hover:bg-white/10">1H</button>
+                                <button
+                                    class="px-3 py-1 text-sm font-medium rounded-md text-white/60 hover:bg-white/10">6H</button>
+                                <button
+                                    class="px-3 py-1 text-sm font-medium rounded-md text-white/60 hover:bg-white/10">24H</button>
+                                <button
+                                    class="px-3 py-1 text-sm font-medium rounded-md text-white/60 hover:bg-white/10">7D</button>
+                            </div>
+                        </div>
+                        <div class="w-full h-72 bg-cover bg-center rounded-lg"
+                            data-alt="A large area chart showing IOPS data over time with a vibrant neon blue line and gradient."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-d2s3eY97dL3BGcmdC6UFnGVPRupsSaFBwGE-xMy3OG5Qv4VfiGYGeGjZ-EgC9mXf7qwwqPUjwRMttxI-8tkXJbylZrHZV0s7MfT3q7Iay3qxao9yHY9Bqq_hwjVuwt8oNlMvmYASMWBUMhDLUGVSAlFNNJs5FMCrrEQvxz5ToN4aULVrfDE-DTmZmwAl7v0ikmXx7qknQCIBlN0IBmRq1NxHb1YSXMZljbLD8mqz6HKi6YEFxB_Yi0Yu6qMJmleSdUsosvxaE9c')">
+                        </div>
+                    </div>
+                    <!-- Device IOPS Breakdown Table -->
+                    <div class="rounded-xl p-6 bg-white/5 border border-white/10">
+                        <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-4">Device IOPS
+                            Breakdown</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead class="border-b border-white/20 text-white/60">
+                                    <tr>
+                                        <th class="p-3 font-medium">Device ID</th>
+                                        <th class="p-3 font-medium">IOPS (Current)</th>
+                                        <th class="p-3 font-medium">Latency (ms)</th>
+                                        <th class="p-3 font-medium">Throughput (MB/s)</th>
+                                        <th class="p-3 font-medium">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-white/10 hover:bg-white/5">
+                                        <td class="p-3">SSD-NVMe-001A</td>
+                                        <td class="p-3">250.3K</td>
+                                        <td class="p-3">0.52</td>
+                                        <td class="p-3">1,280</td>
+                                        <td class="p-3"><span
+                                                class="inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-2 py-0.5 text-xs font-medium text-green-300">Normal</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-white/10 hover:bg-white/5">
+                                        <td class="p-3">SSD-NVMe-001B</td>
+                                        <td class="p-3">245.1K</td>
+                                        <td class="p-3">0.55</td>
+                                        <td class="p-3">1,250</td>
+                                        <td class="p-3"><span
+                                                class="inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-2 py-0.5 text-xs font-medium text-green-300">Normal</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-white/10 hover:bg-white/5">
+                                        <td class="p-3">HDD-SATA-032C</td>
+                                        <td class="p-3">12.5K</td>
+                                        <td class="p-3">4.12</td>
+                                        <td class="p-3">180</td>
+                                        <td class="p-3"><span
+                                                class="inline-flex items-center gap-1.5 rounded-full bg-yellow-500/20 px-2 py-0.5 text-xs font-medium text-yellow-300">Warning</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-white/5">
+                                        <td class="p-3">SSD-SATA-008D</td>
+                                        <td class="p-3">55.8K</td>
+                                        <td class="p-3">0.98</td>
+                                        <td class="p-3">550</td>
+                                        <td class="p-3"><span
+                                                class="inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-2 py-0.5 text-xs font-medium text-green-300">Normal</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <!-- AI Insights Panel -->
+                <aside class="rounded-xl p-6 bg-white/5 border border-white/10 flex flex-col gap-4 min-h-[500px]">
+                    <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">AI Insights &amp; Anomaly
+                        Detection
+                    </h2>
+                    <div class="flex flex-col gap-4">
+                        <div class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-red-400 mt-0.5">error</span>
+                                <div>
+                                    <p class="font-bold text-red-300">Anomaly Detected</p>
+                                    <p class="text-white/90 text-sm">Unusual IOPS spike on <span
+                                            class="font-semibold text-white">SSD-NVMe-014F</span>. Latency increased by
+                                        300%.</p>
+                                    <a class="text-sm text-primary hover:underline mt-1" href="#">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-blue-300 mt-0.5">auto_awesome</span>
+                                <div>
+                                    <p class="font-bold text-blue-300">Prediction</p>
+                                    <p class="text-white/90 text-sm">Cluster-A is projected to reach peak IOPS capacity
+                                        in ~3 hours based
+                                        on current trends.</p>
+                                    <a class="text-sm text-primary hover:underline mt-1" href="#">Analyze Trend</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-300 mt-0.5">task_alt</span>
+                                <div>
+                                    <p class="font-bold text-green-300">Recommendation</p>
+                                    <p class="text-white/90 text-sm">Consider migrating workload from <span
+                                            class="font-semibold text-white">Server-B2</span> to <span
+                                            class="font-semibold text-white">Server-C1</span> to balance IOPS load.</p>
+                                    <a class="text-sm text-primary hover:underline mt-1" href="#">Initiate Migration</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

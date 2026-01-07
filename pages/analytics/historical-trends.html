@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI-DCIM - Historical Trend Analysis</title>
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex h-full flex-1">
+            <!-- SideNavBar -->
+            <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <!-- Main Content -->
+            <main class="flex-1 overflow-y-auto">
+                <div class="p-8">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap justify-between gap-4 items-center mb-6">
+                        <div class="flex flex-col gap-2">
+                            <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Historical
+                                Trend Analysis</h1>
+                            <p class="text-primary/70 text-base font-normal leading-normal">Analyze compute, storage,
+                                and network resource usage over time.</p>
+                        </div>
+
+                        <div class="flex flex-wrap justify-between items-center gap-4">
+                            <a href="../analytics/tabs/future-demand-forecasting.html"
+                                class="flex capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+                                <span class="truncate">future-demand-forecasting</span>
+                            </a>
+
+                            <a href="../analytics/tabs/resource-allocation.html"
+                                class="flex  capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+
+                                <span class="truncate">resource-allocation</span>
+                            </a>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <!-- Chips / Filters -->
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#224649] hover:bg-primary/30 transition-colors pl-4 pr-2">
+                            <p class="text-white text-sm font-medium leading-normal">Time Period: Last 7 Days</p>
+                            <span class="material-symbols-outlined text-white text-xl">expand_more</span>
+                        </button>
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#224649] hover:bg-primary/30 transition-colors pl-4 pr-2">
+                            <p class="text-white text-sm font-medium leading-normal">Resource: All</p>
+                            <span class="material-symbols-outlined text-white text-xl">expand_more</span>
+                        </button>
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#224649] hover:bg-primary/30 transition-colors pl-4 pr-2">
+                            <p class="text-white text-sm font-medium leading-normal">Granularity: Daily</p>
+                            <span class="material-symbols-outlined text-white text-xl">expand_more</span>
+                        </button>
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#224649] hover:bg-primary/30 transition-colors pl-4 pr-2">
+                            <p class="text-white text-sm font-medium leading-normal">Location: All</p>
+                            <span class="material-symbols-outlined text-white text-xl">expand_more</span>
+                        </button>
+                    </div>
+                    <!-- Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#316368] bg-[#1A2D2F]/50">
+                            <p class="text-white/80 text-base font-medium leading-normal">Avg. CPU Utilization</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">78.5%</p>
+                            <p class="text-[#39FF14] text-base font-medium leading-normal">+2.1%</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#316368] bg-[#1A2D2F]/50">
+                            <p class="text-white/80 text-base font-medium leading-normal">Total Storage Consumed</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">1.2 PB</p>
+                            <p class="text-[#39FF14] text-base font-medium leading-normal">+5.6%</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#316368] bg-[#1A2D2F]/50">
+                            <p class="text-white/80 text-base font-medium leading-normal">Peak Network Throughput</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">45.2 Gbps</p>
+                            <p class="text-[#fa5c38] text-base font-medium leading-normal">-1.8%</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#316368] bg-[#1A2D2F]/50">
+                            <p class="text-white/80 text-base font-medium leading-normal">AI Anomaly Count</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">12</p>
+                            <p class="text-[#39FF14] text-base font-medium leading-normal">+3</p>
+                        </div>
+                    </div>
+                    <!-- Charts Grid -->
+                    <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                        <!-- Main Trend Chart -->
+                        <div
+                            class="xl:col-span-3 flex flex-col gap-2 rounded-xl border border-[#316368] p-6 bg-[#1A2D2F]/50">
+                            <p class="text-white text-lg font-medium leading-normal">Resource Usage Over Time</p>
+                            <p class="text-white tracking-light text-[32px] font-bold leading-tight truncate">CPU,
+                                Storage, Network</p>
+                            <div class="flex gap-2">
+                                <p class="text-primary/70 text-base font-normal leading-normal">Last 7 Days</p>
+                                <p class="text-[#39FF14] text-base font-medium leading-normal">+4.5%</p>
+                            </div>
+                            <div class="flex min-h-[250px] flex-1 flex-col gap-8 py-4">
+                                <svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="-3 0 478 150"
+                                    width="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z"
+                                        fill="url(#paint0_linear_1131_5935)"></path>
+                                    <path
+                                        d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
+                                        stroke="#0ddff2" stroke-linecap="round" stroke-width="3"></path>
+                                    <defs>
+                                        <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_1131_5935"
+                                            x1="236" x2="236" y1="1" y2="149">
+                                            <stop stop-color="#0ddff2" stop-opacity="0.4"></stop>
+                                            <stop offset="1" stop-color="#102122" stop-opacity="0"></stop>
+                                        </lineargradient>
+                                    </defs>
+                                </svg>
+                                <div class="flex justify-around -mt-4">
+                                    <p class="text-primary/70 text-sm font-bold leading-normal tracking-[0.015em]">Mon
+                                    </p>
+                                    <p class="text-primary/70 text-sm font-bold leading-normal tracking-[0.015em]">Tue
+                                    </p>
+                                    <p class="text-primary/70 text-sm font-bold leading-normal tracking-[0.015em]">Wed
+                                    </p>
+                                    <p class="text-primary/70 text-sm font-bold leading-normal tracking-[0.015em]">Thu
+                                    </p>
+                                    <p class="text-primary/70 text-sm font-bold leading-normal tracking-[0.015em]">Fri
+                                    </p>
+                                    <p class="text-primary/70 text-sm font-bold leading-normal tracking-[0.015em]">Sat
+                                    </p>
+                                    <p class="text-primary/70 text-sm font-bold leading-normal tracking-[0.015em]">Sun
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Breakdown Panels -->
+                        <div
+                            class="xl:col-span-1 flex flex-col gap-4 rounded-xl border border-[#316368] p-6 bg-[#1A2D2F]/50">
+                            <h3 class="text-white text-lg font-medium leading-normal">Storage Allocation</h3>
+                            <div class="relative flex items-center justify-center h-48 w-48 mx-auto my-4">
+                                <svg class="absolute inset-0" viewbox="0 0 36 36">
+                                    <circle cx="18" cy="18" fill="none" r="15.9154943092" stroke="#224649"
+                                        stroke-width="3"></circle>
+                                    <circle cx="18" cy="18" fill="none" r="15.9154943092" stroke="#0ddff2"
+                                        stroke-dasharray="60, 40" stroke-dashoffset="25" stroke-width="3"></circle>
+                                    <circle cx="18" cy="18" fill="none" r="15.9154943092" stroke="#39FF14"
+                                        stroke-dasharray="25, 75" stroke-dashoffset="85" stroke-width="3"></circle>
+                                </svg>
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="text-white/80 text-sm">Total</span>
+                                    <span class="text-white text-2xl font-bold">1.2 PB</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-primary"></div>
+                                        <p class="text-white/80 text-sm">Project Alpha</p>
+                                    </div>
+                                    <p class="text-white font-medium">60%</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-[#39FF14]"></div>
+                                        <p class="text-white/80 text-sm">Project Beta</p>
+                                    </div>
+                                    <p class="text-white font-medium">25%</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-[#224649]"></div>
+                                        <p class="text-white/80 text-sm">Others</p>
+                                    </div>
+                                    <p class="text-white font-medium">15%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="xl:col-span-2 flex flex-col gap-4 rounded-xl border border-[#316368] p-6 bg-[#1A2D2F]/50">
+                            <h3 class="text-white text-lg font-medium leading-normal">AI-Detected Anomalies</h3>
+                            <div class="flex flex-col gap-3 overflow-y-auto">
+                                <div class="flex items-center justify-between p-3 rounded-lg bg-primary/10">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-red-400">warning</span>
+                                        <div class="flex flex-col">
+                                            <p class="text-white font-medium text-sm">Unusual CPU Spike on Server-042
+                                            </p>
+                                            <p class="text-white/60 text-xs">2 hours ago</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-red-400 font-bold text-sm">High Severity</p>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-lg bg-primary/10">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-amber-400">info</span>
+                                        <div class="flex flex-col">
+                                            <p class="text-white font-medium text-sm">Network latency increase in Rack
+                                                B3</p>
+                                            <p class="text-white/60 text-xs">Yesterday, 10:30 PM</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-amber-400 font-bold text-sm">Medium Severity</p>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-lg bg-primary/10">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-amber-400">info</span>
+                                        <div class="flex flex-col">
+                                            <p class="text-white font-medium text-sm">Disk I/O pattern deviation on
+                                                Storage-Array-07</p>
+                                            <p class="text-white/60 text-xs">Mar 15, 8:15 AM</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-amber-400 font-bold text-sm">Medium Severity</p>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-lg bg-primary/10">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-green-400">task_alt</span>
+                                        <div class="flex flex-col">
+                                            <p class="text-white font-medium text-sm">Memory usage returning to normal
+                                                on Compute-112</p>
+                                            <p class="text-white/60 text-xs">Mar 14, 2:00 PM</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-green-400 font-bold text-sm">Resolved</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

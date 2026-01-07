@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../assets/css/output.css" rel="stylesheet" />
+    
+    <title>AI-DCIM Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <div class="flex h-full w-full">
+            <!-- SideNavBar -->
+            <aside
+                class="flex min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary" href="dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="pages/administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="pages/governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <!-- Main Content -->
+            <main class="flex-1">
+                <!-- TopNavBar -->
+                <header
+                    class="flex h-20 items-center justify-between gap-8 border-b border-solid border-border-dark bg-surface-dark/50 px-8 sticky top-0 backdrop-blur-sm z-10">
+                    <div class="flex flex-1 items-center">
+                        <label class="flex flex-col min-w-40 w-full max-w-md">
+                            <div class="flex h-11 w-full flex-1 items-stretch rounded-lg">
+                                <div
+                                    class="text-text-medium flex items-center justify-center rounded-l-lg border-y border-l border-border-dark bg-background-dark pl-4">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg border-y border-r border-border-dark bg-background-dark px-4 text-sm font-normal text-text-light placeholder:text-text-medium focus:border-primary focus:outline-0 focus:ring-0"
+                                    placeholder="Search assets, racks, or alerts..." value="" />
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-end gap-4">
+                        <button
+                            class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg border border-border-dark bg-surface-dark text-text-medium hover:text-white">
+                            <span class="material-symbols-outlined text-xl">notifications</span>
+                        </button>
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary"
+                            data-alt="User profile picture"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1nKrIyIKh2YDb48rGfpJ4v3Y0q2mMMuoSDI-_paje7BStA9EcQC0Mwlc2KovQlRm8ECDU-1kdP_z6tjAN9vSCfezp9dP3HzeY4GFLkLGafipPljblPFInQJQExPMji4ySTKTsS95X9hqYx2FyTysHAwu3ZFoTynk6F88JsjrHEPVHNRuAFiZHpZFYV0nY9arXukab6dfeE-8XQKDgM0rDcic_Fnqsp3oEje3iFfkfuWiZ4vucHA582vwoZDUA3649mu7IKWvVngU");'>
+                        </div>
+                    </div>
+                </header>
+                <div class="p-8">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap items-end justify-between gap-4 pb-6">
+                        <div class="flex flex-col gap-2">
+                            <p class="text-3xl font-bold leading-tight tracking-tight text-text-light">Main Dashboard
+                            </p>
+                            <p class="text-base font-normal leading-normal text-text-medium">Real-time overview of data
+                                center health
+                                and performance.</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-text-medium">
+                            <span class="material-symbols-outlined text-base">update</span>
+                            <span>Last updated: 5s ago</span>
+                        </div>
+                    </div>
+                    <!-- Stats / KPI Banner -->
+                    <div class="grid grid-cols-2 gap-6 lg:grid-cols-5">
+                        <div class="flex flex-col gap-2 rounded-xl bg-surface-dark p-5 border border-border-dark">
+                            <p class="text-sm font-medium text-text-medium">Total Power Usage</p>
+                            <p class="text-3xl font-bold leading-tight tracking-tight text-white">8,250 kW</p>
+                            <div class="flex items-center gap-1 text-status-high">
+                                <span class="material-symbols-outlined text-base">arrow_upward</span>
+                                <p class="text-sm font-medium">+1.2%</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2 rounded-xl bg-surface-dark p-5 border border-border-dark">
+                            <p class="text-sm font-medium text-text-medium">Overall PUE</p>
+                            <p class="text-3xl font-bold leading-tight tracking-tight text-white">1.18</p>
+                            <div class="flex items-center gap-1 text-status-low">
+                                <span class="material-symbols-outlined text-base">arrow_downward</span>
+                                <p class="text-sm font-medium">-0.5%</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2 rounded-xl bg-surface-dark p-5 border border-border-dark">
+                            <p class="text-sm font-medium text-text-medium">Total CPU Load</p>
+                            <p class="text-3xl font-bold leading-tight tracking-tight text-white">72%</p>
+                            <div class="flex items-center gap-1 text-status-medium">
+                                <span class="material-symbols-outlined text-base">arrow_upward</span>
+                                <p class="text-sm font-medium">+3.1%</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2 rounded-xl bg-surface-dark p-5 border border-border-dark">
+                            <p class="text-sm font-medium text-text-medium">Active Network Devices</p>
+                            <p class="text-3xl font-bold leading-tight tracking-tight text-white">482</p>
+                            <div class="flex items-center gap-1 text-status-high">
+                                <span class="material-symbols-outlined text-base">arrow_upward</span>
+                                <p class="text-sm font-medium">+2 new</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2 rounded-xl bg-surface-dark p-5 border border-border-dark">
+                            <p class="text-sm font-medium text-text-medium">Usable Storage</p>
+                            <p class="text-3xl font-bold leading-tight tracking-tight text-white">2.5 PB</p>
+                            <div class="flex items-center gap-1 text-status-high">
+                                <span class="material-symbols-outlined text-base">arrow_upward</span>
+                                <p class="text-sm font-medium">+0.02%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Main Dashboard Grid -->
+                    <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                        <div class="lg:col-span-2 flex flex-col gap-6">
+                            <!-- Rack Heatmap -->
+                            <div class="rounded-xl bg-surface-dark p-6 border border-border-dark">
+                                <h3 class="text-lg font-bold text-white">Rack Heatmap</h3>
+                                <p class="text-sm text-text-medium mb-4">Real-time temperature distribution across the
+                                    data center
+                                    floor.</p>
+                                <div class="w-full h-80 bg-background-dark rounded-lg flex items-center justify-center">
+                                    <img class="object-contain h-full w-full"
+                                        data-alt="Data center floor plan with color-coded racks indicating temperature from blue (cool) to red (hot)"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9qwDguL5aYGSpPu40gIcvtCTWTzUr8RzMuNRa2E7qDaSOvFPKrbg3t9D4YWZf_YxtgI6nhVNfRgee91AhKLBRZ_QHXz0IH_IpKHnvDDJ6na9U00wgt2iQJ_PLJ4i75bfGKzJOOZX0J9PHWV6Z5uRKWiQtP2K511b0NeZpQG1Zz4k6MHwAnaHjyTiO3KR5_wKAORCq72xQDqsqtbOuBcK_9OcZpb15ic8q0O7wM-AMbS4p51FcgN1SPjzY_XbMCFIgrsFkklwWuI" />
+                                </div>
+                            </div>
+                            <!-- System Status Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Compute -->
+                                <div class="rounded-xl bg-surface-dark p-6 border border-border-dark">
+                                    <h3 class="text-lg font-bold text-white mb-4">Compute Overview</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm text-text-medium">CPU Utilization</span>
+                                            <span class="font-bold text-white">72%</span>
+                                        </div>
+                                        <div class="w-full bg-border-dark rounded-full h-2.5">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 72%"></div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm text-text-medium">RAM Utilization</span>
+                                            <span class="font-bold text-white">61%</span>
+                                        </div>
+                                        <div class="w-full bg-border-dark rounded-full h-2.5">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 61%"></div>
+                                        </div>
+                                        <div
+                                            class="border-t border-border-dark pt-4 mt-4 flex justify-between items-center text-sm">
+                                            <span class="text-text-medium">Active Servers</span>
+                                            <div>
+                                                <span class="font-bold text-status-high">1204</span><span
+                                                    class="text-text-medium"> /
+                                                    1220</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Storage -->
+                                <div class="rounded-xl bg-surface-dark p-6 border border-border-dark">
+                                    <h3 class="text-lg font-bold text-white mb-4">Storage Capacity</h3>
+                                    <div class="flex items-center justify-center">
+                                        <img class="h-40 w-40"
+                                            data-alt="Donut chart showing 78% storage used and 22% available"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD29jhGloaSaT8qbObzkjDMvJzb3OyZSZlmFCQ068JT5jDNPKnTXb54IjuiCRWQH3UFNELGyDAOUBALWqI6vivULlSx0NJ8I2iBVtNN9BE2L0p2wCgJHs_f_Xl_tuo_zgpGy7ZwGG3sHiUaz5gqACTpxGs8Z5pDiUOmIvrwI8oCdsmn3ZmVQ3s_Fa3RrlMNAjcU3u0_yqYza1xJLn5ojBKv2mKvw6dexfn7fnNpE2N--3r3-C8jstyY4ifKJ_uvkrf91aoVSN1N-e0" />
+                                    </div>
+                                    <div
+                                        class="border-t border-border-dark pt-4 mt-4 flex justify-between items-center text-sm">
+                                        <span class="text-text-medium">IOPS</span>
+                                        <span class="font-bold text-white">1.2M</span>
+                                    </div>
+                                </div>
+                                <!-- Network -->
+                                <div class="rounded-xl bg-surface-dark p-6 border border-border-dark">
+                                    <h3 class="text-lg font-bold text-white mb-1">Network Traffic</h3>
+                                    <p class="text-xs text-text-medium mb-4">Last 24 hours</p>
+                                    <img class="w-full h-32"
+                                        data-alt="Line chart showing network traffic trends over the last 24 hours"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_yAE4b0ToF6THhXFQfKqBsPfvpj1jFHDTn_4hVIHeEFRZnAtrGBtBbpU19zNBnSBRlxNEjNfEVwbzhzVzv9FuGLJUTaBz5Ui7ZdjnkgKtPj1_O12avJVRJSgDtfA-xoWpxSxeW69APfIfS39TXvuCk-IuOiF3WgoC4DedSzhAKE_bl_VnvH4piOCA63IhbMahHylVAsC85Y__BXWpgZS5hBAq4dHeDJwFSWnTExaQore5eMLXcUb1qeFr8aznEhMASbpmllzgkVo" />
+                                    <div
+                                        class="border-t border-border-dark pt-4 mt-4 flex justify-between items-center text-sm">
+                                        <span class="text-text-medium">Avg. Latency</span>
+                                        <span class="font-bold text-white">2.1ms</span>
+                                    </div>
+                                </div>
+                                <!-- Energy -->
+                                <div class="rounded-xl bg-surface-dark p-6 border border-border-dark">
+                                    <h3 class="text-lg font-bold text-white mb-1">PUE Trend</h3>
+                                    <p class="text-xs text-text-medium mb-4">Last 7 days</p>
+                                    <img class="w-full h-32"
+                                        data-alt="Line chart showing Power Usage Effectiveness (PUE) over the last 7 days"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo4zZLgydszuLO1o7rb-334D4XwJP0qtDqMJngz9gmYIbkpj7jRPs1zARWM55wV8C-jRhGupKi5ZKdY355znrGcrQa3RMKiH8EoxYUcitK-xF6QwFkQ99MC_1FBwMnl29oSPpLUQTlwQdHWq8yCWnJil_TfbFTjqaTmfS3QfupuxnjxQR_pOFknD3trpAlOzDnPa-fipGGSRVzN70o_C8sJzmTDyIuXmrzaH8etHO8e-QbRdw2GuGGczYa-EkC6RU7uwgi51TLxwc" />
+                                    <div
+                                        class="border-t border-border-dark pt-4 mt-4 flex justify-between items-center text-sm">
+                                        <span class="text-text-medium">Current PUE</span>
+                                        <span class="font-bold text-white">1.18</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-1 flex flex-col gap-6">
+                            <!-- AI Insights -->
+                            <div class="rounded-xl bg-surface-dark p-6 border border-border-dark">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <span class="material-symbols-outlined text-accent-green">auto_awesome</span>
+                                    <h3 class="text-lg font-bold text-white">AI Insights</h3>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 size-3 rounded-full bg-status-medium"></div>
+                                        <div class="flex flex-col">
+                                            <p class="text-sm font-semibold text-text-light">Predictive failure on PSU
+                                                in Rack C-12 within
+                                                48h.</p>
+                                            <a class="text-xs font-bold text-primary hover:underline" href="#">Create
+                                                Ticket</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 size-3 rounded-full bg-status-high"></div>
+                                        <div class="flex flex-col">
+                                            <p class="text-sm font-semibold text-text-light">Adjust cooling by +0.5Â°C in
+                                                Zone 3 to save 3%
+                                                energy.</p>
+                                            <a class="text-xs font-bold text-primary hover:underline" href="#">Apply
+                                                Change</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Live Alerts -->
+                            <div class="rounded-xl bg-surface-dark p-6 border border-border-dark flex-1">
+                                <h3 class="text-lg font-bold text-white mb-4">Live Alerts</h3>
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 size-3 rounded-full bg-status-low"></div>
+                                        <div class="flex flex-col">
+                                            <p class="text-sm font-semibold text-text-light">CRITICAL: High temp
+                                                detected on Server SRV-1024.
+                                            </p>
+                                            <p class="text-xs text-text-medium">2 min ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 size-3 rounded-full bg-status-medium"></div>
+                                        <div class="flex flex-col">
+                                            <p class="text-sm font-semibold text-text-light">WARNING: Network switch
+                                                SW-08 packet loss &gt;
+                                                5%.</p>
+                                            <p class="text-xs text-text-medium">5 min ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 size-3 rounded-full bg-status-medium"></div>
+                                        <div class="flex flex-col">
+                                            <p class="text-sm font-semibold text-text-light">WARNING: Storage Array
+                                                SA-02 latency &gt; 50ms.
+                                            </p>
+                                            <p class="text-xs text-text-medium">12 min ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 size-3 rounded-full bg-status-low"></div>
+                                        <div class="flex flex-col">
+                                            <p class="text-sm font-semibold text-text-light">CRITICAL: UPS-01 battery
+                                                level below 10%.</p>
+                                            <p class="text-xs text-text-medium">28 min ago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>

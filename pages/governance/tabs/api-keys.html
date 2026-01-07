@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AI-DCIM - API Key Management</title>
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex h-full flex-1">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <!-- Main Content -->
+            <main class="flex-1 overflow-y-auto p-8">
+                <div class="mx-auto max-w-7xl">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex flex-col gap-2">
+                            <h1 class="font-display text-4xl font-black leading-tight tracking-[-0.033em] text-white">
+                                API Key Management</h1>
+                            <p class="font-display text-base font-normal leading-normal text-slate-400">Manage keys for
+                                programmatic access and external service integrations.</p>
+                        </div>
+                        <button
+                            class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#0f2123] text-sm font-bold leading-normal tracking-[0.015em] transition-opacity hover:opacity-80">
+                            <span class="material-symbols-outlined">add</span>
+                            <span class="truncate">Generate New Key</span>
+                        </button>
+                    </div>
+                    <!-- Search and Filters -->
+                    <div class="mt-8 flex items-center justify-between gap-4">
+                        <div class="flex-1">
+                            <label class="flex flex-col min-w-40 h-12 w-full max-w-md">
+                                <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                    <div
+                                        class="text-[#8ec7cc] flex border-none bg-[#183235] items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                        <span class="material-symbols-outlined">search</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#183235] h-full placeholder:text-[#8ec7cc] px-4 pl-2 text-base font-normal leading-normal font-display"
+                                        placeholder="Search keys by name or label..." value="" />
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Table -->
+                    <div class="mt-6">
+                        <div class="flex overflow-hidden rounded-lg border border-[#2f656a]">
+                            <table class="w-full text-left">
+                                <thead class="bg-[#183235]">
+                                    <tr>
+                                        <th
+                                            class="px-4 py-3 font-display text-sm font-medium leading-normal text-white">
+                                            Name/Label</th>
+                                        <th
+                                            class="px-4 py-3 font-display text-sm font-medium leading-normal text-white">
+                                            API Key</th>
+                                        <th
+                                            class="px-4 py-3 font-display text-sm font-medium leading-normal text-white">
+                                            Status</th>
+                                        <th
+                                            class="px-4 py-3 font-display text-sm font-medium leading-normal text-white">
+                                            Created Date</th>
+                                        <th
+                                            class="px-4 py-3 font-display text-sm font-medium leading-normal text-white">
+                                            Last Used</th>
+                                        <th
+                                            class="px-4 py-3 font-display text-sm font-medium leading-normal text-white text-right">
+                                            Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-t-[#2f656a]">
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-white">
+                                            External Integration A</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            sk_...a4f8</td>
+                                        <td class="h-[72px] px-4 py-2">
+                                            <div
+                                                class="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-1 text-xs font-medium text-green-400">
+                                                <span class="h-1.5 w-1.5 rounded-full bg-green-400"></span>
+                                                Active
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            2023-10-26</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            2023-10-27</td>
+                                        <td class="h-[72px] px-4 py-2 text-right">
+                                            <button class="text-[#8ec7cc] transition-colors hover:text-primary">
+                                                <span class="material-symbols-outlined">more_vert</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#2f656a]">
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-white">
+                                            Reporting Script</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            sk_...9c1e</td>
+                                        <td class="h-[72px] px-4 py-2">
+                                            <div
+                                                class="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-1 text-xs font-medium text-green-400">
+                                                <span class="h-1.5 w-1.5 rounded-full bg-green-400"></span>
+                                                Active
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            2023-09-15</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            2023-10-25</td>
+                                        <td class="h-[72px] px-4 py-2 text-right">
+                                            <button class="text-[#8ec7cc] transition-colors hover:text-primary">
+                                                <span class="material-symbols-outlined">more_vert</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#2f656a]">
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-white">
+                                            Legacy System Hook</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            sk_...b2d7</td>
+                                        <td class="h-[72px] px-4 py-2">
+                                            <div
+                                                class="inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-2 py-1 text-xs font-medium text-red-400">
+                                                <span class="h-1.5 w-1.5 rounded-full bg-red-400"></span>
+                                                Revoked
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            2023-01-20</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 font-display text-sm font-normal leading-normal text-[#8ec7cc]">
+                                            2023-08-01</td>
+                                        <td class="h-[72px] px-4 py-2 text-right">
+                                            <button class="text-[#8ec7cc] transition-colors hover:text-primary">
+                                                <span class="material-symbols-outlined">more_vert</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

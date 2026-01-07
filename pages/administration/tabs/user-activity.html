@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI-DCIM - User Activity</title>
+
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#EAEAEA]">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <div class="flex h-full min-h-screen">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <!-- Main Content -->
+            <main class="flex-1 p-8">
+                <div class="flex flex-col gap-6">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex flex-col gap-2">
+                            <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">User Activity
+                                History</p>
+                            <p class="text-primary/70 text-base font-normal leading-normal">Review and audit all user
+                                activities within the system.</p>
+                        </div>
+                        <button
+                            class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary/90 hover:bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] transition-colors duration-200">
+                            <span class="material-symbols-outlined">download</span>
+                            <span class="truncate">Export Log</span>
+                        </button>
+                    </div>
+                    <!-- Filter Section -->
+                    <div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#102223] p-6">
+                        <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Filter Activities
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <label class="flex flex-col">
+                                <p class="text-white text-base font-medium leading-normal pb-2">Filter by User</p>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-primary/20 bg-[#183235] h-12 placeholder:text-primary/60 p-3 text-base font-normal leading-normal"
+                                    placeholder="Search user name or email" value="" />
+                            </label>
+                            <label class="flex flex-col">
+                                <p class="text-white text-base font-medium leading-normal pb-2">Select Date Range</p>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-primary/20 bg-[#183235] h-12 placeholder:text-primary/60 p-3 text-base font-normal leading-normal"
+                                    placeholder="Start Date - End Date" value="" />
+                            </label>
+                            <div class="flex items-end gap-3">
+                                <button
+                                    class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary/90 hover:bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] transition-colors duration-200">
+                                    <span class="truncate">Apply Filters</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary/20 text-primary hover:bg-primary/30 text-sm font-bold leading-normal tracking-[0.015em] transition-colors duration-200">
+                                    <span class="truncate">Reset</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 flex-wrap pt-2">
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4 ring-1 ring-inset ring-primary">
+                                <p class="text-primary text-sm font-medium leading-normal">All Activities</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#183235] hover:bg-primary/20 px-4 transition-colors duration-200">
+                                <p class="text-white text-sm font-medium leading-normal">Login</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#183235] hover:bg-primary/20 px-4 transition-colors duration-200">
+                                <p class="text-white text-sm font-medium leading-normal">Data Export</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#183235] hover:bg-primary/20 px-4 transition-colors duration-200">
+                                <p class="text-white text-sm font-medium leading-normal">Configuration Change</p>
+                            </div>
+                            <div
+                                class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-[#183235] hover:bg-primary/20 px-4 transition-colors duration-200">
+                                <p class="text-white text-sm font-medium leading-normal">Module Access</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Activity Log Table -->
+                    <div class="overflow-hidden rounded-xl border border-white/10 bg-[#102223]">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead class="border-b border-white/10 text-white/70">
+                                    <tr>
+                                        <th class="px-6 py-4 font-medium" scope="col">Timestamp</th>
+                                        <th class="px-6 py-4 font-medium" scope="col">User</th>
+                                        <th class="px-6 py-4 font-medium" scope="col">Activity Type</th>
+                                        <th class="px-6 py-4 font-medium" scope="col">Details</th>
+                                        <th class="px-6 py-4 font-medium" scope="col">IP Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        class="border-b border-white/10 hover:bg-primary/5 transition-colors duration-200">
+                                        <td class="px-6 py-4 text-white/70">2023-10-27 14:35:10 UTC</td>
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <img class="h-8 w-8 rounded-full object-cover"
+                                                    data-alt="User avatar for Alex Hartman"
+                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDSlipjAywQtpuXCQJPdfYM2d1iNB9OFRH4UW8W_XCO_mDC-9vFtnH4P4ZpJyg04zeEJLemRsdQJ-Kpyw0E3upPH7o3fJ8HEgFKZiwoUURlipCcz_YUwpbAtoBJ7GRVf_H1Hm5lO9O420zkTgi8w9_jJZnSWoMWqBaNHZob-BoWKmrd8P8nTzKL5sXJobqljCBp88gncw-g0YBhovo3A4j1hJqR6pFNMzgEklL2ZHnUx5dfh3jmDbAuD8VXxFBxvdAobPGKS5OmDA" />
+                                                <div>
+                                                    <p class="font-medium text-white">Alex Hartman</p>
+                                                    <p class="text-xs text-white/60">alex.hartman@datacore.io</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-green-500/10 px-2 py-1 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-500/20">SUCCESSFUL_LOGIN</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-white">User logged in successfully.</td>
+                                        <td class="px-6 py-4 text-white/70">192.168.1.100</td>
+                                    </tr>
+                                    <tr
+                                        class="border-b border-white/10 hover:bg-primary/5 transition-colors duration-200">
+                                        <td class="px-6 py-4 text-white/70">2023-10-27 14:32:05 UTC</td>
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <img class="h-8 w-8 rounded-full object-cover"
+                                                    data-alt="User avatar for Samantha Ray"
+                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTyVyvFu9w_Yzy5vy6FmzVLLs8FdZsmzWxo39195d10Mqpoad-ZftZNg6WklHhzftkKGtyo0LqPr7rcIQ0MNe_hA_lvcQLtTsZ06A9evaVY_TRBLoP5FgqiEqvdYBhCYmxhOnime8Qrbqg8KY33IJKQEbMkBZc7hJ5GsNcuHfoYAX4mcuSlllAn0sXutr7ViBEJBB6CSwJbKThVfjSdLIYE9U9vaYkGwKHU68sXnuRhLpZ6wtj7_DZx1q9wLj_aGp4_2P796TrHR8" />
+                                                <div>
+                                                    <p class="font-medium text-white">Samantha Ray</p>
+                                                    <p class="text-xs text-white/60">s.ray@datacore.io</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-cyan-500/10 px-2 py-1 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/20">DATA_EXPORT</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-white">Exported power usage report for Q3.</td>
+                                        <td class="px-6 py-4 text-white/70">203.0.113.45</td>
+                                    </tr>
+                                    <tr
+                                        class="border-b border-white/10 hover:bg-primary/5 transition-colors duration-200">
+                                        <td class="px-6 py-4 text-white/70">2023-10-27 13:50:18 UTC</td>
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <img class="h-8 w-8 rounded-full object-cover"
+                                                    data-alt="User avatar for Alex Hartman"
+                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqidltQ76xBCmxs8hnek7jTRzDv4nHadrot-wU5FvkKTeY2pk2VEnvR4eJmHZu7PdnyJh9nCmnaoZtRtcavCZ62uxuYS36OV4pwiddPVmtnc7Pt7F13z0YdVeUdUC1acZOnyQ_LFDSXdQGJ1jvTSQw80NFY3lF0DpQ8xmO0vliN1nEtZydnFMpN9mFgRXP1Re6STRbUEciMF3JjU8jgyx9QD8QSpLqcpB4HVgb6ctXRA7UrCss5R9A4VppCDenmMjXnRwEXsSAQ4" />
+                                                <div>
+                                                    <p class="font-medium text-white">Alex Hartman</p>
+                                                    <p class="text-xs text-white/60">alex.hartman@datacore.io</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-yellow-500/10 px-2 py-1 text-xs font-medium text-yellow-400 ring-1 ring-inset ring-yellow-500/20">CONFIG_UPDATE</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-white">Updated cooling threshold for Rack A-12.</td>
+                                        <td class="px-6 py-4 text-white/70">192.168.1.100</td>
+                                    </tr>
+                                    <tr
+                                        class="border-b border-white/10 hover:bg-primary/5 transition-colors duration-200">
+                                        <td class="px-6 py-4 text-white/70">2023-10-27 11:21:44 UTC</td>
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <img class="h-8 w-8 rounded-full object-cover"
+                                                    data-alt="User avatar for Ben Carter"
+                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm4MkyRPICWfP5ciVNNeKTvVLcYYfrmlMDjhkZoYViJ8KUuIb7koKU3BzCCXhP0nVuHh40MpaoC6YZZahetCCGR8bvBZUafBBKwGJnq7X_Q3QaGTiZvYBPYYKIULYGbmsyF3EhDIr7o06wmwo9LtjmQ72HZOhFuiMTwGaglpbj8OudFGbMHs3iagZCjvyjKdlrumCFvCajOzdYX8aR0-927IPZq4U6PE3MVSK_4YVfi71C0imCaINrMfBf8AQK_oB5HQDNAxIorTY" />
+                                                <div>
+                                                    <p class="font-medium text-white">Ben Carter</p>
+                                                    <p class="text-xs text-white/60">ben.carter@datacore.io</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-blue-500/10 px-2 py-1 text-xs font-medium text-blue-400 ring-1 ring-inset ring-blue-500/20">VIEW_ACCESS</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-white">Viewed temperature sensor data for Rack C-04.
+                                        </td>
+                                        <td class="px-6 py-4 text-white/70">198.51.100.12</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary/5 transition-colors duration-200">
+                                        <td class="px-6 py-4 text-white/70">2023-10-27 09:15:30 UTC</td>
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span
+                                                    class="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20 font-bold text-red-400">?</span>
+                                                <div>
+                                                    <p class="font-medium text-white">Unknown User</p>
+                                                    <p class="text-xs text-white/60">Login Attempt</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="inline-flex items-center rounded-md bg-red-500/10 px-2 py-1 text-xs font-medium text-red-400 ring-1 ring-inset ring-red-500/20">FAILED_LOGIN</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-white">Failed login attempt with username 'admin'.
+                                        </td>
+                                        <td class="px-6 py-4 text-white/70">123.45.67.89</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="flex items-center justify-between border-t border-white/10 px-4 py-3 sm:px-6">
+                            <div class="flex flex-1 justify-between sm:hidden">
+                                <a class="relative inline-flex items-center rounded-md border border-white/20 bg-[#183235] px-4 py-2 text-sm font-medium text-white hover:bg-primary/20"
+                                    href="#">Previous</a>
+                                <a class="relative ml-3 inline-flex items-center rounded-md border border-white/20 bg-[#183235] px-4 py-2 text-sm font-medium text-white hover:bg-primary/20"
+                                    href="#">Next</a>
+                            </div>
+                            <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                                <div>
+                                    <p class="text-sm text-white/70">
+                                        Showing
+                                        <span class="font-medium text-white">1</span>
+                                        to
+                                        <span class="font-medium text-white">5</span>
+                                        of
+                                        <span class="font-medium text-white">97</span>
+                                        results
+                                    </p>
+                                </div>
+                                <div>
+                                    <nav aria-label="Pagination"
+                                        class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+                                        <a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-white/70 ring-1 ring-inset ring-white/20 hover:bg-primary/20 focus:z-20 focus:outline-offset-0"
+                                            href="#">
+                                            <span class="material-symbols-outlined text-sm">chevron_left</span>
+                                        </a>
+                                        <a aria-current="page"
+                                            class="relative z-10 inline-flex items-center bg-primary/20 px-4 py-2 text-sm font-semibold text-primary focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                                            href="#">1</a>
+                                        <a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 hover:bg-primary/20 focus:z-20 focus:outline-offset-0"
+                                            href="#">2</a>
+                                        <a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 hover:bg-primary/20 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                                            href="#">3</a>
+                                        <span
+                                            class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/20">...</span>
+                                        <a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 hover:bg-primary/20 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                                            href="#">10</a>
+                                        <a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-white/70 ring-1 ring-inset ring-white/20 hover:bg-primary/20 focus:z-20 focus:outline-offset-0"
+                                            href="#">
+                                            <span class="material-symbols-outlined text-sm">chevron_right</span>
+                                        </a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

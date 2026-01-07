@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>Performance History: SRV-102 - AI-DCIM</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Breadcrumbs -->
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                    <a class="text-gray-500 dark:text-[#90bccb] text-base font-medium leading-normal hover:text-primary transition-colors"
+                        href="#">Servers</a>
+                    <span class="text-gray-400 dark:text-[#90bccb]">/</span>
+                    <a class="text-gray-500 dark:text-[#90bccb] text-base font-medium leading-normal hover:text-primary transition-colors"
+                        href="#">SRV-102</a>
+                    <span class="text-gray-400 dark:text-[#90bccb]">/</span>
+                    <span class="text-gray-800 dark:text-white text-base font-medium leading-normal">Performance
+                        History</span>
+                </div>
+                <!-- PageHeading -->
+                <header class="flex flex-wrap justify-between items-start gap-4 mb-6">
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">
+                            Performance
+                            History: SRV-102</h1>
+                        <p class="text-gray-600 dark:text-[#90bccb] text-base font-normal leading-normal">IP:
+                            192.168.1.102 |
+                            Status: <span class="text-green-400">Online</span> | Model: PowerEdge R740</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg h-10 hover:bg-primary/90 transition-colors">
+                        <span class="material-symbols-outlined text-base">download</span>
+                        <span>Export as CSV</span>
+                    </button>
+                </header>
+                <!-- ToolBar & Chips -->
+                <div
+                    class="flex flex-wrap justify-between items-center gap-4 p-3 bg-white/50 dark:bg-[#1A1A2E]/50 rounded-xl border border-gray-200 dark:border-gray-700/50 mb-6">
+                    <div class="flex items-center gap-2 overflow-x-auto">
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white px-4">
+                            <p class="text-sm font-medium leading-normal">Last 1hr</p>
+                        </button>
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-[#223f49] text-gray-800 dark:text-white px-4 hover:bg-primary/20 transition-colors">
+                            <p class="text-sm font-medium leading-normal">24hr</p>
+                        </button>
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-[#223f49] text-gray-800 dark:text-white px-4 hover:bg-primary/20 transition-colors">
+                            <p class="text-sm font-medium leading-normal">7d</p>
+                        </button>
+                        <button
+                            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-[#223f49] text-gray-800 dark:text-white px-4 hover:bg-primary/20 transition-colors">
+                            <p class="text-sm font-medium leading-normal">30d</p>
+                        </button>
+                    </div>
+                    <div class="flex gap-1">
+                        <button aria-label="Select custom date range"
+                            class="p-2 text-gray-600 dark:text-white rounded-lg hover:bg-primary/20 transition-colors">
+                            <span class="material-symbols-outlined">calendar_month</span>
+                        </button>
+                        <button aria-label="Refresh data"
+                            class="p-2 text-gray-600 dark:text-white rounded-lg hover:bg-primary/20 transition-colors">
+                            <span class="material-symbols-outlined">refresh</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Charts Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- CPU Utilization Card -->
+                    <div
+                        class="bg-white dark:bg-[#1A1A2E]/50 rounded-xl border border-gray-200 dark:border-gray-700/50 p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">CPU Utilization</h3>
+                            <p class="text-2xl font-black text-primary">78.5%</p>
+                        </div>
+                        <div class="h-64 bg-gray-100 dark:bg-black/20 rounded-lg flex items-center justify-center">
+                            <img class="w-full h-full object-cover rounded-lg"
+                                data-alt="Line chart showing CPU utilization over the last hour, peaking at 85%."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABlIp6rbsEeufZlg6B6Cebd75BMBogu0sdW4ObzW3rByKbL5htMsYNTAI7zYCNp55dzydpnMVQHVuAWTdspwiNigFz4tUhzk6xFeUDYbwJVPFNGT63zdRogJdn0Q6wegXXo2h7BDcB7FAb8du5MLmdoH_WpYMIOCnGBeXzPpGfOwO3FgJ3Bvs538EQxJK2fQlZ33Q91raFDvwM7EHUS5JpnfY4DapIzY-a-W1zWgROJ4sHPKZH3DP7fmARjYuegMlTU5U0TrLljuM" />
+                        </div>
+                    </div>
+                    <!-- GPU Utilization & Temp Card -->
+                    <div
+                        class="bg-white dark:bg-[#1A1A2E]/50 rounded-xl border border-gray-200 dark:border-gray-700/50 p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">GPU Utilization &amp; Temp</h3>
+                            <p class="text-2xl font-black text-primary">62.1% / 75Â°C</p>
+                        </div>
+                        <div class="h-64 bg-gray-100 dark:bg-black/20 rounded-lg flex items-center justify-center">
+                            <img class="w-full h-full object-cover rounded-lg"
+                                data-alt="Line chart showing GPU utilization and temperature over the last hour."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq1LyhqZmOdFNMXRwoZvRDAE4akTe1UQ26supB2Y1-ywHHepn2zyIKwydm29COnepCQXqAZaDG7a11R0ka0K1q8_fc7V0Qa9AIhmbEmzFIBsMohrtpzNq36EIKXdbTVFDhb8N55n39xqf6gicTi5gkPrpSvoa8MPN6fpxRPAHA32CXwnWjGxsw59Lv0Q0auc5jRvW60iAcZAp4krm6tyLA8Ovdmz2xV9NvJZNSINPtxsu49AkiKp5A9eZYy2J2OqN6qBQ9wU5iWco" />
+                        </div>
+                    </div>
+                    <!-- RAM Usage Card -->
+                    <div
+                        class="bg-white dark:bg-[#1A1A2E]/50 rounded-xl border border-gray-200 dark:border-gray-700/50 p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">RAM Usage</h3>
+                            <p class="text-2xl font-black text-primary">48.2 GB</p>
+                        </div>
+                        <div class="h-64 bg-gray-100 dark:bg-black/20 rounded-lg flex items-center justify-center">
+                            <img class="w-full h-full object-cover rounded-lg"
+                                data-alt="Line chart showing RAM usage in gigabytes over time, with a stable trend."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK8_S-MDvhv1AhTqnbR5ktjL3V-tF78BIK8SyOVCsO3W4TM3aOAjSJBlEhsehU8y1Mhky_fHR3lZA7yTh_buC4vI6rtRq68x7BkBrZLAVF1huRcCrgV4iayNXGRDdIqcHeU_1vzIFcD3H8Mx-Gud09Bqsl5bVc2W5n5-jyYGLFUAIXz-Un-NahKFe__bYBi3tJNK4eXksgkB7audW8LNFOL1M5nN5OECw0yy-sBXhTulSSypOiVdJ2_R-W3DTjK7xQ_2wN5Cj9Jmo" />
+                        </div>
+                    </div>
+                    <!-- Disk I/O Card -->
+                    <div
+                        class="bg-white dark:bg-[#1A1A2E]/50 rounded-xl border border-gray-200 dark:border-gray-700/50 p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">Disk I/O</h3>
+                            <p class="text-2xl font-black text-primary">1.2k IOPS</p>
+                        </div>
+                        <div class="h-64 bg-gray-100 dark:bg-black/20 rounded-lg flex items-center justify-center">
+                            <img class="w-full h-full object-cover rounded-lg"
+                                data-alt="Line chart showing disk read/write operations per second, with occasional spikes."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnanmQd_-XvCEfjYKsiLNjcuphXvynzSEcx13M2fsJOhwiE2aPdJgEd4lGgVdwiGIW3Xdx8jzLZSBq2jrupdEmWFyXZ3jgpLrEQb7lLH36y8dNoelHVHH9yG4xrOokR7WkFAFhZTdYb2u6N7nhflpi_CU1z1pROlAnjr1QadgEQ-q7OchwY3Kmm9da9ykDFvFkktxmua4khc5vqGtGBlGsfUgSIZWbK2qRJeY4bJkhNSXad8jcZ-ObYE_8jE3ZjttefTrGX2wpe1I" />
+                        </div>
+                    </div>
+                    <!-- Network I/O Card -->
+                    <div
+                        class="lg:col-span-2 bg-white dark:bg-[#1A1A2E]/50 rounded-xl border border-gray-200 dark:border-gray-700/50 p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">Network I/O</h3>
+                            <p class="text-2xl font-black text-primary">850 Mbps</p>
+                        </div>
+                        <div class="h-64 bg-gray-100 dark:bg-black/20 rounded-lg flex items-center justify-center">
+                            <img class="w-full h-full object-cover rounded-lg"
+                                data-alt="Line chart showing network traffic in and out over time, displaying consistent data transfer rates."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo_aXc9_L9lR83nqW3WUCRcLIt9ChBxF3P7Iaxx0Cmf2XTeIdTwqBMWOjrbdqnTFcKwDzsD5i5xcSCGqF0LPHTuNbZ9yNrvi0T4PQ2gDnVRqMyl1q2GJIJTXtak2MBRrifF1oen1Lj0euYG20wFTo0Sg775RRIW0c1T_dBrB9jKuutsIgA2Wddek4LBE8T7vWyoNrx4-pnXPiXRF2E49pFHNsOYrMpji67sxiYRAsjL9G3S6UxLgxwSTqlf2639fi5DGyBV1EFm1U" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>AI-DCIM - Logout</title>
+  <link href="./assets/css/output.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#EAEAEA]">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full bg-[#102223] rounded-xl p-8 border border-white/10">
+      <div class="text-center">
+        <div class="mx-auto w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-primary text-2xl">logout</span>
+        </div>
+        <h1 class="text-white text-2xl font-bold mb-2">Logging Out</h1>
+        <p class="text-primary/70 mb-6">Thank you for using AI-DCIM. You are being logged out securely.</p>
+        
+        <div class="space-y-3">
+          <button onclick="window.location.href='index.html'" class="w-full flex items-center justify-center gap-2 bg-primary/90 hover:bg-primary text-background-dark rounded-lg py-3 px-4 font-medium transition-colors duration-200">
+            <span class="material-symbols-outlined">login</span>
+            Return to Login
+          </button>
+          <button onclick="window.history.back()" class="w-full flex items-center justify-center gap-2 bg-primary/20 hover:bg-primary/30 text-primary rounded-lg py-3 px-4 font-medium transition-colors duration-200">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

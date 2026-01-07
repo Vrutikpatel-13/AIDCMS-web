@@ -1,0 +1,26 @@
+{
+  "name": "aidcms-web",
+  "version": "1.0.0",
+  "description": "AI-DCMS Web Application",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node node_modules/tailwindcss/lib/cli.js -i assets/css/input.css -o assets/css/output.css",
+    "watch-css": "node node_modules/tailwindcss/lib/cli.js -i assets/css/input.css -o assets/css/output.css --watch",
+    "dev": "npm run watch-css",
+    "serve": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "tailwind",
+    "css",
+    "ai-dcms"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

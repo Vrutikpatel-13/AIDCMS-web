@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM Network Command Center</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <style>
+        /* Custom styles for Material Symbols Outlined */
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <div class="flex h-full min-w-0 flex-1">
+            <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <!-- Main Content -->
+            <main class="flex flex-1 flex-col p-6 lg:p-8">
+                <!-- Header Bar -->
+                <header class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                    <!-- PageHeading -->
+                    <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Network Command
+                        Center
+                    </p>
+                    <!-- Search & Profile -->
+                    <div class="flex items-center gap-4">
+                        <!-- SearchBar -->
+                        <label class="flex flex-col min-w-40 h-12 w-full max-w-sm">
+                            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                <div
+                                    class="text-[#90b7cb] flex border-none bg-[#223c49] items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#223c49] focus:border-none h-full placeholder:text-[#90b7cb] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                                    placeholder="Search Devices, IPs, or Logs..." value="" />
+                            </div>
+                        </label>
+                        <button class="relative p-2 text-white/80 hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <span class="absolute top-1 right-1 flex h-2.5 w-2.5">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                            </span>
+                        </button>
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="User avatar"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxXRAAW8ecizpp23nqZT9L9nQ1T4NeyjeOLMdLK9T9KfKh9e1MRjhZg6oYWHkwPaOYLHfldxBTkrLcDdIHnqzzoYmyA-OkbJm1cg7lEWamA-4iSeCjw-iCT-iVmDG65dqscp5FFNVI4-bRGNJyNVadiOBdcuTm86F0u8p8tKHQfz-0I1hTCvwOxCmi77i37RogxaRglPl7BaJp1nR6ZDzf5DUdQh0Ni2ULyhDuiDEDz6V99KkQ3Ms_bTE4rK7b-NyqhIQrZ-0Zioc");'>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main KPI Cards (Stats) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#315668] bg-[#0D1117]/50">
+                        <p class="text-white text-base font-medium leading-normal">Overall Network Health</p>
+                        <p class="text-[#39FF14] tracking-light text-3xl font-bold leading-tight">99.8%</p>
+                        <p class="text-[#FFBF00] text-base font-medium leading-normal">-0.1%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#315668] bg-[#0D1117]/50">
+                        <p class="text-white text-base font-medium leading-normal">Active Critical Alerts</p>
+                        <p class="text-[#FF0033] tracking-light text-3xl font-bold leading-tight">3</p>
+                        <p class="text-[#FF0033] text-base font-medium leading-normal">+2 Today</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#315668] bg-[#0D1117]/50">
+                        <p class="text-white text-base font-medium leading-normal">System Uptime</p>
+                        <p class="text-[#39FF14] tracking-light text-3xl font-bold leading-tight">99.999%</p>
+                        <p class="text-[#39FF14] text-base font-medium leading-normal">+0.001%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#315668] bg-[#0D1117]/50">
+                        <p class="text-white text-base font-medium leading-normal">Avg. Latency</p>
+                        <p class="text-white tracking-light text-3xl font-bold leading-tight">45ms</p>
+                        <p class="text-[#FFBF00] text-base font-medium leading-normal">+5ms</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-6">
+                    <!-- Main Charts Column -->
+                    <div class="xl:col-span-2 flex flex-col gap-6">
+                        <!-- Charts -->
+                        <div class="flex flex-wrap gap-6">
+                            <div
+                                class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-[#315668] p-6 bg-[#0D1117]/50">
+                                <p class="text-white text-base font-medium leading-normal">Bandwidth Utilization (Last
+                                    24h)</p>
+                                <p class="text-primary tracking-light text-[32px] font-bold leading-tight truncate">15.2
+                                    Gbps</p>
+                                <div class="flex gap-2 items-center">
+                                    <p class="text-[#90b7cb] text-sm font-normal leading-normal">Last 24 Hours</p>
+                                    <p
+                                        class="text-[#39FF14] text-sm font-medium leading-normal flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-base">arrow_upward</span>5.2%
+                                    </p>
+                                </div>
+                                <div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+                                    <svg fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150"
+                                        width="100%" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z"
+                                            fill="url(#paint0_linear_1131_5935)"></path>
+                                        <path
+                                            d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
+                                            stroke="#0da6f2" stroke-linecap="round" stroke-width="3"></path>
+                                        <defs>
+                                            <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_1131_5935"
+                                                x1="236" x2="236" y1="1" y2="149">
+                                                <stop stop-color="#0da6f2" stop-opacity="0.4"></stop>
+                                                <stop offset="1" stop-color="#0da6f2" stop-opacity="0"></stop>
+                                            </lineargradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="flex justify-around">
+                                        <p
+                                            class="text-[#90b7cb] text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                            12 AM</p>
+                                        <p
+                                            class="text-[#90b7cb] text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                            4 AM</p>
+                                        <p
+                                            class="text-[#90b7cb] text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                            8 AM</p>
+                                        <p
+                                            class="text-[#90b7cb] text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                            12 PM</p>
+                                        <p
+                                            class="text-[#90b7cb] text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                            4 PM</p>
+                                        <p
+                                            class="text-[#90b7cb] text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                            8 PM</p>
+                                        <p
+                                            class="text-[#90b7cb] text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                            Now</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Critical Components Status -->
+                        <div class="rounded-lg border border-[#315668] bg-[#0D1117]/50 p-6">
+                            <h3 class="text-lg font-bold text-white mb-4">Critical Components Status</h3>
+                            <div class="flex flex-col gap-4">
+                                <div
+                                    class="flex items-center justify-between gap-4 p-3 rounded-md bg-[#223c49]/50 hover:bg-[#223c49] transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-3 h-3 rounded-full bg-[#39FF14] shadow-[0_0_8px_#39FF14]"></div>
+                                        <p class="font-medium">Core Router 1</p>
+                                    </div>
+                                    <p class="text-sm text-[#90b7cb]">CPU: 25%</p>
+                                    <p class="text-sm text-[#90b7cb]">Temp: 45Â°C</p>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between gap-4 p-3 rounded-md bg-[#223c49]/50 hover:bg-[#223c49] transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-3 h-3 rounded-full bg-[#FF0033] shadow-[0_0_8px_#FF0033]"></div>
+                                        <p class="font-medium">Firewall Cluster A</p>
+                                    </div>
+                                    <p class="text-sm text-[#90b7cb]">CPU: 92%</p>
+                                    <p class="text-sm text-[#90b7cb]">Temp: 78Â°C</p>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between gap-4 p-3 rounded-md bg-[#223c49]/50 hover:bg-[#223c49] transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-3 h-3 rounded-full bg-[#FFBF00] shadow-[0_0_8px_#FFBF00]"></div>
+                                        <p class="font-medium">Distribution Switch B-4</p>
+                                    </div>
+                                    <p class="text-sm text-[#90b7cb]">CPU: 68%</p>
+                                    <p class="text-sm text-[#90b7cb]">Temp: 62Â°C</p>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between gap-4 p-3 rounded-md bg-[#223c49]/50 hover:bg-[#223c49] transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-3 h-3 rounded-full bg-[#39FF14] shadow-[0_0_8px_#39FF14]"></div>
+                                        <p class="font-medium">Edge Switch C-1</p>
+                                    </div>
+                                    <p class="text-sm text-[#90b7cb]">CPU: 15%</p>
+                                    <p class="text-sm text-[#90b7cb]">Temp: 41Â°C</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Sidebar Column -->
+                    <div class="flex flex-col gap-6">
+                        <!-- AI Insights Feed -->
+                        <div class="rounded-lg border border-[#315668] bg-[#0D1117]/50 p-6 flex-1">
+                            <h3 class="text-lg font-bold text-white mb-4">AI-Powered Insights</h3>
+                            <div class="flex flex-col gap-5">
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-red-500 mt-1">error</span>
+                                    <div class="flex flex-col">
+                                        <p class="font-medium text-red-400">Alert: Port flapping detected</p>
+                                        <p class="text-sm text-[#90b7cb]">Unusual activity on SW-C02, Port GE1/0/23.
+                                            Recommend immediate
+                                            investigation.</p>
+                                        <p class="text-xs text-white/50 mt-1">2m ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-yellow-400 mt-1">warning</span>
+                                    <div class="flex flex-col">
+                                        <p class="font-medium text-yellow-300">Prediction: High load expected</p>
+                                        <p class="text-sm text-[#90b7cb]">AI predicts high CPU load on Server-Rack 5 in
+                                            the next 30 mins due
+                                            to scheduled backup jobs.</p>
+                                        <p class="text-xs text-white/50 mt-1">15m ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-primary mt-1">auto_awesome</span>
+                                    <div class="flex flex-col">
+                                        <p class="font-medium text-primary">Optimization: Reroute traffic</p>
+                                        <p class="text-sm text-[#90b7cb]">Suggest rerouting non-critical traffic from
+                                            Core Router 1 to Core
+                                            Router 2 to balance load.</p>
+                                        <p class="text-xs text-white/50 mt-1">1h ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-green-400 mt-1">check_circle</span>
+                                    <div class="flex flex-col">
+                                        <p class="font-medium text-green-300">System Normal: All clear</p>
+                                        <p class="text-sm text-[#90b7cb]">Anomaly detection scan completed. No unusual
+                                            patterns found across
+                                            the network.</p>
+                                        <p class="text-xs text-white/50 mt-1">2h ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

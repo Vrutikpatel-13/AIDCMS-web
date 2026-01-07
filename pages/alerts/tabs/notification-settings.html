@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM Notification Preferences</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-row">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <div class="mx-auto max-w-4xl">
+                <!-- PageHeading -->
+                <header class="flex flex-wrap justify-between gap-3 mb-8">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <p class="text-white text-4xl font-bold leading-tight tracking-tight">Notification Preferences
+                        </p>
+                        <p class="text-[#90c6cb] text-base font-normal leading-normal">Manage how and when you receive
+                            alerts from the system.</p>
+                    </div>
+                </header>
+                <div class="flex flex-col gap-10">
+                    <!-- Alert Delivery Methods Section -->
+                    <section>
+                        <h2
+                            class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 border-b border-white/10 mb-6">
+                            Alert Delivery Methods</h2>
+                        <div class="flex flex-col gap-6">
+                            <!-- Email Notifications -->
+                            <div class="flex items-center gap-4 min-h-14 justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#224649] shrink-0 size-10">
+                                        <span class="material-symbols-outlined">mail</span>
+                                    </div>
+                                    <p class="text-white text-base font-normal leading-normal flex-1 truncate">Email
+                                        Notifications</p>
+                                </div>
+                                <div class="shrink-0">
+                                    <label
+                                        class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#224649] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                        <div class="h-full w-[27px] rounded-full bg-white"
+                                            style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px, rgba(0, 0, 0, 0.06) 0px 3px 1px;">
+                                        </div>
+                                        <input checked="" class="invisible absolute" type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="flex max-w-lg flex-wrap items-end gap-4 pl-14">
+                                <label class="flex flex-col min-w-40 flex-1">
+                                    <p class="text-white text-sm font-medium leading-normal pb-2">Email Address</p>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-[#316368] bg-[#183234] focus:border-primary h-12 placeholder:text-[#90c6cb] p-[15px] text-base font-normal leading-normal"
+                                        value="admin@dcim.ai" />
+                                </label>
+                            </div>
+                            <!-- SMS Notifications -->
+                            <div class="flex items-center gap-4 min-h-14 justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#224649] shrink-0 size-10">
+                                        <span class="material-symbols-outlined">sms</span>
+                                    </div>
+                                    <p class="text-white text-base font-normal leading-normal flex-1 truncate">SMS
+                                        Notifications</p>
+                                </div>
+                                <div class="shrink-0">
+                                    <label
+                                        class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#224649] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                        <div class="h-full w-[27px] rounded-full bg-white"
+                                            style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px, rgba(0, 0, 0, 0.06) 0px 3px 1px;">
+                                        </div>
+                                        <input class="invisible absolute" type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="flex max-w-lg flex-wrap items-end gap-4 pl-14">
+                                <label class="flex flex-col min-w-40 flex-1">
+                                    <p class="text-white text-sm font-medium leading-normal pb-2">Phone Number</p>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-[#316368] bg-[#183234] focus:border-primary h-12 placeholder:text-[#90c6cb] p-[15px] text-base font-normal leading-normal"
+                                        placeholder="+1 (555) 123-4567" />
+                                </label>
+                            </div>
+                            <!-- In-App Notifications -->
+                            <div class="flex items-center gap-4 min-h-14 justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#224649] shrink-0 size-10">
+                                        <span class="material-symbols-outlined">widgets</span>
+                                    </div>
+                                    <p class="text-white text-base font-normal leading-normal flex-1 truncate">In-App
+                                        Notifications</p>
+                                </div>
+                                <div class="shrink-0">
+                                    <label
+                                        class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#224649] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                        <div class="h-full w-[27px] rounded-full bg-white"
+                                            style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px, rgba(0, 0, 0, 0.06) 0px 3px 1px;">
+                                        </div>
+                                        <input checked="" class="invisible absolute" type="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Alert Severity Section -->
+                    <section>
+                        <h2
+                            class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 border-b border-white/10 mb-6">
+                            Alert Severity Levels</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label
+                                class="flex items-center gap-3 p-4 rounded-lg bg-[#183234] border border-transparent has-[:checked]:border-primary has-[:checked]:bg-primary/20 cursor-pointer">
+                                <input checked=""
+                                    class="form-checkbox h-5 w-5 rounded bg-[#224649] border-[#316368] text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span class="text-white font-medium">Critical</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 p-4 rounded-lg bg-[#183234] border border-transparent has-[:checked]:border-primary has-[:checked]:bg-primary/20 cursor-pointer">
+                                <input checked=""
+                                    class="form-checkbox h-5 w-5 rounded bg-[#224649] border-[#316368] text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span class="text-white font-medium">Warning</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 p-4 rounded-lg bg-[#183234] border border-transparent has-[:checked]:border-primary has-[:checked]:bg-primary/20 cursor-pointer">
+                                <input
+                                    class="form-checkbox h-5 w-5 rounded bg-[#224649] border-[#316368] text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    type="checkbox" />
+                                <span class="text-white font-medium">Informational</span>
+                            </label>
+                        </div>
+                    </section>
+                    <!-- Notification Frequency Section -->
+                    <section>
+                        <h2
+                            class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 border-b border-white/10 mb-6">
+                            Notification Frequency</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label
+                                class="flex items-center gap-3 p-4 rounded-lg bg-[#183234] border border-transparent has-[:checked]:border-primary has-[:checked]:bg-primary/20 cursor-pointer">
+                                <input checked=""
+                                    class="form-radio h-5 w-5 bg-[#224649] border-[#316368] text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    name="frequency" type="radio" />
+                                <span class="text-white font-medium">Real-time</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 p-4 rounded-lg bg-[#183234] border border-transparent has-[:checked]:border-primary has-[:checked]:bg-primary/20 cursor-pointer">
+                                <input
+                                    class="form-radio h-5 w-5 bg-[#224649] border-[#316368] text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    name="frequency" type="radio" />
+                                <span class="text-white font-medium">Daily Digest</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 p-4 rounded-lg bg-[#183234] border border-transparent has-[:checked]:border-primary has-[:checked]:bg-primary/20 cursor-pointer">
+                                <input
+                                    class="form-radio h-5 w-5 bg-[#224649] border-[#316368] text-primary focus:ring-primary focus:ring-offset-background-dark"
+                                    name="frequency" type="radio" />
+                                <span class="text-white font-medium">Weekly Summary</span>
+                            </label>
+                        </div>
+                    </section>
+                    <!-- Action Buttons -->
+                    <footer class="flex justify-end gap-4 pt-8 mt-6 border-t border-white/10">
+                        <button
+                            class="px-6 py-3 rounded-lg text-white font-medium hover:bg-[#224649] transition-colors">Reset
+                            to Defaults</button>
+                        <button
+                            class="px-6 py-3 rounded-lg bg-primary text-background-dark font-bold hover:bg-primary/80 transition-colors">Save
+                            Changes</button>
+                    </footer>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+
+</body>
+
+</html>

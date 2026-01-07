@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Storage Cluster Overview</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <div class="layout-container flex h-full w-full">
+            <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <main class="px-4 md:px-10 py-5 flex-1">
+                <div class="flex flex-wrap justify-between items-center gap-3 p-4">
+                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Storage
+                        Cluster Overview</h1>
+
+                    <div class="flex gap-2 ">
+                        <a href="../storage-capacity/tabs/disk-health-prediction.html"
+                            class="flex capitalize  max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+                            <span class="truncate">disk health prediction</span>
+                        </a>
+
+                        <a href="../storage-capacity/tabs/iops-insights.html"
+                            class="flex capitalize max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+                            <span class="truncate">iops-insights</span>
+                        </a>
+
+                        <a href="../storage-capacity/tabs/volume-usage.html"
+                            class="flex capitalize  max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+                            <span class="truncate">volume-usage</span>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="flex flex-wrap gap-4 p-4">
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#31685f] bg-[#18342f]/30">
+                        <p class="text-white text-base font-medium leading-normal">Total Storage Capacity</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">4.2 PB</p>
+                        <p class="text-[#0df2cc] text-base font-medium leading-normal">+1.2%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#31685f] bg-[#18342f]/30">
+                        <p class="text-white text-base font-medium leading-normal">Overall Cluster Health</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">98.5%</p>
+                        <p class="text-[#fa5838] text-base font-medium leading-normal">-0.1%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#31685f] bg-[#18342f]/30">
+                        <p class="text-white text-base font-medium leading-normal">Active Alerts</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">3</p>
+                        <p class="text-[#FFBF00] text-base font-medium leading-normal">+3</p>
+                    </div>
+                </div>
+                <div class="flex justify-between gap-2 px-4 py-3 border-t border-b border-[#224942] my-4">
+                    <div class="flex gap-2">
+                        <button
+                            class="p-2 text-white bg-[#224942] rounded-lg hover:bg-primary hover:text-background-dark">
+                            <span class="material-symbols-outlined" style="font-size: 24px;">filter_list</span>
+                        </button>
+                        <button
+                            class="p-2 text-white bg-[#224942] rounded-lg hover:bg-primary hover:text-background-dark">
+                            <span class="material-symbols-outlined" style="font-size: 24px;">calendar_today</span>
+                        </button>
+                    </div>
+                    <button
+                        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+                        <span class="material-symbols-outlined text-background-dark"
+                            style="font-size: 20px; font-variation-settings: 'FILL' 1">create_new_folder</span>
+                        <span class="truncate">Add New Cluster</span>
+                    </button>
+                </div>
+                <div class="px-4 py-3">
+                    <div class="flex overflow-hidden rounded-lg border border-[#31685f] bg-[#102320]">
+                        <div class="overflow-x-auto w-full">
+                            <table class="w-full min-w-[960px]">
+                                <thead>
+                                    <tr class="bg-[#18342f]">
+                                        <th
+                                            class="px-4 py-3 text-left text-white text-sm font-medium leading-normal w-1/5">
+                                            Cluster Name</th>
+                                        <th
+                                            class="px-4 py-3 text-left text-white text-sm font-medium leading-normal w-1/12">
+                                            Status</th>
+                                        <th
+                                            class="px-4 py-3 text-left text-white text-sm font-medium leading-normal w-1/5">
+                                            Used Capacity</th>
+                                        <th
+                                            class="px-4 py-3 text-left text-white text-sm font-medium leading-normal w-1/12">
+                                            Health</th>
+                                        <th
+                                            class="px-4 py-3 text-left text-white text-sm font-medium leading-normal w-1/12">
+                                            IOPS</th>
+                                        <th
+                                            class="px-4 py-3 text-left text-white text-sm font-medium leading-normal w-1/12">
+                                            Latency</th>
+                                        <th
+                                            class="px-4 py-3 text-left text-[#90cbc1] text-sm font-medium leading-normal w-1/12">
+                                            Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-t-[#31685f]">
+                                        <td class="h-[72px] px-4 py-2 text-white text-sm font-normal leading-normal">
+                                            Hyperion-01</td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-2">
+                                                <div class="size-2.5 rounded-full bg-[#39FF14]"></div>
+                                                <span class="text-white">Healthy</span>
+                                            </div>
+                                        </td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-full max-w-24 overflow-hidden rounded-full bg-[#31685f]">
+                                                    <div class="h-1.5 rounded-full bg-primary" style="width: 75%;">
+                                                    </div>
+                                                </div>
+                                                <p class="text-white text-sm font-medium leading-normal">75 TB / 100 TB
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            99%</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            150k</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            0.5ms</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-primary text-sm font-bold leading-normal tracking-[0.015em] cursor-pointer hover:underline">
+                                            View Details</td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#31685f]">
+                                        <td class="h-[72px] px-4 py-2 text-white text-sm font-normal leading-normal">
+                                            Titan-Alpha</td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-2">
+                                                <div class="size-2.5 rounded-full bg-[#39FF14]"></div>
+                                                <span class="text-white">Healthy</span>
+                                            </div>
+                                        </td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-full max-w-24 overflow-hidden rounded-full bg-[#31685f]">
+                                                    <div class="h-1.5 rounded-full bg-primary" style="width: 60%;">
+                                                    </div>
+                                                </div>
+                                                <p class="text-white text-sm font-medium leading-normal">120 TB / 200 TB
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            98%</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            220k</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            0.4ms</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-primary text-sm font-bold leading-normal tracking-[0.015em] cursor-pointer hover:underline">
+                                            View Details</td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#31685f]">
+                                        <td class="h-[72px] px-4 py-2 text-white text-sm font-normal leading-normal">
+                                            Nova-Cluster-West</td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-2">
+                                                <div class="size-2.5 rounded-full bg-[#FFBF00]"></div>
+                                                <span class="text-[#FFBF00]">Warning</span>
+                                            </div>
+                                        </td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-full max-w-24 overflow-hidden rounded-full bg-[#31685f]">
+                                                    <div class="h-1.5 rounded-full bg-[#FFBF00]" style="width: 97%;">
+                                                    </div>
+                                                </div>
+                                                <p class="text-white text-sm font-medium leading-normal">88 TB / 90 TB
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            85%</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            95k</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            1.2ms</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-primary text-sm font-bold leading-normal tracking-[0.015em] cursor-pointer hover:underline">
+                                            View Details</td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#31685f]">
+                                        <td class="h-[72px] px-4 py-2 text-white text-sm font-normal leading-normal">
+                                            Orion-Backup-S3</td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-2">
+                                                <div class="size-2.5 rounded-full bg-[#DC143C]"></div>
+                                                <span class="text-[#DC143C]">Critical</span>
+                                            </div>
+                                        </td>
+                                        <td class="h-[72px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-full max-w-24 overflow-hidden rounded-full bg-[#31685f]">
+                                                    <div class="h-1.5 rounded-full bg-[#DC143C]" style="width: 90%;">
+                                                    </div>
+                                                </div>
+                                                <p class="text-white text-sm font-medium leading-normal">450 TB / 500 TB
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            60%</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            40k</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-[#90cbc1] text-sm font-normal leading-normal">
+                                            3.5ms</td>
+                                        <td
+                                            class="h-[72px] px-4 py-2 text-primary text-sm font-bold leading-normal tracking-[0.015em] cursor-pointer hover:underline">
+                                            View Details</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

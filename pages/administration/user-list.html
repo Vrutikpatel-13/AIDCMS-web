@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="relative flex min-h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                        href="../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                    href="../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                    href="../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <div class="mx-auto max-w-7xl">
+                <!-- PageHeading -->
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">User Management</h1>
+                    <div class="flex items-center gap-2">
+                        <a href="../administration/tabs/audit-log.html"
+                            class="capitalize flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+
+                            <span class="truncate">audit log</span>
+                        </a>
+
+                        <a href="../administration/tabs/roles-permissions.html"
+                            class="capitalize flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+
+                            <span class="truncate">roles permissions</span>
+                        </a>
+
+                        <a href="../administration/tabs/user-activity.html"
+                            class="capitalize flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+
+                            <span class="truncate">user Activity</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Toolbar: Search and Filters -->
+                <div class="mt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <!-- SearchBar -->
+                    <div class="flex-1">
+                        <label class="flex flex-col h-12 w-full max-w-md">
+                            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                <div
+                                    class="text-primary/70 flex border-none bg-[#14262d] items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#14262d] h-full placeholder:text-gray-400 px-4 text-sm font-normal leading-normal"
+                                    placeholder="Search by name or email..." />
+                            </div>
+                        </label>
+                    </div>
+                    <!-- Chips as Filters -->
+                    <div class="flex gap-3 flex-wrap">
+                        <button
+                            class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#14262d] hover:bg-primary/20 px-4">
+                            <p class="text-gray-300 text-sm font-medium">Filter by Role</p>
+                            <span class="material-symbols-outlined text-gray-400 text-xl">expand_more</span>
+                        </button>
+                        <button
+                            class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#14262d] hover:bg-primary/20 px-4">
+                            <p class="text-gray-300 text-sm font-medium">Filter by Status</p>
+                            <span class="material-symbols-outlined text-gray-400 text-xl">expand_more</span>
+                        </button>
+                        <button
+                            class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg border border-primary/30 hover:bg-primary/20 px-4 text-primary">
+                            <p class="text-sm font-medium">Clear Filters</p>
+                        </button>
+                    </div>
+                </div>
+                <!-- User Data Table -->
+                <div class="mt-6 overflow-hidden rounded-xl bg-[#14262d]">
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-[800px] text-left text-sm">
+                            <thead class="border-b border-white/10 text-xs uppercase text-gray-400">
+                                <tr>
+                                    <th class="w-12 p-4" scope="col"><input
+                                            class="form-checkbox rounded bg-[#0f1e23] border-gray-600 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></th>
+                                    <th class="py-3 px-6" scope="col">User</th>
+                                    <th class="py-3 px-6" scope="col">Role</th>
+                                    <th class="py-3 px-6" scope="col">Status</th>
+                                    <th class="py-3 px-6" scope="col">Last Login</th>
+                                    <th class="py-3 px-6 text-center" scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-white/10 hover:bg-primary/10">
+                                    <td class="w-12 p-4"><input
+                                            class="form-checkbox rounded bg-[#0f1e23] border-gray-600 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="py-4 px-6">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full object-cover"
+                                                data-alt="User avatar for Alex Johnson"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPvNa5lii2q8zC-Efl61voW-0DGQ1wZWAy-Vzi0DOA-cegcf-9IDTIKOsD3p7PIw-KLoZxHXULw56OiAo9b_0Z7btZJKcuDADsXq4cAaLkO8T1Yb814WibBibND7LGyzOf5UlX3TCEh2fgfu4-oRdvd_HjCTj4eSiVazCm0AiuTozxPPp_m8v8GU5k2wZnPtmNcT6ewP5LHZOLthNvcGHMSQfG1AhMrR5exr70vDWx0oS7TU6b_8jROmi3T8e3v8Iylm2iSM7xZFA" />
+                                            <div>
+                                                <div class="font-medium text-white">Alex Johnson</div>
+                                                <div class="text-gray-400">alex.j@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">Administrator</td>
+                                    <td class="py-4 px-6">
+                                        <span
+                                            class="inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                                            Active
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">2023-10-27 10:30 AM</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <div class="flex justify-center gap-2">
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">visibility</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">edit</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-red-500 rounded-full hover:bg-red-500/20"><span
+                                                    class="material-symbols-outlined text-xl">toggle_off</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-white/10 hover:bg-primary/10">
+                                    <td class="w-12 p-4"><input
+                                            class="form-checkbox rounded bg-[#0f1e23] border-gray-600 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="py-4 px-6">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full object-cover"
+                                                data-alt="User avatar for Maria Garcia"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeuwd8MrE92lbJhsoCiCBLkxuiEppGnrrz1ytK3ULE9x5pV0pLJECmKRGsimdnGQ_gxa7YhNNx5baUON38F6PCHxqE4zcj8Mk76L7x4iFMAME1OsjvVP7WVPCnw6HH0UYXSfzGHsCeYBRDrk1zblXktURqkJwGFglHGxs4pQtYDtwGS5vJo4TM5VHUrlvUx09ia8YeEJqOXNR1FO9-YXsvuNyZ4FWJDZqcE04IylmcRT4Rm3EveGgxWccxEXoTWtj7cbWkhNeXN0A" />
+                                            <div>
+                                                <div class="font-medium text-white">Maria Garcia</div>
+                                                <div class="text-gray-400">maria.g@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">Engineer</td>
+                                    <td class="py-4 px-6">
+                                        <span
+                                            class="inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                                            Active
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">2023-10-26 08:15 PM</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <div class="flex justify-center gap-2">
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">visibility</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">edit</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-red-500 rounded-full hover:bg-red-500/20"><span
+                                                    class="material-symbols-outlined text-xl">toggle_off</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-white/10 hover:bg-primary/10">
+                                    <td class="w-12 p-4"><input
+                                            class="form-checkbox rounded bg-[#0f1e23] border-gray-600 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="py-4 px-6">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full object-cover"
+                                                data-alt="User avatar for Ben Carter"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSrzp9XlUwu-mIzuu9z3vAIr9R-Gg9xbps0IBK_QZ4g0_Gdmu6VrUljYIM5EurMJJm8TrwhUu4Ar1V7H-4zMucoWt2g79ZP0EdnvN8AJ6EHmyq-SJD0u095pIm1rMqr7c-qnjoYPC2D9HCrMJXfmkPJh-2KXwsSW8ceEi5R9vUMyAAjshXOSfUa622ciGjgxYX69KWE045AF3jxyyIkOz7Vk_0UmiHPi_fdrGR0bk8_l6HxlnIahddMmT6IYUrEzOqFvfdaWrLQO4" />
+                                            <div>
+                                                <div class="font-medium text-white">Ben Carter</div>
+                                                <div class="text-gray-400">ben.c@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">Technician</td>
+                                    <td class="py-4 px-6">
+                                        <span
+                                            class="inline-flex items-center gap-2 rounded-full bg-yellow-500/10 px-3 py-1 text-xs font-medium text-yellow-400">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-yellow-500"></span>
+                                            Pending
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">Invitation sent</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <div class="flex justify-center gap-2">
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">visibility</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">edit</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-red-500 rounded-full hover:bg-red-500/20"><span
+                                                    class="material-symbols-outlined text-xl">toggle_off</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/10">
+                                    <td class="w-12 p-4"><input
+                                            class="form-checkbox rounded bg-[#0f1e23] border-gray-600 text-primary focus:ring-primary/50"
+                                            type="checkbox" /></td>
+                                    <td class="py-4 px-6">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full object-cover"
+                                                data-alt="User avatar for Sarah Lee"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYeO22u4kyJQVCntpXVT174gKBshyWHmNJt3VTeBkrKU-f_-2Vjm7L83y8V0z7kp8nWudaBSVmqMBtET9bZCPcGD-mSsqlskyp5Eki9gFnVNH5HjQEiyBAuPRsdkci5itvhz6_PaLqw3v2s4QP81_OcvEnRmAvfSWR_dhCjVGnixH8JRm1xcLGLl7C2vp_lzM0e2fbcP_Jbsb8HxKkJuxctXzdBKCZxKfvGpvv803j3K3bQaqcC-nFyE3sZ7fRWD7lB3dfbvDSvf4" />
+                                            <div>
+                                                <div class="font-medium text-white">Sarah Lee</div>
+                                                <div class="text-gray-400">sarah.l@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">Viewer</td>
+                                    <td class="py-4 px-6">
+                                        <span
+                                            class="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-400">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-red-500"></span>
+                                            Inactive
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-300">2023-09-15 02:45 PM</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <div class="flex justify-center gap-2">
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">visibility</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-primary rounded-full hover:bg-primary/20"><span
+                                                    class="material-symbols-outlined text-xl">edit</span></button>
+                                            <button
+                                                class="p-2 text-gray-400 hover:text-green-500 rounded-full hover:bg-green-500/20"><span
+                                                    class="material-symbols-outlined text-xl">toggle_on</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="flex items-center justify-between border-t border-white/10 px-4 py-3 sm:px-6">
+                        <div class="flex flex-1 justify-between sm:hidden">
+                            <a class="relative inline-flex items-center rounded-md border border-gray-700 bg-[#14262d] px-4 py-2 text-sm font-medium text-gray-300 hover:bg-primary/20"
+                                href="#">Previous</a>
+                            <a class="relative ml-3 inline-flex items-center rounded-md border border-gray-700 bg-[#14262d] px-4 py-2 text-sm font-medium text-gray-300 hover:bg-primary/20"
+                                href="#">Next</a>
+                        </div>
+                        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-400">
+                                    Showing
+                                    <span class="font-medium text-white">1</span>
+                                    to
+                                    <span class="font-medium text-white">4</span>
+                                    of
+                                    <span class="font-medium text-white">97</span>
+                                    results
+                                </p>
+                            </div>
+                            <div>
+                                <nav aria-label="Pagination"
+                                    class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+                                    <a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-primary/20 focus:z-20 focus:outline-offset-0"
+                                        href="#">
+                                        <span class="material-symbols-outlined text-xl">chevron_left</span>
+                                    </a>
+                                    <a aria-current="page"
+                                        class="relative z-10 inline-flex items-center bg-primary/20 px-4 py-2 text-sm font-semibold text-primary focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                                        href="#">1</a>
+                                    <a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-primary/20 focus:z-20 focus:outline-offset-0"
+                                        href="#">2</a>
+                                    <a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-primary/20 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                                        href="#">3</a>
+                                    <span
+                                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-400 ring-1 ring-inset ring-gray-700 focus:outline-offset-0">...</span>
+                                    <a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-primary/20 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                                        href="#">8</a>
+                                    <a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-primary/20 focus:z-20 focus:outline-offset-0"
+                                        href="#">
+                                        <span class="material-symbols-outlined text-xl">chevron_right</span>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

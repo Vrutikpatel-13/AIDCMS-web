@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - System Action Logs</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-300">
+    <div class="flex h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex flex-1 flex-col overflow-y-auto">
+            <div class="flex-1 p-8">
+                <!-- PageHeading -->
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">System Action Logs
+                        </h1>
+                        <p class="text-primary/70 text-base font-normal leading-normal">A chronological record of all
+                            automated
+                            actions performed by the AI-DCIM system.</p>
+                    </div>
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/80">
+                        <span class="material-symbols-outlined">download</span>
+                        <span class="truncate">Export Logs</span>
+                    </button>
+                </div>
+                <!-- Main Layout (Filters + Table) -->
+                <div class="mt-8 flex gap-8">
+                    <!-- Filter Sidebar -->
+                    <div class="w-72 flex-shrink-0 border border-white/10 bg-black/20 p-2">
+                        <!-- SearchBar -->
+                        <label class="flex flex-col h-12 w-full">
+                            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                <div
+                                    class="text-primary/70 flex border-none bg-black/20 items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                    <span class="material-symbols-outlined text-2xl">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-black/20 h-full placeholder:text-primary/70 px-4 pl-2 text-base font-normal leading-normal"
+                                    placeholder="Search logs..." value="" />
+                            </div>
+                        </label>
+                        <!-- Filter Sections -->
+                        <div class="mt-6 flex flex-col gap-6 ">
+                            <!-- Date Range Filter -->
+                            <div>
+                                <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Date
+                                    Range</h3>
+                                <div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-black/20 p-1">
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary/20 has-[:checked]:text-primary text-white/60 text-sm font-medium leading-normal">
+                                        <span class="truncate">1H</span>
+                                        <input class="invisible w-0" name="date-range" type="radio" value="1H" />
+                                    </label>
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary/20 has-[:checked]:text-primary text-white/60 text-sm font-medium leading-normal">
+                                        <span class="truncate">24H</span>
+                                        <input checked="" class="invisible w-0" name="date-range" type="radio"
+                                            value="24H" />
+                                    </label>
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary/20 has-[:checked]:text-primary text-white/60 text-sm font-medium leading-normal">
+                                        <span class="truncate">7D</span>
+                                        <input class="invisible w-0" name="date-range" type="radio" value="7D" />
+                                    </label>
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary/20 has-[:checked]:text-primary text-white/60 text-sm font-medium leading-normal">
+                                        <span class="truncate">All</span>
+                                        <input class="invisible w-0" name="date-range" type="radio" value="All" />
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Action Status Filter -->
+                            <div>
+                                <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Action
+                                    Status</h3>
+                                <div class="flex flex-col gap-2">
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>Success</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>Failed</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>In Progress</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>Warning</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Action Type Filter -->
+                            <div>
+                                <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Action
+                                    Type</h3>
+                                <div class="flex flex-col gap-2">
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>Power Cycle</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>Resource Allocation</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>Security Patch</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-3 cursor-pointer text-white/80 hover:text-white">
+                                        <input
+                                            class="form-checkbox h-4 w-4 rounded bg-black/20 border-white/20 text-primary focus:ring-primary/50"
+                                            type="checkbox" />
+                                        <span>Cooling Adjustment</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Filter Actions -->
+                            <div class="mt-4 flex flex-col gap-2">
+                                <button
+                                    class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em]">Apply
+                                    Filters</button>
+                                <button
+                                    class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-transparent border border-primary/40 text-primary/80 hover:bg-primary/10 hover:text-primary text-sm font-bold leading-normal tracking-[0.015em]">Clear
+                                    All</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Log Table -->
+                    <div class="flex-1 overflow-x-auto">
+                        <div class="rounded-lg border border-white/10 bg-black/20">
+                            <table class="w-full text-left text-sm">
+                                <thead class="sticky top-0 bg-[#0c1a1c]/80 backdrop-blur-sm">
+                                    <tr>
+                                        <th class="p-4 font-semibold text-white">Timestamp</th>
+                                        <th class="p-4 font-semibold text-white">Status</th>
+                                        <th class="p-4 font-semibold text-white">Action Type</th>
+                                        <th class="p-4 font-semibold text-white">Details</th>
+                                        <th class="p-4 font-semibold text-white">Target Node</th>
+                                        <th class="p-4 font-semibold text-white">Triggered By</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-white/10">
+                                    <tr class="hover:bg-primary/10">
+                                        <td class="whitespace-nowrap p-4 text-white/70">2024-05-21 14:35:12.123</td>
+                                        <td class="p-4"><span
+                                                class="inline-flex items-center rounded-full bg-green-500/20 px-3 py-1 text-xs font-medium text-green-400">Success</span>
+                                        </td>
+                                        <td class="p-4 font-mono text-xs text-primary/80">VM_MIGRATION</td>
+                                        <td class="p-4 text-white/90">Migrated VM 'web-prod-01' from Host A to Host B
+                                            due to thermal
+                                            threshold breach.</td>
+                                        <td class="p-4 font-mono text-xs text-white/70">RACK-04-SVR-12</td>
+                                        <td class="p-4 text-white/70">AI Policy: 'Thermal Management'</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary/10">
+                                        <td class="whitespace-nowrap p-4 text-white/70">2024-05-21 14:33:05.456</td>
+                                        <td class="p-4"><span
+                                                class="inline-flex items-center rounded-full bg-red-500/20 px-3 py-1 text-xs font-medium text-red-400">Failed</span>
+                                        </td>
+                                        <td class="p-4 font-mono text-xs text-primary/80">SECURITY_PATCH</td>
+                                        <td class="p-4 text-white/90">Failed to apply patch KB5034441 to
+                                            'db-cluster-03'. Timeout error.
+                                        </td>
+                                        <td class="p-4 font-mono text-xs text-white/70">DB-CLSTR-03</td>
+                                        <td class="p-4 text-white/70">Admin: J. Doe</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary/10">
+                                        <td class="whitespace-nowrap p-4 text-white/70">2024-05-21 14:30:18.789</td>
+                                        <td class="p-4"><span
+                                                class="inline-flex items-center rounded-full bg-blue-500/20 px-3 py-1 text-xs font-medium text-blue-400">In
+                                                Progress</span></td>
+                                        <td class="p-4 font-mono text-xs text-primary/80">RESOURCE_ALLOC</td>
+                                        <td class="p-4 text-white/90">Allocating additional 32GB RAM to
+                                            'analytics-engine-01'.</td>
+                                        <td class="p-4 font-mono text-xs text-white/70">ANL-ENG-01</td>
+                                        <td class="p-4 text-white/70">AI Policy: 'Dynamic Scaling'</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary/10">
+                                        <td class="whitespace-nowrap p-4 text-white/70">2024-05-21 14:28:44.012</td>
+                                        <td class="p-4"><span
+                                                class="inline-flex items-center rounded-full bg-yellow-500/20 px-3 py-1 text-xs font-medium text-yellow-400">Warning</span>
+                                        </td>
+                                        <td class="p-4 font-mono text-xs text-primary/80">COOLING_ADJUST</td>
+                                        <td class="p-4 text-white/90">CRAC unit 7 fan speed at 95%. Ambient temperature
+                                            rising.</td>
+                                        <td class="p-4 font-mono text-xs text-white/70">CRAC-UNIT-07</td>
+                                        <td class="p-4 text-white/70">System</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary/10">
+                                        <td class="whitespace-nowrap p-4 text-white/70">2024-05-21 14:25:59.334</td>
+                                        <td class="p-4"><span
+                                                class="inline-flex items-center rounded-full bg-green-500/20 px-3 py-1 text-xs font-medium text-green-400">Success</span>
+                                        </td>
+                                        <td class="p-4 font-mono text-xs text-primary/80">POWER_CYCLE</td>
+                                        <td class="p-4 text-white/90">Successfully power cycled unresponsive switch
+                                            'SW-CORE-02B'.</td>
+                                        <td class="p-4 font-mono text-xs text-white/70">SW-CORE-02B</td>
+                                        <td class="p-4 text-white/70">Admin: S. Smith</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary/10">
+                                        <td class="whitespace-nowrap p-4 text-white/70">2024-05-21 14:22:10.957</td>
+                                        <td class="p-4"><span
+                                                class="inline-flex items-center rounded-full bg-green-500/20 px-3 py-1 text-xs font-medium text-green-400">Success</span>
+                                        </td>
+                                        <td class="p-4 font-mono text-xs text-primary/80">SECURITY_PATCH</td>
+                                        <td class="p-4 text-white/90">Applied security patch CVE-2024-1234 to web server
+                                            farm.</td>
+                                        <td class="p-4 font-mono text-xs text-white/70">WEB-FARM-ALL</td>
+                                        <td class="p-4 text-white/70">AI Policy: 'Vulnerability Management'</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-sm text-white/60">Showing 1 to 6 of 1,258 entries</span>
+                            <div class="flex items-center gap-2">
+                                <button
+                                    class="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/70 hover:bg-primary/20 hover:text-white">
+                                    <span class="material-symbols-outlined text-xl">chevron_left</span>
+                                </button>
+                                <button
+                                    class="flex h-8 w-8 items-center justify-center rounded-md border border-primary/20 bg-primary/20 text-primary">1</button>
+                                <button
+                                    class="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/70 hover:bg-primary/20 hover:text-white">2</button>
+                                <button
+                                    class="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/70 hover:bg-primary/20 hover:text-white">3</button>
+                                <span class="text-white/70">...</span>
+                                <button
+                                    class="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/70 hover:bg-primary/20 hover:text-white">210</button>
+                                <button
+                                    class="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/70 hover:bg-primary/20 hover:text-white">
+                                    <span class="material-symbols-outlined text-xl">chevron_right</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Cooling System Overview</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark overflow-x-hidden">
+        <div class="layout-container flex h-full ">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <div class="px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+                    <main class="flex flex-col gap-6 mt-6">
+                        <div class="flex flex-wrap justify-between gap-3 p-4">
+                            <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Cooling
+                                System
+                                Overview</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
+                            <div
+                                class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#1a2c30] border border-[#315f68]">
+                                <p class="text-white/80 text-base font-medium leading-normal">Power Usage (PUE)</p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">1.32</p>
+                                <p class="text-[#0bda54] text-base font-medium leading-normal">+0.02%</p>
+                            </div>
+                            <div
+                                class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#1a2c30] border border-[#315f68]">
+                                <p class="text-white/80 text-base font-medium leading-normal">Total Cooling Load (kW)
+                                </p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">450</p>
+                                <p class="text-[#fa5f38] text-base font-medium leading-normal">-1.5%</p>
+                            </div>
+                            <div
+                                class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#1a2c30] border border-[#315f68]">
+                                <p class="text-white/80 text-base font-medium leading-normal">Avg Rack Inlet Temp (Â°C)
+                                </p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">22.5</p>
+                                <p class="text-[#0bda54] text-base font-medium leading-normal">+0.5%</p>
+                            </div>
+                            <div
+                                class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#1a2c30] border border-[#315f68]">
+                                <p class="text-white/80 text-base font-medium leading-normal">Water Usage (WUE)</p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">0.98</p>
+                                <p class="text-[#0bda54] text-base font-medium leading-normal">+0.1%</p>
+                            </div>
+                            <div
+                                class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#1a2c30] border border-[#315f68]">
+                                <p class="text-white/80 text-base font-medium leading-normal">Chiller Plant Efficiency
+                                </p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">95.2%</p>
+                                <p class="text-[#fa5f38] text-base font-medium leading-normal">-0.3%</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4">
+                            <div class="lg:col-span-2 flex flex-col gap-4">
+                                <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">System
+                                    Schematic</h2>
+                                <div
+                                    class="w-full grow aspect-[16/9] rounded-xl overflow-hidden border border-[#315f68]">
+                                    <div class="w-full h-full bg-center bg-no-repeat bg-cover"
+                                        data-alt="A 2D schematic of the data center cooling system, showing chillers, pumps, and CRAC units connected by pipes. Blue and red lines indicate cool and warm water flow."
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSFZzSasyh-KCuS5IF1YK90DUxRAs77a70BcbxIP3npYIKS2CwPdtp9Y61Bvu-Y1-v_qeR1yjaPWao806-N_8Cia9QBJCCM2KByvjP7YyeM0lb6IrrOspEEfMi2j7HS4h_CF6uE_PEt58963nWV7oYarZ1m97SDGTNnV8Bw3pV2VH5Rl76x_r4JurYOcJXc0VJsPEwh4mxJ5jtaH59mtIfVnCtVlPVRH5ecPRk8OnLOdt7R5IemDUhgF3syW2Cm_jizp3cl0hZEN8");'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Component
+                                    Status</h2>
+                                <div class="bg-[#1a2c30] p-4 rounded-xl border border-[#315f68] h-full">
+                                    <ul class="space-y-3">
+                                        <li
+                                            class="flex items-center justify-between p-2 rounded-lg hover:bg-[#224249]/50 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <span
+                                                    class="material-symbols-outlined text-green-400">check_circle</span>
+                                                <span class="text-white font-medium">CRAC Unit #1</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-white/70">
+                                                <span>21.8Â°C</span>
+                                                <span>4.2 kW</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between p-2 rounded-lg hover:bg-[#224249]/50 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <span
+                                                    class="material-symbols-outlined text-green-400">check_circle</span>
+                                                <span class="text-white font-medium">CRAC Unit #2</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-white/70">
+                                                <span>22.1Â°C</span>
+                                                <span>4.5 kW</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between p-2 rounded-lg bg-yellow-500/10 hover:bg-yellow-500/20 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <span class="material-symbols-outlined text-yellow-400">warning</span>
+                                                <span class="text-white font-medium">Chiller #1</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-white/70">
+                                                <span>7.5Â°C</span>
+                                                <span>180 kW</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between p-2 rounded-lg hover:bg-[#224249]/50 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <span
+                                                    class="material-symbols-outlined text-green-400">check_circle</span>
+                                                <span class="text-white font-medium">Chiller #2</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-white/70">
+                                                <span>6.9Â°C</span>
+                                                <span>175 kW</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between p-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <span class="material-symbols-outlined text-red-500">error</span>
+                                                <span class="text-white font-medium">Pump #3</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-white/70">
+                                                <span>Offline</span>
+                                                <span>0 kW</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between p-2 rounded-lg hover:bg-[#224249]/50 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <span
+                                                    class="material-symbols-outlined text-green-400">check_circle</span>
+                                                <span class="text-white font-medium">Cooling Tower A</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-white/70">
+                                                <span>28Â°C</span>
+                                                <span>25 kW</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="flex items-center justify-between p-2 rounded-lg hover:bg-[#224249]/50 transition-colors">
+                                            <div class="flex items-center gap-3">
+                                                <span
+                                                    class="material-symbols-outlined text-green-400">check_circle</span>
+                                                <span class="text-white font-medium">CRAC Unit #3</span>
+                                            </div>
+                                            <div class="flex items-center gap-4 text-sm text-white/70">
+                                                <span>22.0Â°C</span>
+                                                <span>4.3 kW</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                            <div class="flex flex-col gap-4">
+                                <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Temp
+                                    &amp; Humidity (24h)
+                                </h2>
+                                <div class="bg-[#1a2c30] p-4 rounded-xl border border-[#315f68] h-64">
+                                    <div class="w-full h-full bg-center bg-no-repeat bg-cover"
+                                        data-alt="A line chart showing temperature in neon blue and humidity in neon green trending over the last 24 hours. The background is dark with a faint grid."
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxJZ1CDTYt4TUGRCk4bW_w5yCpjpoBfA6BwjadHEHT2ClUFr2KL5OAh3gu-CF-iEMJchB-Y-10omPJBMmkf6zVBvSiNB1_Fshezn2PvA_sVnfNBdOuCkJXcAIQrIHQ_nd7oJnSLE21MVUYFvE6JcKQt6lV1QhdjQjiDo8WcecgjIO9BQB6oGSje478vpU88altSZqxrZX3pj1ypG9jvlORMsnXWz9Hw6Jq5Yi4O1oK9QQaUho0DfqfhKVbSMkZrJaA1hrpgCBZ1PE");'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Energy
+                                    Use by Component
+                                    (7d)</h2>
+                                <div class="bg-[#1a2c30] p-4 rounded-xl border border-[#315f68] h-64">
+                                    <div class="w-full h-full bg-center bg-no-repeat bg-cover"
+                                        data-alt="A stacked bar chart showing energy consumption over the last 7 days, broken down by component type (Chillers, CRACs, Pumps) in different shades of blue and green."
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3T15S79jRMrHTVsCMB2Tht3UUUxsfOp_vETduvR1-HhriVcYqEfTZTmPdq4gwcA_bY3yhYxZQYZDjzGFaQbryEnCje79REbzZ4bbWLhOHexN7rChx28qQoliGx_OH8jyk4oAinNPjhqV0N23Ufrac_1SMr155STzO9VpmlAJ2JgW1tYamZ7aJMTCJqOUOdxqNi6z1d5hHt1ECmU6d6leLbs0HrpOU8i1sFPrBeM92IPZwkRkpjibeaksT1L7iW9TzjPVLetOcHqo");'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Alerts
+                                    &amp;
+                                    Recommendations</h2>
+                                <div class="bg-[#1a2c30] p-4 rounded-xl border border-[#315f68] h-64 overflow-y-auto">
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start gap-3 p-2 rounded-lg bg-red-500/10">
+                                            <span class="material-symbols-outlined text-red-500 mt-1">error</span>
+                                            <div>
+                                                <p class="text-white font-medium">Critical: Pump #3 Offline</p>
+                                                <p class="text-white/70 text-sm">Immediate attention required.
+                                                    Redundancy compromised.</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start gap-3 p-2 rounded-lg bg-yellow-500/10">
+                                            <span class="material-symbols-outlined text-yellow-400 mt-1">warning</span>
+                                            <div>
+                                                <p class="text-white font-medium">Warning: Chiller #1 Efficiency Drop
+                                                </p>
+                                                <p class="text-white/70 text-sm">Efficiency below 85%. Investigate for
+                                                    maintenance.</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start gap-3 p-2 rounded-lg bg-green-500/10">
+                                            <span class="material-symbols-outlined text-green-400 mt-1">lightbulb</span>
+                                            <div>
+                                                <p class="text-white font-medium">AI Rec: Adjust CRAC #2 Fan Speed</p>
+                                                <p class="text-white/70 text-sm">Reduce fan speed by 10% to save energy
+                                                    without impacting
+                                                    cooling.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

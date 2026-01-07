@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Infrastructure Map</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#E0E0E0]">
+    <div class="flex h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                        href="../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                    href="../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                    href="../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+       
+        <main class="flex-1 flex flex-col h-screen">
+            <!-- TopNavBar -->
+            <header
+                class="flex h-16 items-center justify-between whitespace-nowrap border-b border-solid border-border-dark px-6">
+                <h2 class="text-white text-lg font-bold tracking-[-0.015em]">Network Infrastructure Map</h2>
+                <div class="flex flex-1 justify-end items-center gap-4">
+                    <label class="flex flex-col w-full !h-10 max-w-sm">
+                        <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                            <div
+                                class="text-white/70 flex border-none bg-panel-dark items-center justify-center pl-3 rounded-l-lg border-r-0">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-0 focus:ring-primary border-none bg-panel-dark focus:border-none h-full placeholder:text-white/50 px-2 text-sm font-normal leading-normal"
+                                placeholder="Search by device name, IP, or location..." value="" />
+                        </div>
+                    </label>
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-panel-dark text-white hover:bg-white/10">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <div
+                                class="absolute top-2 right-2 w-2 h-2 bg-status-red rounded-full border-2 border-background-dark">
+                            </div>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="User profile picture, abstract purple and blue gradient"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtlaBg84qAPHS00Epsh-Hj3mHR6kKimYzfWYDnZZxsNymwK7u34_kIIWL3heshI4Tl7g-WIo0sm6_bpRiqBhwIUBBb8gqspmavgumdcZY7Izjd5UYlg8SrQuzXzLXSfa51s_h02Mb4BdlUgwZOcGoJWW2c7ij8wrKTZnNBw8GN43Cb0-77bhEf8FbJyp5PAvznXA8nLG0vO0gosgfP0GqLoSD-YaIlw0jNrpAJxXcHSKqIRR0_MG7FKqrH9AW6s1Iek3zMVxZ2NPo");'>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <span class="font-semibold text-white">Alex Hudson</span>
+                            <span class="text-white/70">NOC Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="flex flex-wrap justify-end items-center gap-4 my-3 px-5">
+                <a href="../network/tabs/device-inventory.html"
+                    class="flex capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+                    <span class="truncate">Network Device Inventory</span>
+                </a>
+            
+                <a href="../network/tabs/performance-monitoring.html"
+                    class="flex  capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+            
+                    <span class="truncate">Network Performance Monitoring</span>
+                </a>
+            
+                <a href="../network/tabs/status-indicator.html"
+                    class="flex capitalize  min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2 transition-colors">
+                    <span class="truncate">Network Status Indicator</span>
+                </a>
+            
+            
+                
+            </div>
+
+
+            <div class="flex-1 flex overflow-hidden">
+                <!-- Map and Stats Content -->
+                <div class="flex-1 flex flex-col">
+                    <!-- Stats Section -->
+                    <div class="flex flex-wrap gap-4 p-4 border-b border-border-dark">
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-lg p-4 bg-panel-dark border border-border-dark">
+                            <p class="text-white/70 text-sm font-medium">Overall Network Health</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white tracking-light text-2xl font-bold">99.99%</p>
+                                <p class="text-status-green text-sm font-medium flex items-center"><span
+                                        class="material-symbols-outlined text-base">arrow_upward</span>+0.01%</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-lg p-4 bg-panel-dark border border-border-dark">
+                            <p class="text-white/70 text-sm font-medium">Active Alerts</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white tracking-light text-2xl font-bold">5</p>
+                                <p class="text-status-red text-sm font-medium flex items-center"><span
+                                        class="material-symbols-outlined text-base">arrow_downward</span>-2%</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-lg p-4 bg-panel-dark border border-border-dark">
+                            <p class="text-white/70 text-sm font-medium">Devices Online</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white tracking-light text-2xl font-bold">148 / 150</p>
+                                <p class="text-status-green text-sm font-medium flex items-center"><span
+                                        class="material-symbols-outlined text-base">arrow_upward</span>+1.2%</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-lg p-4 bg-panel-dark border border-border-dark">
+                            <p class="text-white/70 text-sm font-medium">Total Bandwidth</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white tracking-light text-2xl font-bold">78.2 Gbps</p>
+                                <p class="text-status-red text-sm font-medium flex items-center"><span
+                                        class="material-symbols-outlined text-base">arrow_downward</span>-5.0%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map Section -->
+                    <div class="flex-1 p-4 relative">
+                        <div class="bg-cover bg-center flex h-full w-full flex-col justify-between rounded-xl"
+                            data-alt="A dark, abstract representation of a network topology map with glowing blue and green nodes and lines on a dark grid background."
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdA8j_zsooM85sJlws_l8yZMOdxTNR053ZByUv-xX_0sB-jeay1Edm69cJ6SSkaS9DTNhsmpA0iFlKey3abU4cX7OlruD3TuePafsrAQB_kH4EIhpNEjW_ULx4vLpNzOdSXpJYBz4mUafqIQRbtfGM-vMisYYn_L8kj0il4YGl3Ttq2GX5pBBUnq0Qulwl9byjJ9BPfyAR3wP98jEpNsI_R8RRmBIOVqjbNfqOUvc9OOWLCSLf7SgRGgmlwXDy3bPNDmesUgMHfY8");'>
+                            <div
+                                class="absolute top-8 left-8 flex gap-2 p-2 bg-panel-dark/80 backdrop-blur-sm rounded-lg border border-border-dark">
+                                <button class="p-2 text-white hover:text-primary rounded-md"><span
+                                        class="material-symbols-outlined">zoom_in</span></button>
+                                <button class="p-2 text-white hover:text-primary rounded-md"><span
+                                        class="material-symbols-outlined">zoom_out</span></button>
+                                <div class="border-l border-border-dark mx-1"></div>
+                                <button class="p-2 text-white hover:text-primary rounded-md"><span
+                                        class="material-symbols-outlined">filter_list</span></button>
+                                <button class="p-2 text-white hover:text-primary rounded-md"><span
+                                        class="material-symbols-outlined">layers</span></button>
+                                <button class="p-2 text-white hover:text-primary rounded-md"><span
+                                        class="material-symbols-outlined">info</span></button>
+                            </div>
+                            <div class="absolute bottom-8 right-8 flex flex-col gap-3">
+                                <div class="flex flex-col items-end gap-0.5">
+                                    <button
+                                        class="flex size-10 items-center justify-center rounded-t-lg bg-panel-dark/80 backdrop-blur-sm border border-border-dark text-white hover:bg-primary/30">
+                                        <span class="material-symbols-outlined">add</span>
+                                    </button>
+                                    <button
+                                        class="flex size-10 items-center justify-center rounded-b-lg bg-panel-dark/80 backdrop-blur-sm border border-border-dark text-white hover:bg-primary/30">
+                                        <span class="material-symbols-outlined">remove</span>
+                                    </button>
+                                </div>
+                                <button
+                                    class="flex size-10 items-center justify-center rounded-lg bg-panel-dark/80 backdrop-blur-sm border border-border-dark text-white hover:bg-primary/30">
+                                    <span class="material-symbols-outlined">navigation</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side Panel -->
+                <aside class="w-96 border-l border-border-dark flex flex-col h-full overflow-y-auto">
+                    <div class="p-4 border-b border-border-dark">
+                        <h3 class="font-bold text-white">Filter &amp; Legend</h3>
+                    </div>
+                    <div class="p-4 border-b border-border-dark flex flex-col gap-4">
+                        <h4 class="text-sm font-semibold text-white/80">Device Type</h4>
+                        <div class="flex flex-col gap-3">
+                            <label class="flex items-center gap-3 text-sm cursor-pointer"><input checked=""
+                                    class="form-checkbox bg-panel-dark border-border-dark rounded text-primary focus:ring-primary"
+                                    type="checkbox" /> Servers</label>
+                            <label class="flex items-center gap-3 text-sm cursor-pointer"><input checked=""
+                                    class="form-checkbox bg-panel-dark border-border-dark rounded text-primary focus:ring-primary"
+                                    type="checkbox" /> Switches</label>
+                            <label class="flex items-center gap-3 text-sm cursor-pointer"><input
+                                    class="form-checkbox bg-panel-dark border-border-dark rounded text-primary focus:ring-primary"
+                                    type="checkbox" /> Routers</label>
+                            <label class="flex items-center gap-3 text-sm cursor-pointer"><input
+                                    class="form-checkbox bg-panel-dark border-border-dark rounded text-primary focus:ring-primary"
+                                    type="checkbox" /> Firewalls</label>
+                        </div>
+                    </div>
+                    <div class="p-4 border-b border-border-dark flex flex-col gap-4">
+                        <h4 class="text-sm font-semibold text-white/80">Status Legend</h4>
+                        <div class="flex flex-col gap-3 text-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-status-green"></div>Healthy
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-status-yellow"></div>Warning
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-status-red"></div>Critical
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 border-b border-border-dark">
+                        <h3 class="font-bold text-white">Alerts Feed</h3>
+                    </div>
+                    <div class="flex-1 p-4 flex flex-col gap-4">
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-status-red mt-1">error</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">High CPU Load on <span
+                                        class="text-primary">SRV-DB01</span></p>
+                                <p class="text-xs text-white/60">2 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-status-red mt-1">error</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Link Down: <span
+                                        class="text-primary">SW-CORE-02:g1/0/1</span></p>
+                                <p class="text-xs text-white/60">5 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-status-yellow mt-1">warning</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">High Memory Usage</p>
+                                <p class="text-xs text-white/60">15 minutes ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+   
+   
+
+</body>
+
+</html>

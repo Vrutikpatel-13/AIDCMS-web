@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AI-DCIM - Demand Forecasting</title>
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <div class="flex h-full min-h-screen grow">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <!-- Main Content -->
+            <main class="flex-1 overflow-y-auto">
+                <div class="p-8">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">AI Demand
+                                Forecasting &amp;
+                                Capacity Planning</p>
+                            <p class="text-primary/70 text-base font-normal leading-normal">Predictive models for future
+                                data center
+                                resource needs</p>
+                        </div>
+                        <button
+                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors duration-200">
+                            <span class="truncate">Run New Forecast</span>
+                        </button>
+                    </div>
+                    <!-- Stats -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-[#142e30]/50">
+                            <p class="text-white/80 text-base font-medium leading-normal">Days Until Capacity Breach</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">124</p>
+                            <p class="text-[#fa5c38] text-base font-medium leading-normal flex items-center gap-1">
+                                <span class="material-symbols-outlined text-lg">arrow_downward</span>
+                                <span>2 days</span>
+                            </p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-[#142e30]/50">
+                            <p class="text-white/80 text-base font-medium leading-normal">Projected Growth (90 days)</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">15.2%</p>
+                            <p class="text-[#0bda54] text-base font-medium leading-normal flex items-center gap-1">
+                                <span class="material-symbols-outlined text-lg">arrow_upward</span>
+                                <span>0.5%</span>
+                            </p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-[#142e30]/50">
+                            <p class="text-white/80 text-base font-medium leading-normal">Model Confidence Level</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">98.5%</p>
+                            <p class="text-primary/90 text-base font-medium leading-normal flex items-center gap-1">
+                                <span class="material-symbols-outlined text-lg">horizontal_rule</span>
+                                <span>Stable</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Main Content Area with Chart and Parameters -->
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Chart Section -->
+                        <div class="flex-1 flex-col gap-4 p-6 rounded-xl border border-white/10 bg-[#142e30]/50">
+                            <div class="flex flex-wrap items-start justify-between gap-4">
+                                <div class="flex min-w-72 flex-1 flex-col gap-2">
+                                    <p class="text-white text-lg font-medium leading-normal">Resource Utilization (%)
+                                        vs. Time</p>
+                                    <p class="text-white tracking-light text-4xl font-bold leading-tight truncate">78%
+                                        <span class="text-2xl text-white/70 font-medium">Current</span>
+                                    </p>
+                                    <div class="flex gap-2 items-center">
+                                        <p class="text-primary/70 text-base font-normal leading-normal">Last 180 Days
+                                        </p>
+                                        <p
+                                            class="text-[#0bda54] text-base font-medium leading-normal flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-lg">trending_up</span>
+                                            <span>+3.5%</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-white/40"></div>
+                                        <span class="text-white/60 text-sm">Historical</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-primary"></div>
+                                        <span class="text-white/60 text-sm">Forecast</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex min-h-[300px] w-full flex-1 flex-col gap-8 py-4">
+                                <svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 475 150"
+                                    width="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Historical Data -->
+                                    <path
+                                        d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101"
+                                        stroke="#888888" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="3">
+                                    </path>
+                                    <!-- Forecasted Data with Confidence Interval -->
+                                    <path
+                                        d="M181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
+                                        stroke="#0ddff2" stroke-linecap="round" stroke-width="3"></path>
+                                    <path
+                                        d="M181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H181.538V101Z"
+                                        fill="url(#forecast_gradient)"></path>
+                                    <defs>
+                                        <lineargradient gradientunits="userSpaceOnUse" id="forecast_gradient"
+                                            x1="326.769" x2="326.769" y1="1" y2="149">
+                                            <stop stop-color="#0ddff2" stop-opacity="0.3"></stop>
+                                            <stop offset="1" stop-color="#0ddff2" stop-opacity="0"></stop>
+                                        </lineargradient>
+                                    </defs>
+                                </svg>
+                                <div class="flex justify-around">
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Jan</p>
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Feb</p>
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Mar</p>
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Apr</p>
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        May</p>
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Jun</p>
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Jul</p>
+                                    <p class="text-primary/60 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Aug</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Parameters Panel -->
+                        <div class="w-full lg:w-96 flex flex-col gap-6">
+                            <div class="p-6 rounded-xl border border-white/10 bg-[#142e30]/50 flex flex-col gap-5">
+                                <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Forecast
+                                    Parameters</h2>
+                                <div class="flex flex-col gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2"
+                                            for="resource-select">Resource
+                                            Selection</label>
+                                        <select
+                                            class="w-full rounded-lg border-white/20 bg-background-dark/80 text-white focus:ring-primary focus:border-primary"
+                                            id="resource-select">
+                                            <option>CPU Utilization</option>
+                                            <option>Power Consumption</option>
+                                            <option>Cooling Capacity</option>
+                                            <option>Rack Space</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2"
+                                            for="model-select">AI Model</label>
+                                        <select
+                                            class="w-full rounded-lg border-white/20 bg-background-dark/80 text-white focus:ring-primary focus:border-primary"
+                                            id="model-select">
+                                            <option>LSTM (Long Short-Term Memory)</option>
+                                            <option>ARIMA (Autoregressive Integrated Moving Average)</option>
+                                            <option>Prophet</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 rounded-xl border border-white/10 bg-[#142e30]/50 flex flex-col gap-5">
+                                <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Scenario
+                                    Modeling</h2>
+                                <div class="flex flex-col gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2"
+                                            for="growth-rate">Simulate Customer
+                                            Growth (%)</label>
+                                        <input
+                                            class="w-full rounded-lg border-white/20 bg-background-dark/80 text-white focus:ring-primary focus:border-primary placeholder:text-white/40"
+                                            id="growth-rate" placeholder="e.g., 20" type="number" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-white/80 mb-2"
+                                            for="vm-add">Simulate New VMs
+                                            Added</label>
+                                        <input
+                                            class="w-full rounded-lg border-white/20 bg-background-dark/80 text-white focus:ring-primary focus:border-primary placeholder:text-white/40"
+                                            id="vm-add" placeholder="e.g., 500" type="number" />
+                                    </div>
+                                    <button
+                                        class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors duration-200">
+                                        <span class="truncate">Run Simulation</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

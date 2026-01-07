@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI-DCIM - General System Preferences</title>
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-8 overflow-y-auto">
+            <div class="max-w-4xl mx-auto">
+                <!-- PageHeading -->
+                <header class="mb-10">
+                    <div class="flex min-w-72 flex-col gap-3">
+                        <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">General System
+                            Preferences</p>
+                        <p class="text-[#8ec7cc] text-base font-normal leading-normal">Configure display, language, time
+                            zone, and other global application behaviors.</p>
+                    </div>
+                </header>
+                <div class="flex flex-col gap-8">
+                    <!-- Display & Theme Section -->
+                    <section>
+                        <h2
+                            class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 border-b border-[#2f656a] mb-4">
+                            Display &amp; Theme</h2>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="flex items-center gap-4 bg-[#102223] px-4 min-h-[72px] py-2 justify-between rounded-lg">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#21474a] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-2xl">contrast</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">Theme
+                                        </p>
+                                        <p class="text-[#8ec7cc] text-sm font-normal leading-normal line-clamp-2">Choose
+                                            your preferred interface theme.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 flex flex-wrap gap-3">
+                                    <label
+                                        class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#2f656a] px-4 h-11 text-white has-[:checked]:border-2 has-[:checked]:px-[15px] has-[:checked]:border-primary relative cursor-pointer">
+                                        Light
+                                        <input class="invisible absolute" name="theme" type="radio" />
+                                    </label>
+                                    <label
+                                        class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#2f656a] px-4 h-11 text-white has-[:checked]:border-2 has-[:checked]:px-[15px] has-[:checked]:border-primary relative cursor-pointer">
+                                        Dark
+                                        <input checked="" class="invisible absolute" name="theme" type="radio" />
+                                    </label>
+                                    <label
+                                        class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#2f656a] px-4 h-11 text-white has-[:checked]:border-2 has-[:checked]:px-[15px] has-[:checked]:border-primary relative cursor-pointer">
+                                        System
+                                        <input class="invisible absolute" name="theme" type="radio" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Localization Section -->
+                    <section>
+                        <h2
+                            class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 border-b border-[#2f656a] mb-4">
+                            Localization</h2>
+                        <div class="flex flex-col divide-y divide-[#2f656a] bg-[#102223] rounded-lg">
+                            <div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#21474a] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-2xl">language</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">Language
+                                        </p>
+                                        <p class="text-[#8ec7cc] text-sm font-normal leading-normal line-clamp-2">Select
+                                            your preferred language for the interface.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <select
+                                        class="bg-[#21474a] text-white border border-[#2f656a] rounded-lg h-11 px-4 focus:ring-primary focus:border-primary">
+                                        <option>English (US)</option>
+                                        <option>EspaÃ±ol</option>
+                                        <option>FranÃ§ais</option>
+                                        <option>Deutsch</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#21474a] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-2xl">schedule</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">Time
+                                            Zone</p>
+                                        <p class="text-[#8ec7cc] text-sm font-normal leading-normal line-clamp-2">Set
+                                            the time zone for all date and time displays.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <select
+                                        class="bg-[#21474a] text-white border border-[#2f656a] rounded-lg h-11 px-4 focus:ring-primary focus:border-primary">
+                                        <option>(GMT-05:00) Eastern Time</option>
+                                        <option>(GMT-08:00) Pacific Time</option>
+                                        <option>(GMT+00:00) Coordinated Universal Time</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Application Behavior Section -->
+                    <section>
+                        <h2
+                            class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 border-b border-[#2f656a] mb-4">
+                            Application Behavior</h2>
+                        <div class="flex flex-col divide-y divide-[#2f656a] bg-[#102223] rounded-lg">
+                            <div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#21474a] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-2xl">toggle_on</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">
+                                            Auto-save changes</p>
+                                        <p class="text-[#8ec7cc] text-sm font-normal leading-normal line-clamp-2">
+                                            Automatically save settings as you change them.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                        <div
+                                            class="w-11 h-6 bg-[#2f656a] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary/50">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#21474a] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-2xl">warning</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">Session
+                                            timeout warnings</p>
+                                        <p class="text-[#8ec7cc] text-sm font-normal leading-normal line-clamp-2">Show a
+                                            warning before your session expires.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                        <div
+                                            class="w-11 h-6 bg-[#2f656a] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary/50">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- Floating Action Bar -->
+            <footer class="sticky bottom-0 mt-10 -mx-8 -mb-8">
+                <div class="bg-[#102223]/80 backdrop-blur-sm border-t border-[#2f656a] p-4">
+                    <div class="max-w-4xl mx-auto flex justify-end gap-4">
+                        <button
+                            class="px-5 py-2.5 rounded-lg text-white text-sm font-medium border border-[#2f656a] hover:bg-[#2f656a]/50">Reset
+                            to Defaults</button>
+                        <button
+                            class="px-5 py-2.5 rounded-lg text-background-dark bg-primary text-sm font-medium hover:bg-primary/90">Save
+                            Changes</button>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+</body>
+
+</html>

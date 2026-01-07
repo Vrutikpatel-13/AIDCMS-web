@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM Server View</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#EAEAEA]">
+    <div class="relative flex min-h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                        href="../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                    href="../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                    href="../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <div class="flex flex-col gap-6">
+                <!-- Header -->
+                <header class="flex flex-col gap-4">
+                    <div class="flex flex-wrap gap-2 items-center">
+                        <a class="text-[#aaa] text-sm font-medium leading-normal" href="#">Dashboard</a>
+                        <span class="text-[#aaa] text-sm font-medium leading-normal">/</span>
+                        <a class="text-[#aaa] text-sm font-medium leading-normal" href="#">Rack 3</a>
+                        <span class="text-[#aaa] text-sm font-medium leading-normal">/</span>
+                        <span class="text-white text-sm font-medium leading-normal">Server SRV-042</span>
+                    </div>
+                    <div class="flex flex-wrap justify-between items-center gap-4">
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">SRV-042 -
+                                Production Web
+                                Server</h1>
+                            <p class="text-[#aaa] text-base font-normal leading-normal">Real-time performance and status
+                                overview.</p>
+                        </div>
+                        <button
+                            class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-accent-blue text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-accent-blue/80 transition-colors">
+                            <span class="material-symbols-outlined text-base">terminal</span>
+                            <span class="truncate">Remote Console</span>
+                        </button>
+                    </div>
+                </header>
+                <!-- Stats Cards -->
+                <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col gap-2 rounded-lg p-6 bg-[#1E1E2D] border border-white/10">
+                        <p class="text-white/80 text-base font-medium leading-normal">CPU Temp</p>
+                        <p class="text-white tracking-light text-3xl font-bold leading-tight">52Â°C</p>
+                        <p class="text-accent-green text-sm font-medium leading-normal flex items-center"><span
+                                class="material-symbols-outlined text-base mr-1">arrow_upward</span>+1.2%</p>
+                    </div>
+                    <div class="flex flex-col gap-2 rounded-lg p-6 bg-[#1E1E2D] border border-white/10">
+                        <p class="text-white/80 text-base font-medium leading-normal">Fan Speed</p>
+                        <p class="text-white tracking-light text-3xl font-bold leading-tight">4500 RPM</p>
+                        <p class="text-accent-red text-sm font-medium leading-normal flex items-center"><span
+                                class="material-symbols-outlined text-base mr-1">arrow_downward</span>-0.5%</p>
+                    </div>
+                    <div class="flex flex-col gap-2 rounded-lg p-6 bg-[#1E1E2D] border border-white/10">
+                        <p class="text-white/80 text-base font-medium leading-normal">Power Usage</p>
+                        <p class="text-white tracking-light text-3xl font-bold leading-tight">350W</p>
+                        <p class="text-accent-green text-sm font-medium leading-normal flex items-center"><span
+                                class="material-symbols-outlined text-base mr-1">arrow_upward</span>+3.0%</p>
+                    </div>
+                    <div class="flex flex-col gap-2 rounded-lg p-6 bg-[#1E1E2D] border border-white/10">
+                        <p class="text-white/80 text-base font-medium leading-normal">Network Throughput</p>
+                        <p class="text-white tracking-light text-3xl font-bold leading-tight">1.2 Gbps</p>
+                        <p class="text-accent-green text-sm font-medium leading-normal flex items-center"><span
+                                class="material-symbols-outlined text-base mr-1">arrow_upward</span>+5.8%</p>
+                    </div>
+                </section>
+                <!-- Main Grid Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Left Column: Charts -->
+                    <div class="lg:col-span-2 flex flex-col gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-[#1E1E2D] p-4 rounded-lg border border-white/10">
+                                <h3 class="font-bold text-white mb-2">CPU Utilization</h3>
+                                <img class="w-full h-auto rounded"
+                                    data-alt="A line chart showing CPU utilization over time, with a bright blue line on a dark background."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHI5UjfqdYEL8PbiGOLHuReGUUyoymcrQhlhaHFLdja9rGqknTrYCGqdExUp9Wn7aKTqbTQGBN1gSiPgQ1Dn3S1TEmUsc8q80qk-Ut6cYjlq_0iWI_3KidkT26qkwr1o5HMNo3f83pyUenBJ5wWI_qim80GE574BWPBAXs8o1dQi2rB30qfJvOABYjyl8lAKyprJbFvYe6XZL7F31iQmK6VQXwtNNea7eI7LV_ysRq_C2FH6Fx1wWwgp6vIjOEueIvNTlzie53fWk" />
+                            </div>
+                            <div class="bg-[#1E1E2D] p-4 rounded-lg border border-white/10">
+                                <h3 class="font-bold text-white mb-2">RAM Usage</h3>
+                                <img class="w-full h-auto rounded"
+                                    data-alt="A line chart showing RAM usage over time, with a bright blue line on a dark background."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr0w7kZZxEHCz0jkXlMKvuap6VmkPdAJOWv6oOxpD5UngtCeUdr1y1-qDpUAy2Vh9HRXHf6cRkHBxS0myuacq71LdrS016zUmlLke1hcTykRcIQRRlaQpsUKroWlFM4IffosTy3X5MM3npna1Xbi8Hm3fvIHqapSnT1nJg3srrKBjF35s0sPWfwFYvBwySlRlsTlZmxX5IRWhUcF0QFbD7o5wsF-4gGv2oWA5bxWJTSJxQY75oaGagnQcrtOzmAC9CVyRlnj3_bpk" />
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-[#1E1E2D] p-4 rounded-lg border border-white/10">
+                                <h3 class="font-bold text-white mb-2">Disk I/O</h3>
+                                <img class="w-full h-auto rounded"
+                                    data-alt="A line chart showing Disk I/O rates over time, with a bright blue line for reads and a lighter blue line for writes on a dark background."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvSh9VVeu5ixDvEcXScL3d1desf5kVacvJwvIcdUaD0I4iaTLpwq6fLMwk4RpgWhCRI5bk1so6IZazzPi79i_JLJXlwr2Z7ZtmGWIDAyLfKJDBkJQM7c33LgHCET76NVXl-6XslDCAlaSgDBCrX3kVvov4nENG07fvHAIKckpkvLJV-zbzmK6BSGgk8DihPfmJfNqQXEwRcGFXeo-tU-N8ly8UnBrgMKCLmvoUlpPvHitRi7JK30B_S7XW36_N-fpz4WoBGo5ErLY" />
+                            </div>
+                            <div class="bg-[#1E1E2D] p-4 rounded-lg border border-white/10">
+                                <h3 class="font-bold text-white mb-2">Network I/O</h3>
+                                <img class="w-full h-auto rounded"
+                                    data-alt="A line chart showing Network I/O rates over time, with a bright blue line for incoming and a lighter blue line for outgoing traffic on a dark background."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_iP-52fNnL4LQDlniClx9CoLAienhLKVvXbq1QALZb3SOejqQlVdbynamihpPI6yDQ_-D9yGNatIK72Rqv8lqZ9AUgm1JOVXKcyy3fxJDzsXm5fLg6mUPM7Ep8jT9UMq3FV6C53wL0ethx6-zgyRQHqLNn7pOmtg9_FkDWTINikkNUxNY4PCPHKk5T9D3mDcewK7kCAoBZJ5tDhLh5MucM5lX0mtnx1AgX7zsK4DQmsRcfCHVTNDcT73Eapxv2CJXlbYhAiHm85A" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column: Info & Insights -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Server Info Card -->
+                        <div class="bg-[#1E1E2D] p-6 rounded-lg border border-white/10">
+                            <h3 class="font-bold text-white mb-4">Server Information</h3>
+                            <div class="grid grid-cols-2 gap-y-4">
+                                <div class="flex flex-col gap-1 pr-2">
+                                    <p class="text-[#aaa] text-sm">Status</p>
+                                    <p class="text-accent-green text-sm font-medium flex items-center"><span
+                                            class="w-2 h-2 bg-accent-green rounded-full mr-2"></span>Online</p>
+                                </div>
+                                <div class="flex flex-col gap-1 pl-2">
+                                    <p class="text-[#aaa] text-sm">Uptime</p>
+                                    <p class="text-white text-sm">128 days</p>
+                                </div>
+                                <div class="flex flex-col gap-1 pr-2">
+                                    <p class="text-[#aaa] text-sm">Hostname</p>
+                                    <p class="text-white text-sm">SRV-042</p>
+                                </div>
+                                <div class="flex flex-col gap-1 pl-2">
+                                    <p class="text-[#aaa] text-sm">IP Address</p>
+                                    <p class="text-white text-sm">192.168.1.101</p>
+                                </div>
+                                <div class="flex flex-col gap-1 pr-2">
+                                    <p class="text-[#aaa] text-sm">Model</p>
+                                    <p class="text-white text-sm">PowerEdge R740</p>
+                                </div>
+                                <div class="flex flex-col gap-1 pl-2">
+                                    <p class="text-[#aaa] text-sm">Serial</p>
+                                    <p class="text-white text-sm">VMX7B8C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Storage Breakdown -->
+                        <div class="bg-[#1E1E2D] p-6 rounded-lg border border-white/10">
+                            <h3 class="font-bold text-white mb-4">Storage Breakdown</h3>
+                            <div class="flex flex-col gap-4">
+                                <div>
+                                    <div class="flex justify-between items-center mb-1 text-sm">
+                                        <span class="text-white/80">/dev/sda1 (OS)</span>
+                                        <span class="text-white">150.7 GB / 256 GB</span>
+                                    </div>
+                                    <div class="w-full bg-white/10 rounded-full h-2.5">
+                                        <div class="bg-accent-blue h-2.5 rounded-full" style="width: 59%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-center mb-1 text-sm">
+                                        <span class="text-white/80">/dev/sdb1 (Data)</span>
+                                        <span class="text-white">1.2 TB / 2.0 TB</span>
+                                    </div>
+                                    <div class="w-full bg-white/10 rounded-full h-2.5">
+                                        <div class="bg-accent-blue h-2.5 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- AI-Powered Insights -->
+                        <div class="bg-[#1E1E2D] p-6 rounded-lg border border-white/10">
+                            <h3 class="font-bold text-white mb-4 flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-accent-yellow">auto_awesome</span>AI-Powered
+                                Insights</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-accent-yellow mt-0.5">warning</span>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-white">Predictive Failure Alert</p>
+                                        <p class="text-sm text-white/70">High error rate on PSU-2. Recommend proactive
+                                            replacement within 48
+                                            hours.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-accent-green mt-0.5">lightbulb</span>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-white">Optimization</p>
+                                        <p class="text-sm text-white/70">Network I/O patterns suggest NIC bonding would
+                                            improve redundancy.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event Log Table -->
+                <section class="bg-[#1E1E2D] p-6 rounded-lg border border-white/10">
+                    <h3 class="font-bold text-white mb-4">Event Log</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="text-xs text-white/60 uppercase">
+                                <tr>
+                                    <th class="px-4 py-2" scope="col">Timestamp</th>
+                                    <th class="px-4 py-2" scope="col">Type</th>
+                                    <th class="px-4 py-2" scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-white/10">
+                                    <td class="px-4 py-3">2023-10-27 14:32:01</td>
+                                    <td class="px-4 py-3"><span
+                                            class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-accent-blue/20 text-accent-blue">Info</span>
+                                    </td>
+                                    <td class="px-4 py-3">User 'admin' initiated remote console session.</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="px-4 py-3">2023-10-27 14:15:23</td>
+                                    <td class="px-4 py-3"><span
+                                            class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-accent-yellow/20 text-accent-yellow">Warning</span>
+                                    </td>
+                                    <td class="px-4 py-3">CPU temperature exceeded 85Â°C threshold.</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="px-4 py-3">2023-10-27 13:50:45</td>
+                                    <td class="px-4 py-3"><span
+                                            class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-accent-blue/20 text-accent-blue">Info</span>
+                                    </td>
+                                    <td class="px-4 py-3">System patch KB50123 applied successfully.</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="px-4 py-3">2023-10-26 22:01:10</td>
+                                    <td class="px-4 py-3"><span
+                                            class="inline-block px-2 py-1 text-xs font-medium rounded-full bg-accent-red/20 text-accent-red">Error</span>
+                                    </td>
+                                    <td class="px-4 py-3">Failed to mount network drive /mnt/backup. Connection timed
+                                        out.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM Cloud Integrations</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- TopNavBar -->
+
+            <main class="flex flex-1">
+                <!-- SideNavBar -->
+                <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+                <!-- Main Content -->
+                <div class="flex-1 p-6 lg:p-10">
+                    <div class="flex flex-col max-w-5xl mx-auto">
+                        <!-- PageHeading -->
+                        <div class="flex flex-wrap justify-between gap-4 items-center">
+                            <div class="flex min-w-72 flex-col gap-2">
+                                <p
+                                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] font-display">
+                                    AWS -
+                                    Production West</p>
+                                <p class="text-white/60 text-base font-normal leading-normal font-display">Manage your
+                                    AWS production
+                                    environment for the west region.</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white/10 text-white text-sm font-bold leading-normal tracking-[0.015em] font-display hover:bg-white/20 transition-colors">
+                                    <span class="truncate">Refresh Status</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] font-display hover:opacity-90 transition-opacity">
+                                    <span class="truncate">Sync Now</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Tabs -->
+                        <div class="mt-8 pb-3">
+                            <div class="flex border-b border-white/10 gap-8">
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em] font-display">Overview
+                                    </p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/60 pb-[13px] pt-4 hover:text-white transition-colors"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em] font-display">
+                                        Credentials</p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/60 pb-[13px] pt-4 hover:text-white transition-colors"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em] font-display">
+                                        Synchronization Settings
+                                    </p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/60 pb-[13px] pt-4 hover:text-white transition-colors"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em] font-display">Logs</p>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Main Content Panel Content -->
+                        <div class="pt-8">
+                            <!-- Stats -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div class="flex flex-col gap-2 rounded-lg p-6 border border-white/10 bg-white/5">
+                                    <p class="text-white text-base font-medium leading-normal font-display">Synced
+                                        Resources</p>
+                                    <p class="text-white tracking-light text-2xl font-bold leading-tight font-display">
+                                        1,482</p>
+                                    <p class="text-[#00FF7F] text-base font-medium leading-normal font-display">+5.2%
+                                    </p>
+                                </div>
+                                <div class="flex flex-col gap-2 rounded-lg p-6 border border-white/10 bg-white/5">
+                                    <p class="text-white text-base font-medium leading-normal font-display">Last Sync
+                                        Time</p>
+                                    <p class="text-white tracking-light text-2xl font-bold leading-tight font-display">2
+                                        minutes ago</p>
+                                    <p class="text-white/60 text-base font-medium leading-normal font-display">
+                                        Successful</p>
+                                </div>
+                                <div class="flex flex-col gap-2 rounded-lg p-6 border border-white/10 bg-white/5">
+                                    <p class="text-white text-base font-medium leading-normal font-display">Data
+                                        Exchange Rate</p>
+                                    <p class="text-white tracking-light text-2xl font-bold leading-tight font-display">
+                                        15.2 MB/s</p>
+                                    <p class="text-[#FF3131] text-base font-medium leading-normal font-display">-1.5%
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Details Table -->
+                            <div class="mt-10 p-6 rounded-lg border border-white/10 bg-white/5">
+                                <h3 class="text-xl font-bold text-white mb-6 font-display">Account Details</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                    <div class="flex flex-col gap-1">
+                                        <p class="text-sm font-medium text-white/60 font-display">Provider</p>
+                                        <p class="text-base text-white font-display">Amazon Web Services (AWS)</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <p class="text-sm font-medium text-white/60 font-display">Account ID</p>
+                                        <p class="text-base text-white font-display">1234-5678-9012</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <p class="text-sm font-medium text-white/60 font-display">Region</p>
+                                        <p class="text-base text-white font-display">us-west-2 (Oregon)</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <p class="text-sm font-medium text-white/60 font-display">Connection Status</p>
+                                        <div class="flex items-center gap-2">
+                                            <div class="size-2 rounded-full bg-[#00FF7F]"></div>
+                                            <p class="text-base text-[#00FF7F] font-display">Connected</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Log Table -->
+                            <div class="mt-10 p-6 rounded-lg border border-white/10 bg-white/5">
+                                <h3 class="text-xl font-bold text-white mb-4 font-display">Recent Activity Logs</h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-left">
+                                        <thead>
+                                            <tr class="border-b border-white/10 text-sm text-white/60">
+                                                <th class="py-3 px-4 font-medium">Timestamp</th>
+                                                <th class="py-3 px-4 font-medium">Event</th>
+                                                <th class="py-3 px-4 font-medium">Status</th>
+                                                <th class="py-3 px-4 font-medium">Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-white/10 text-sm">
+                                                <td class="py-4 px-4 font-mono text-white/80">2024-07-29 14:30:15 UTC
+                                                </td>
+                                                <td class="py-4 px-4">Manual Sync Triggered</td>
+                                                <td class="py-4 px-4"><span
+                                                        class="bg-[#4D96FF]/20 text-[#4D96FF] px-2 py-1 rounded-full text-xs font-bold">In
+                                                        Progress</span></td>
+                                                <td class="py-4 px-4 text-white/80">Sync initiated by admin@example.com
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-white/10 text-sm">
+                                                <td class="py-4 px-4 font-mono text-white/80">2024-07-29 14:15:02 UTC
+                                                </td>
+                                                <td class="py-4 px-4">Scheduled Sync</td>
+                                                <td class="py-4 px-4"><span
+                                                        class="bg-[#00FF7F]/20 text-[#00FF7F] px-2 py-1 rounded-full text-xs font-bold">Success</span>
+                                                </td>
+                                                <td class="py-4 px-4 text-white/80">Synced 1,482 resources.</td>
+                                            </tr>
+                                            <tr class="border-b border-white/10 text-sm">
+                                                <td class="py-4 px-4 font-mono text-white/80">2024-07-29 13:45:10 UTC
+                                                </td>
+                                                <td class="py-4 px-4">Configuration Update</td>
+                                                <td class="py-4 px-4"><span
+                                                        class="bg-[#00FF7F]/20 text-[#00FF7F] px-2 py-1 rounded-full text-xs font-bold">Success</span>
+                                                </td>
+                                                <td class="py-4 px-4 text-white/80">Synchronization settings updated.
+                                                </td>
+                                            </tr>
+                                            <tr class="text-sm">
+                                                <td class="py-4 px-4 font-mono text-white/80">2024-07-29 13:00:05 UTC
+                                                </td>
+                                                <td class="py-4 px-4">Connection Test</td>
+                                                <td class="py-4 px-4"><span
+                                                        class="bg-[#FFBF00]/20 text-[#FFBF00] px-2 py-1 rounded-full text-xs font-bold">Warning</span>
+                                                </td>
+                                                <td class="py-4 px-4 text-white/80">API latency spike detected: 350ms.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

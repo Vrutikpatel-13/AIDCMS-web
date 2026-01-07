@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AI-DCIM - Resource Allocation Dashboard</title>
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full  ">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <main class="px-4 sm:px-6 md:px-10 lg:px-12 flex flex-1 justify-center py-8">
+                <div class="layout-content-container flex flex-col w-full max-w-7xl flex-1 gap-8">
+                    <div class="flex flex-wrap justify-between gap-4 items-center">
+                        <p
+                            class="text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">
+                            Resource
+                            Allocation &amp; Optimization</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <button
+                                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 transition-colors px-4">
+                                <p class="text-sm font-medium leading-normal">Last 24 Hours</p>
+                                <span class="material-symbols-outlined text-base">expand_more</span>
+                            </button>
+                            <button
+                                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-background-dark transition-colors px-4">
+                                <p class="text-sm font-bold leading-normal">Last 7 Days</p>
+                            </button>
+                            <button
+                                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 transition-colors px-4">
+                                <p class="text-sm font-medium leading-normal">Custom Range</p>
+                                <span class="material-symbols-outlined text-base">date_range</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/80 text-base font-medium leading-normal">Overall CPU Usage</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">78%</p>
+                            <p class="text-green-400 text-base font-medium leading-normal flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-lg">arrow_upward</span>+2.5%</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/80 text-base font-medium leading-normal">Memory Utilization</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">62%</p>
+                            <p class="text-red-400 text-base font-medium leading-normal flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-lg">arrow_downward</span>-1.2%</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/80 text-base font-medium leading-normal">Storage Capacity</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">85%</p>
+                            <p class="text-green-400 text-base font-medium leading-normal flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-lg">arrow_upward</span>+5.0%</p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+                            <p class="text-white/80 text-base font-medium leading-normal">Power Usage (PUE)</p>
+                            <p class="text-white tracking-light text-3xl font-bold leading-tight">1.45</p>
+                            <p class="text-green-400 text-base font-medium leading-normal flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-lg">arrow_upward</span>+0.02</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 flex flex-col gap-6">
+                            <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6">
+                                <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-4">Current
+                                    Resource
+                                    Distribution</h2>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="flex flex-col items-center gap-3">
+                                        <p class="text-white/90 font-medium">CPU Allocation</p>
+                                        <div class="relative w-40 h-40">
+                                            <svg class="w-full h-full transform -rotate-90" viewbox="0 0 120 120">
+                                                <circle cx="60" cy="60" fill="none" r="54" stroke="#ffffff"
+                                                    stroke-opacity="0.1" stroke-width="12"></circle>
+                                                <circle cx="60" cy="60" fill="none" r="54" stroke="#0ddff2"
+                                                    stroke-dasharray="254.469" stroke-dashoffset="55.98"
+                                                    stroke-linecap="round" stroke-width="12"></circle>
+                                            </svg>
+                                            <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                                <span class="text-3xl font-bold text-white">78%</span>
+                                                <span class="text-sm text-white/60">Used</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-3">
+                                        <p class="text-white/90 font-medium">Memory Allocation</p>
+                                        <div class="relative w-40 h-40">
+                                            <svg class="w-full h-full transform -rotate-90" viewbox="0 0 120 120">
+                                                <circle cx="60" cy="60" fill="none" r="54" stroke="#ffffff"
+                                                    stroke-opacity="0.1" stroke-width="12"></circle>
+                                                <circle cx="60" cy="60" fill="none" r="54" stroke="#39FF14"
+                                                    stroke-dasharray="212.057" stroke-dashoffset="78.46"
+                                                    stroke-linecap="round" stroke-width="12"></circle>
+                                            </svg>
+                                            <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                                <span class="text-3xl font-bold text-white">62%</span>
+                                                <span class="text-sm text-white/60">Used</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-3">
+                                        <p class="text-white/90 font-medium">Storage Allocation</p>
+                                        <div class="relative w-40 h-40">
+                                            <svg class="w-full h-full transform -rotate-90" viewbox="0 0 120 120">
+                                                <circle cx="60" cy="60" fill="none" r="54" stroke="#ffffff"
+                                                    stroke-opacity="0.1" stroke-width="12"></circle>
+                                                <circle cx="60" cy="60" fill="none" r="54" stroke="#f97316"
+                                                    stroke-dasharray="288.29" stroke-dashoffset="50.89"
+                                                    stroke-linecap="round" stroke-width="12"></circle>
+                                            </svg>
+                                            <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                                <span class="text-3xl font-bold text-white">85%</span>
+                                                <span class="text-sm text-white/60">Used</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6">
+                                <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-4">Capacity
+                                    Projections
+                                </h2>
+                                <div class="w-full h-64 bg-transparent">
+                                    <img class="w-full h-full object-contain"
+                                        data-alt="A line chart showing capacity projections for CPU and Storage over the next six months. CPU usage, in neon blue, trends upwards from 65% to 82%. Storage usage, in neon green, trends upwards from 70% to 85%."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5e1z7Lwcg3zBihOcUphmMdp8l-0c6T-J8vPIebPy4GN0QvEpXnC6BCPz8V9OdR9EyzHKf-KQKC65CE6Nqt1uXoYyN0PjJRJMAW8T_Jd2pEEOL1w94PGfV8HhGDkTmDdwlBFlyEM7iybqBDsRxnuKwQePkxFuGn6NU4M6XSawG3fqjW4vWe02obPyxhFs9jTiYgpy1br3oAvP3YUQzcd56-lEGsech_58YGWM4s_4FSBK46ISOhn_7npDxNKkLsT8V8ZflDvyJ95M" />
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 h-full min-h-[400px]">
+                            <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-4">AI-Powered
+                                Recommendations
+                            </h2>
+                            <div class="flex flex-col gap-4 overflow-y-auto">
+                                <div class="flex flex-col gap-2 p-4 rounded-lg bg-primary/20 border border-primary/50">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary text-xl">move_up</span>
+                                        <p class="font-bold text-white">Migrate Low-Priority VMs</p>
+                                    </div>
+                                    <p class="text-white/80 text-sm">Migrate VMs from Cluster A to B to reduce thermal
+                                        load and improve
+                                        performance.</p>
+                                    <button
+                                        class="text-xs font-bold self-start mt-2 px-3 py-1.5 rounded-md bg-primary text-background-dark hover:opacity-90 transition-opacity">Review
+                                        Plan</button>
+                                </div>
+                                <div
+                                    class="flex flex-col gap-2 p-4 rounded-lg bg-green-400/20 border border-green-400/50">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-green-400 text-xl">add_box</span>
+                                        <p class="font-bold text-white">Provision Storage Nodes</p>
+                                    </div>
+                                    <p class="text-white/80 text-sm">Provision 2 additional storage nodes to meet
+                                        projected 90-day demand.
+                                    </p>
+                                    <button
+                                        class="text-xs font-bold self-start mt-2 px-3 py-1.5 rounded-md bg-green-400 text-background-dark hover:opacity-90 transition-opacity">Automate</button>
+                                </div>
+                                <div class="flex flex-col gap-2 p-4 rounded-lg bg-white/10">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-white/80 text-xl">power</span>
+                                        <p class="font-bold text-white">Consolidate Idle Servers</p>
+                                    </div>
+                                    <p class="text-white/80 text-sm">Consolidate workloads and power down 8
+                                        underutilized servers during
+                                        off-peak hours.</p>
+                                    <button
+                                        class="text-xs font-bold self-start mt-2 px-3 py-1.5 rounded-md bg-white/20 text-white hover:bg-white/30 transition-colors">View
+                                        Details</button>
+                                </div>
+                                <div class="flex flex-col gap-2 p-4 rounded-lg bg-white/10">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-white/80 text-xl">cool_to_dry</span>
+                                        <p class="font-bold text-white">Adjust Cooling Setpoint</p>
+                                    </div>
+                                    <p class="text-white/80 text-sm">Increase cooling setpoint by 1Â°C in Zone C-3 to
+                                        save energy without
+                                        risk.</p>
+                                    <button
+                                        class="text-xs font-bold self-start mt-2 px-3 py-1.5 rounded-md bg-white/20 text-white hover:bg-white/30 transition-colors">Execute</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

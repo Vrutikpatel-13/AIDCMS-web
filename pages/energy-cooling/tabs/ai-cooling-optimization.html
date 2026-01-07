@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Energy Efficiency Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="p-8">
+                <!-- PageHeading -->
+                <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-white text-4xl font-bold leading-tight tracking-[-0.033em]">Energy Efficiency
+                            Dashboard</h1>
+                        <p class="text-[#90c6cb] text-base font-normal">Live PUE &amp; DCiE Metrics</p>
+                    </div>
+                    <button
+                        class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-[#224649] text-white text-sm font-medium leading-normal tracking-[0.015em] hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                        <span class="truncate">Last 24 Hours</span>
+                        <span class="material-symbols-outlined text-[20px]">expand_more</span>
+                    </button>
+                </div>
+                <!-- Metric Cards Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <!-- PUE Card -->
+                    <div class="flex flex-col gap-4 rounded-xl p-6 bg-[#1A1E1F] border border-[#316368]/50">
+                        <div class="flex items-start justify-between">
+                            <div class="flex flex-col">
+                                <h3 class="text-white text-lg font-medium">Power Usage Effectiveness (PUE)</h3>
+                                <p class="text-[#90c6cb] text-sm">Real-Time | Industry Ideal: 1.1</p>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse" title="Normal"></span>
+                        </div>
+                        <div class="relative w-full aspect-video flex items-center justify-center">
+                            <svg class="absolute inset-0 w-full h-full" viewbox="0 0 200 100">
+                                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#224649"
+                                    stroke-linecap="round" stroke-width="12"></path>
+                                <path d="M 20 100 A 80 80 0 0 1 50 48" fill="none" stroke="#0ddff2"
+                                    stroke-linecap="round" stroke-width="12"></path>
+                            </svg>
+                            <div class="text-center">
+                                <p class="text-primary text-5xl font-bold tracking-tight">1.18</p>
+                                <p class="text-green-400 text-lg font-medium flex items-center justify-center gap-1">
+                                    <span class="material-symbols-outlined text-xl">arrow_upward</span>
+                                    <span>+0.2%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DCiE Card -->
+                    <div class="flex flex-col gap-4 rounded-xl p-6 bg-[#1A1E1F] border border-[#316368]/50">
+                        <div class="flex items-start justify-between">
+                            <div class="flex flex-col">
+                                <h3 class="text-white text-lg font-medium">Data Center Infrastructure Efficiency (DCiE)
+                                </h3>
+                                <p class="text-[#90c6cb] text-sm">Real-Time | Industry Ideal: 90%+</p>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-green-500" title="Normal"></span>
+                        </div>
+                        <div class="relative w-full aspect-video flex items-center justify-center">
+                            <svg class="absolute inset-0 w-full h-full" viewbox="0 0 200 100">
+                                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#224649"
+                                    stroke-linecap="round" stroke-width="12"></path>
+                                <path d="M 20 100 A 80 80 0 0 1 165 65" fill="none" stroke="#39FF14"
+                                    stroke-linecap="round" stroke-width="12"></path>
+                            </svg>
+                            <div class="text-center">
+                                <p class="text-[#39FF14] text-5xl font-bold tracking-tight">84.7%</p>
+                                <p class="text-red-400 text-lg font-medium flex items-center justify-center gap-1">
+                                    <span class="material-symbols-outlined text-xl">arrow_downward</span>
+                                    <span>-0.5%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Charts Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <!-- PUE Trend Chart -->
+                    <div class="flex flex-col gap-2 p-6 rounded-xl bg-[#1A1E1F] border border-[#316368]/50">
+                        <p class="text-white text-lg font-medium leading-normal">PUE Trend</p>
+                        <div class="flex items-baseline gap-2">
+                            <p class="text-primary tracking-light text-4xl font-bold leading-tight">1.18</p>
+                            <div class="flex gap-1">
+                                <p class="text-[#90c6cb] text-base font-normal">Last 24 Hours</p>
+                                <p class="text-green-400 text-base font-medium">+0.2%</p>
+                            </div>
+                        </div>
+                        <div class="flex min-h-[200px] flex-1 flex-col gap-8 py-4">
+                            <svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 475 150" width="100%"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <lineargradient id="pue-gradient" x1="0" x2="0" y1="0" y2="100%">
+                                        <stop offset="0%" stop-color="#0ddff2" stop-opacity="0.3"></stop>
+                                        <stop offset="100%" stop-color="#0ddff2" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                </defs>
+                                <path
+                                    d="M0 109 C18 109, 18 21, 36 21 C54 21, 54 41, 72 41 C90 41, 90 93, 108 93 C127 93, 127 33, 145 33 C163 33, 163 101, 181 101 C199 101, 199 61, 217 61 C236 61, 236 45, 254 45 C272 45, 272 121, 290 121 C308 121, 308 149, 326 149 C344 149, 344 1, 363 1 C381 1, 381 81, 399 81 C417 81, 417 129, 435 129 C453 129, 453 25, 472 25"
+                                    fill="url(#pue-gradient)" stroke="#0ddff2" stroke-width="2.5"></path>
+                            </svg>
+                            <div class="flex justify-between -mt-4">
+                                <p class="text-[#90c6cb] text-xs font-medium">12am</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">4am</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">8am</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">12pm</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">4pm</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">8pm</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">Now</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DCiE Trend Chart -->
+                    <div class="flex flex-col gap-2 p-6 rounded-xl bg-[#1A1E1F] border border-[#316368]/50">
+                        <p class="text-white text-lg font-medium leading-normal">DCiE Trend</p>
+                        <div class="flex items-baseline gap-2">
+                            <p class="text-[#39FF14] tracking-light text-4xl font-bold leading-tight">84.7%</p>
+                            <div class="flex gap-1">
+                                <p class="text-[#90c6cb] text-base font-normal">Last 24 Hours</p>
+                                <p class="text-red-400 text-base font-medium">-0.5%</p>
+                            </div>
+                        </div>
+                        <div class="flex min-h-[200px] flex-1 flex-col gap-8 py-4">
+                            <svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 475 150" width="100%"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <lineargradient id="dcie-gradient" x1="0" x2="0" y1="0" y2="100%">
+                                        <stop offset="0%" stop-color="#39FF14" stop-opacity="0.3"></stop>
+                                        <stop offset="100%" stop-color="#39FF14" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                </defs>
+                                <path
+                                    d="M0 45 C18 45, 18 101, 36 101 C54 101, 54 81, 72 81 C90 81, 90 29, 108 29 C127 29, 127 89, 145 89 C163 89, 163 21, 181 21 C199 21, 199 61, 217 61 C236 61, 236 77, 254 77 C272 77, 272 1, 290 1 C308 1, 308 50, 326 50 C344 50, 344 121, 363 121 C381 121, 381 41, 399 41 C417 41, 417 1, 435 1 C453 1, 453 97, 472 97"
+                                    fill="url(#dcie-gradient)" stroke="#39FF14" stroke-width="2.5"></path>
+                            </svg>
+                            <div class="flex justify-between -mt-4">
+                                <p class="text-[#90c6cb] text-xs font-medium">12am</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">4am</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">8am</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">12pm</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">4pm</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">8pm</p>
+                                <p class="text-[#90c6cb] text-xs font-medium">Now</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- AI Insights Section -->
+                <div class="p-6 rounded-xl bg-[#1A1E1F] border border-[#316368]/50">
+                    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">AI-Powered
+                        Insights</h2>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-[#224649]/50">
+                            <span class="material-symbols-outlined text-amber-400 text-2xl mt-1">warning</span>
+                            <div class="flex flex-col">
+                                <p class="text-white font-medium">PUE trending high, check cooling unit #3.</p>
+                                <p class="text-[#90c6cb] text-sm">Potential efficiency drop detected in the last hour.
+                                    Recommend
+                                    immediate inspection.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-[#224649]/50">
+                            <span class="material-symbols-outlined text-primary text-2xl mt-1">model_training</span>
+                            <div class="flex flex-col">
+                                <p class="text-white font-medium">Optimization Opportunity</p>
+                                <p class="text-[#90c6cb] text-sm">Server rack B-12 shows low utilization. Consider
+                                    workload
+                                    consolidation to save 5kW.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-[#224649]/50">
+                            <span class="material-symbols-outlined text-green-400 text-2xl mt-1">task_alt</span>
+                            <div class="flex flex-col">
+                                <p class="text-white font-medium">Efficiency Stable</p>
+                                <p class="text-[#90c6cb] text-sm">DCiE has remained within optimal range for the past 72
+                                    hours. No
+                                    action required.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+
+</body>
+
+</html>

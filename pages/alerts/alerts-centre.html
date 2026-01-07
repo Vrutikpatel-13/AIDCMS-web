@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Alerts Center</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex h-full">
+           <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+
+
+            <div class="min-h-screen flex flex-1 flex-col p-4 sm:p-6 lg:p-8">
+                <!-- Header -->
+                <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Alerts Center</h1>
+                    <div class="flex items-center gap-4">
+
+                        <a href="../alerts/tabs/alert-configuration.html"
+                            class="flex capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">alert-configuration</span>
+                        </a>
+                        
+                        <a href="../alerts/tabs/notification-settings.html"
+                            class="flex capitalize min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">notifications-settings</span>
+                        </a>
+
+                        <div class="relative w-full sm:w-64">
+                            <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500"
+                                fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                            <input
+                                class="w-full pl-10 pr-4 py-2 bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                                placeholder="Search alerts..." type="text" />
+                        </div>
+                        <div class="relative">
+                            <button
+                                class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark flex items-center justify-center">
+                                <img class="w-8 h-8 rounded-full object-cover" data-alt="User profile avatar"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyipf_PZuktWQrmqjlCHWwx6oU2C3oRsj1tZ1-Fi6r5n-g0iwz-DllEksXXZr_xDC-Tuck-whbDd8wY2zRAWE46fco8gFdEbojKvIUsQm-XxhlBAFQagTWbMBgFDGyWDVbBSYbey9i17JxepFYSHaBEHhyBtoGeEokZTU-5sc2u6V39yVyJaMZU1vTZMJIxf40LLl5TkOhlGvV--roiT0AffQfgtn5gRpQLYGgnhnzPlMjUwGo_igahFaS008Hx41ymcs1doWKw18" />
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <!-- Summary Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div
+                        class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-200 dark:border-border-dark flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">High Severity</p>
+                            <p class="text-3xl font-bold text-gray-900 dark:text-white">5</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center bg-high-severity/10">
+                            <span class="w-3 h-3 rounded-full bg-high-severity"></span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-200 dark:border-border-dark flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Medium Severity</p>
+                            <p class="text-3xl font-bold text-gray-900 dark:text-white">12</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center bg-medium-severity/10">
+                            <span class="w-3 h-3 rounded-full bg-medium-severity"></span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-200 dark:border-border-dark flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Low Severity</p>
+                            <p class="text-3xl font-bold text-gray-900 dark:text-white">28</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center bg-low-severity/10">
+                            <span class="w-3 h-3 rounded-full bg-low-severity"></span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-200 dark:border-border-dark flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Total Active</p>
+                            <p class="text-3xl font-bold text-gray-900 dark:text-white">45</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center bg-gray-500/10">
+                            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Filters and Main Content Area -->
+                <main
+                    class="flex-1 bg-white dark:bg-surface-dark border border-gray-200 dark:border-border-dark rounded-xl p-4 sm:p-6">
+                    <!-- Filter Controls -->
+                    <div class="flex flex-wrap items-center gap-4 mb-6">
+                        <div class="flex-grow flex flex-wrap items-center gap-4">
+                            <select
+                                class="w-full text-text-light sm:w-auto bg-white dark:bg-background-dark border border-gray-300 dark:border-border-dark rounded-lg text-sm focus:ring-primary focus:border-primary">
+                                <option>Status: All</option>
+                                <option>Active</option>
+                                <option>Acknowledged</option>
+                                <option>Resolved</option>
+                            </select>
+                            <select
+                                class="w-full text-text-light sm:w-auto bg-white dark:bg-background-dark border border-gray-300 dark:border-border-dark rounded-lg text-sm focus:ring-primary focus:border-primary">
+                                <option>Severity: All</option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                            <input
+                                class="w-full sm:w-auto bg-white dark:bg-background-dark border border-gray-300 dark:border-border-dark rounded-lg text-sm focus:ring-primary focus:border-primary text-gray-500"
+                                type="date" />
+                            <select
+                                class="w-full text-text-light sm:w-auto bg-white dark:bg-background-dark border border-gray-300 dark:border-border-dark rounded-lg text-sm focus:ring-primary focus:border-primary">
+                                <option>Component Type: All</option>
+                                <option>Server</option>
+                                <option>Switch</option>
+                                <option>PDU</option>
+                                <option>UPS</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button
+                                class="p-2.5 rounded-lg border border-gray-300 dark:border-border-dark text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-background-dark">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <button
+                                class="p-2.5 rounded-lg border border-gray-300 dark:border-border-dark text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-background-dark">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Alerts Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead
+                                class="text-xs text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-border-dark">
+                                <tr>
+                                    <th class="py-3 px-4 w-24" scope="col">Severity</th>
+                                    <th class="py-3 px-4" scope="col">Alert Summary</th>
+                                    <th class="py-3 px-4" scope="col">Component</th>
+                                    <th class="py-3 px-4" scope="col">Timestamp</th>
+                                    <th class="py-3 px-4" scope="col">Status</th>
+                                    <th class="py-3 px-4 text-right" scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    class="border-b border-gray-200 dark:border-border-dark hover:bg-gray-50 dark:hover:bg-background-dark/50 transition-colors">
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="inline-flex items-center gap-2 font-medium py-1 px-3 rounded-full text-xs bg-high-severity/10 text-high-severity">
+                                            <span class="w-2 h-2 rounded-full bg-high-severity"></span> High
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-900 dark:text-white font-medium"> <a
+                                            href="../alerts/alert-detail.html">PSU-02 Failure</a> </td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">Server Rack-14B</td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">2023-10-27 14:35:12</td>
+                                    <td class="py-4 px-4"><span class="font-medium text-high-severity">Active</span>
+                                    </td>
+                                    <td class="py-4 px-4 text-right">
+                                        <button
+                                            class="py-1 text-text-light  text-text-light px-3 text-xs font-medium rounded-md border border-gray-300 dark:border-border-dark hover:bg-gray-100 dark:hover:bg-background-dark/50 mr-2 text-text-light">Acknowledge</button>
+                                        <button
+                                            class="py-1 px-3 text-xs font-medium rounded-md border border-primary/50 text-primary hover:bg-primary/10">Details</button>
+                                    </td>
+                                </tr>
+                                <tr
+                                    class="border-b border-gray-200 dark:border-border-dark hover:bg-gray-50 dark:hover:bg-background-dark/50 transition-colors">
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="inline-flex items-center gap-2 font-medium py-1 px-3 rounded-full text-xs bg-medium-severity/10 text-medium-severity">
+                                            <span class="w-2 h-2 rounded-full bg-medium-severity"></span> Medium
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-900 dark:text-white font-medium"> <a
+                                            href="../alerts/alert-detail.html">Core Temperature Exceeding
+                                            Threshold</a> </td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">Switch Rack-14B </td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">2023-10-27 14:30:05</td>
+                                    <td class="py-4 px-4"><span class="font-medium text-high-severity">Active</span>
+                                    </td>
+                                    <td class="py-4 px-4 text-right">
+                                        <button
+                                            class="py-1 px-3 text-xs font-medium rounded-md border border-gray-300 dark:border-border-dark hover:bg-gray-100 dark:hover:bg-background-dark/50 mr-2 text-text-light">Acknowledge</button>
+                                        <button
+                                            class="py-1 px-3 text-xs font-medium rounded-md border border-primary/50 text-primary hover:bg-primary/10">Details</button>
+                                    </td>
+                                </tr>
+                                <tr
+                                    class="border-b border-gray-200 dark:border-border-dark hover:bg-gray-50 dark:hover:bg-background-dark/50 transition-colors">
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="inline-flex items-center gap-2 font-medium py-1 px-3 rounded-full text-xs bg-low-severity/10 text-low-severity">
+                                            <span class="w-2 h-2 rounded-full bg-low-severity"></span> Low
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-900 dark:text-white font-medium"><a
+                                            href="../alerts/alert-detail.html">UPS Battery Backup at 50%
+                                            Capacity</a></td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">UPS-Main-A</td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">2023-10-27 13:55:48</td>
+                                    <td class="py-4 px-4"><span
+                                            class="font-medium text-gray-500 dark:text-gray-400 text-text-light">Acknowledged</span>
+                                    </td>
+                                    <td class="py-4 px-4 text-right">
+                                        <button
+                                            class="py-1 px-3 text-xs font-medium rounded-md border border-gray-300 dark:border-border-dark hover:bg-gray-100 dark:hover:bg-background-dark/50 mr-2 text-text-light">Resolve</button>
+                                        <button
+                                            class="py-1 px-3 text-xs font-medium rounded-md border border-primary/50 text-primary hover:bg-primary/10">Details</button>
+                                    </td>
+                                </tr>
+                                <tr
+                                    class="border-b border-gray-200 dark:border-border-dark hover:bg-gray-50 dark:hover:bg-background-dark/50 transition-colors">
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="inline-flex items-center gap-2 font-medium py-1 px-3 rounded-full text-xs bg-high-severity/10 text-high-severity">
+                                            <span class="w-2 h-2 rounded-full bg-high-severity"></span> High
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-900 dark:text-white font-medium"><a
+                                            href="../alerts/alert-detail.html">Network Link Down</a></td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">EdgeRouter-03</td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">2023-10-27 12:10:22</td>
+                                    <td class="py-4 px-4"><span class="font-medium text-success">Resolved</span></td>
+                                    <td class="py-4 px-4 text-right">
+                                        <button
+                                            class="py-1 px-3 text-text-light text-xs font-medium rounded-md border border-gray-300 dark:border-border-dark hover:bg-gray-100 dark:hover:bg-background-dark/50 mr-2 text-text-light"
+                                            disabled="">Acknowledge</button>
+                                        <button
+                                            class="py-1 px-3 text-xs font-medium rounded-md border border-primary/50 text-primary hover:bg-primary/10">Details</button>
+                                    </td>
+                                </tr>
+                                <tr
+                                    class="border-b border-gray-200 dark:border-border-dark hover:bg-gray-50 dark:hover:bg-background-dark/50 transition-colors">
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="inline-flex items-center gap-2 font-medium py-1 px-3 rounded-full text-xs bg-medium-severity/10 text-medium-severity">
+                                            <span class="w-2 h-2 rounded-full bg-medium-severity"></span> Medium
+                                        </span>
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-900 dark:text-white font-medium"><a
+                                            href="../alerts/alert-detail.html">High Packet Loss on Uplink</a>
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">TOR-Switch-21A</td>
+                                    <td class="py-4 px-4 text-gray-500 dark:text-gray-400">2023-10-27 11:45:19</td>
+                                    <td class="py-4 px-4"><span class="font-medium text-success">Resolved</span></td>
+                                    <td class="py-4 px-4 text-right">
+                                        <button
+                                            class="py-1 text-text-light px-3 text-xs font-medium rounded-md border border-gray-300 dark:border-border-dark hover:bg-gray-100 dark:hover:bg-background-dark/50 mr-2"
+                                            disabled="">Acknowledge</button>
+                                        <button
+                                            class="py-1 px-3 text-xs font-medium rounded-md border border-primary/50 text-primary hover:bg-primary/10">Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center mt-6">
+                        <span class="text-sm text-gray-500 dark:text-gray-400 mb-4 sm:mb-0">
+                            Showing <span class="font-semibold text-gray-900 dark:text-white">1-5</span> of <span
+                                class="font-semibold text-gray-900 dark:text-white">128</span>
+                        </span>
+                        <div class="inline-flex items-center -space-x-px">
+                            <a class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-background-dark dark:hover:text-white"
+                                href="#">
+                                Previous
+                            </a>
+                            <a class="px-3 py-2 leading-tight text-gray-500 bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-background-dark dark:hover:text-white"
+                                href="#">1</a>
+                            <a class="px-3 py-2 leading-tight text-gray-500 bg-primary/20 text-primary border border-primary dark:border-primary z-10"
+                                href="#">2</a>
+                            <a class="px-3 py-2 leading-tight text-gray-500 bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-background-dark dark:hover:text-white"
+                                href="#">3</a>
+                            <span
+                                class="px-3 py-2 leading-tight text-gray-500 bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark">...</span>
+                            <a class="px-3 py-2 leading-tight text-gray-500 bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-background-dark dark:hover:text-white"
+                                href="#">26</a>
+                            <a class="px-3 py-2 leading-tight text-gray-500 bg-white dark:bg-surface-dark border border-gray-300 dark:border-border-dark rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-background-dark dark:hover:text-white"
+                                href="#">
+                                Next
+                            </a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

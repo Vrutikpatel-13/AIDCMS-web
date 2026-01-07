@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Alert Thresholds</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <div class="flex h-full min-h-screen">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                    href="../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                    href="../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <!-- Main Content -->
+            <main class="flex-1 p-8 overflow-y-auto">
+                <div class="mx-auto">
+                    
+                    
+
+                    <div class="flex flex-wrap justify-between items-start gap-4 mb-8">
+                        <div class="flex min-w-72 flex-col gap-3">
+                            <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">System-Wide
+                                Alert Thresholds
+                            </p>
+                            <p class="text-[#8ec7cc] text-base font-normal leading-normal">Define default warning and
+                                critical alert
+                                levels for all monitored infrastructure.</p>
+                        </div>
+                        <div class="flex flex-1 gap-3 flex-wrap justify-end min-w-[200px]">
+                            
+                            <button
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#21474a] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#2b5a5e] transition-colors">
+                                <span class="truncate">Reset to Default</span>
+                            </button>
+                            <button
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#102223] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity">
+                                <span class="truncate">Save Changes</span>
+                            </button>
+                        </div>
+                    </div>
+
+                   
+
+
+                    <!-- Search Bar -->
+                    <div class="mb-8 flex justify-between">
+                        <label class="flex flex-col min-w-40 h-12 w-full max-w-sm">
+                            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                <div
+                                    class="text-[#8ec7cc] flex border-none bg-[#21474a] items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#21474a] focus:border-none h-full placeholder:text-[#8ec7cc] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                                    placeholder="Filter metrics..." value="" />
+                            </div>
+                        </label>
+
+                        <div class="flex justify-center gap-4">
+                        <a href="../governance/tabs/api-keys.html"
+                           class="capitalize flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#102223] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity">
+                            <span class="truncate">api keys</span>
+                        </a>
+                        <a href="../governance/tabs/automation-rules.html"
+                            class="capitalize flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#102223] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity">
+                            <span class="truncate">automation rules</span>
+                        </a>
+                    
+                        <a href="../governance/tabs/data-retention.html"
+                            class="capitalize flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#102223] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity">
+                            <span class="truncate">data retention</span>
+                        </a>
+                        <a href="../governance/tabs/system-preferences.html"
+                            class="capitalize flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#102223] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity">
+                            <span class="truncate">system preferences</span>
+                        </a>
+                    </div>
+
+                        
+                    </div>
+                    <!-- Metrics Sections -->
+                    <div class="flex flex-col gap-10">
+                        <!-- Compute Section -->
+                        <div>
+                            <h2
+                                class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-white/10 mb-4">
+                                Compute</h2>
+                            <div class="flex flex-col gap-4">
+                                <!-- Metric Row: CPU Utilization -->
+                                <div
+                                    class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_auto] gap-4 items-center p-4 bg-[#142d2f] rounded-lg">
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-white font-medium">Server CPU Utilization</p>
+                                        <span class="material-symbols-outlined text-[#8ec7cc] text-base cursor-help"
+                                            title="Percentage of CPU being used">info</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-yellow-400" for="cpu-warn">Warning</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-8"
+                                                id="cpu-warn" type="number" value="80" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-red-500" for="cpu-crit">Critical</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-8"
+                                                id="cpu-crit" type="number" value="95" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">%</span>
+                                        </div>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                        <div
+                                            class="w-11 h-6 bg-gray-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        </div>
+                                    </label>
+                                </div>
+                                <!-- More metric rows can be added here -->
+                            </div>
+                        </div>
+                        <!-- Environment Section -->
+                        <div>
+                            <h2
+                                class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-white/10 mb-4">
+                                Environment</h2>
+                            <div class="flex flex-col gap-4">
+                                <!-- Metric Row: Rack Temperature -->
+                                <div
+                                    class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_auto] gap-4 items-center p-4 bg-[#142d2f] rounded-lg">
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-white font-medium">Rack Temperature</p>
+                                        <span class="material-symbols-outlined text-[#8ec7cc] text-base cursor-help"
+                                            title="Ambient temperature within the server rack">info</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-yellow-400" for="temp-warn">Warning</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-10"
+                                                id="temp-warn" type="number" value="30" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">Â°C</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-red-500" for="temp-crit">Critical</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-10"
+                                                id="temp-crit" type="number" value="35" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">Â°C</span>
+                                        </div>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                        <div
+                                            class="w-11 h-6 bg-gray-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        </div>
+                                    </label>
+                                </div>
+                                <!-- Metric Row: Power Draw -->
+                                <div
+                                    class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_auto] gap-4 items-center p-4 bg-[#142d2f] rounded-lg">
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-white font-medium">Power Draw</p>
+                                        <span class="material-symbols-outlined text-[#8ec7cc] text-base cursor-help"
+                                            title="Total power consumption of the rack">info</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-yellow-400" for="power-warn">Warning</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-10"
+                                                id="power-warn" type="number" value="4500" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">W</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-red-500" for="power-crit">Critical</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-10"
+                                                id="power-crit" type="number" value="5000" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">W</span>
+                                        </div>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input class="sr-only peer" type="checkbox" value="" />
+                                        <div
+                                            class="w-11 h-6 bg-gray-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Network Section -->
+                        <div>
+                            <h2
+                                class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-white/10 mb-4">
+                                Network</h2>
+                            <div class="flex flex-col gap-4">
+                                <!-- Metric Row: Bandwidth Utilization -->
+                                <div
+                                    class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_auto] gap-4 items-center p-4 bg-[#142d2f] rounded-lg">
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-white font-medium">Bandwidth Utilization</p>
+                                        <span class="material-symbols-outlined text-[#8ec7cc] text-base cursor-help"
+                                            title="Percentage of total network bandwidth in use">info</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-yellow-400" for="bw-warn">Warning</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-8"
+                                                id="bw-warn" type="number" value="75" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label class="text-sm text-red-500" for="bw-crit">Critical</label>
+                                        <div class="relative flex-1">
+                                            <input
+                                                class="form-input w-full bg-[#102223] border border-transparent focus:border-primary focus:ring-primary/50 rounded-md text-white placeholder:text-gray-500 py-2 pl-3 pr-8"
+                                                id="bw-crit" type="number" value="90" />
+                                            <span
+                                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-[#8ec7cc]">%</span>
+                                        </div>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                        <div
+                                            class="w-11 h-6 bg-gray-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

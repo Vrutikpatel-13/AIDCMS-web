@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Energy & Cooling Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
+        .glowing-anomaly {
+            box-shadow: 0 0 5px #0df2f2, 0 0 10px #0df2f2, 0 0 15px #0df2f2;
+        }
+    </style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex h-full w-full flex-1">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <!-- Main Content -->
+            <div class="flex flex-1 flex-col">
+                
+                
+                <!-- Page Content -->
+                <main class="flex-1 overflow-y-auto p-8">
+                    <div class="flex flex-col gap-6">
+                        <!-- PageHeading & Date Selector -->
+                        <div class="flex flex-wrap items-end justify-between gap-4">
+                            <div class="flex flex-col gap-2">
+                                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Energy
+                                    &amp; Cooling Overview</h1>
+                                <div class="flex items-center gap-2">
+                                    <p class="text-text-muted-dark text-base font-normal leading-normal">Showing data
+                                        for the last 7 days</p>
+                                    <div class="relative flex h-2 w-2">
+                                        <span
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-anomaly-green opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-anomaly-green"></span>
+                                    </div>
+                                    <p class="text-anomaly-green text-sm font-medium">Live Data</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex min-w-[300px] h-10 items-center justify-center rounded-lg bg-container-dark p-1">
+                                <label
+                                    class="flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-md px-2 text-sm font-medium leading-normal text-text-muted-dark has-[:checked]:bg-background-dark has-[:checked]:text-white">
+                                    <span class="truncate">24H</span>
+                                    <input class="invisible w-0" name="date-range" type="radio" value="24H" />
+                                </label>
+                                <label
+                                    class="flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-md px-2 text-sm font-medium leading-normal text-text-muted-dark has-[:checked]:bg-background-dark has-[:checked]:text-white">
+                                    <span class="truncate">7D</span>
+                                    <input checked="" class="invisible w-0" name="date-range" type="radio" value="7D" />
+                                </label>
+                                <label
+                                    class="flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-md px-2 text-sm font-medium leading-normal text-text-muted-dark has-[:checked]:bg-background-dark has-[:checked]:text-white">
+                                    <span class="truncate">30D</span>
+                                    <input class="invisible w-0" name="date-range" type="radio" value="30D" />
+                                </label>
+                                <label
+                                    class="flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-md px-2 text-sm font-medium leading-normal text-text-muted-dark has-[:checked]:bg-background-dark has-[:checked]:text-white">
+                                    <span class="truncate">Custom</span>
+                                    <input class="invisible w-0" name="date-range" type="radio" value="Custom" />
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Stats Cards -->
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                            <div class="flex flex-col gap-2 rounded-xl bg-container-dark p-6 border border-border-dark">
+                                <p class="text-text-muted-dark text-sm font-medium leading-normal">Total Energy
+                                    Consumption</p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">1,234 kWh</p>
+                                <p class="text-anomaly-green text-base font-medium leading-normal">+1.2%</p>
+                            </div>
+                            <div class="flex flex-col gap-2 rounded-xl bg-container-dark p-6 border border-border-dark">
+                                <p class="text-text-muted-dark text-sm font-medium leading-normal">Average PUE</p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">1.38</p>
+                                <p class="text-[#fa5c38] text-base font-medium leading-normal">-0.5%</p>
+                            </div>
+                            <div class="flex flex-col gap-2 rounded-xl bg-container-dark p-6 border border-border-dark">
+                                <p class="text-text-muted-dark text-sm font-medium leading-normal">Total Cooling Load
+                                </p>
+                                <p class="text-white tracking-light text-3xl font-bold leading-tight">450 kW</p>
+                                <p class="text-anomaly-green text-base font-medium leading-normal">+2.1%</p>
+                            </div>
+                            <div
+                                class="flex flex-col gap-2 rounded-xl bg-container-dark p-6 border-2 border-primary glowing-anomaly">
+                                <p class="text-text-muted-dark text-sm font-medium leading-normal">Active High-Level
+                                    Alerts</p>
+                                <p class="text-primary tracking-light text-3xl font-bold leading-tight">3</p>
+                                <p class="text-[#fa5c38] text-base font-medium leading-normal">+1 Since last hour</p>
+                            </div>
+                        </div>
+                        <!-- Charts -->
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- Energy Consumption Chart -->
+                            <div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-container-dark p-6">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Energy Usage by Category</h3>
+                                        <p class="text-sm text-text-muted-dark">kWh consumption per rack</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-xs text-text-muted-dark">
+                                        <div class="flex items-center gap-1.5">
+                                            <div class="size-2.5 rounded-full bg-low-usage"></div>Low
+                                        </div>
+                                        <div class="flex items-center gap-1.5">
+                                            <div class="size-2.5 rounded-full bg-medium-usage"></div>Medium
+                                        </div>
+                                        <div class="flex items-center gap-1.5">
+                                            <div class="size-2.5 rounded-full bg-high-usage"></div>High
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex h-72 w-full items-end justify-around gap-2 pt-4">
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[25%] w-full cursor-pointer rounded-t-sm bg-low-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">A-01</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[35%] w-full cursor-pointer rounded-t-sm bg-medium-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">A-02</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[45%] w-full cursor-pointer rounded-t-sm bg-medium-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">A-03</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[60%] w-full cursor-pointer rounded-t-sm bg-high-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">A-04</p>
+                                    </div>
+                                    <div class="group relative flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="absolute -top-1 left-1/2 -translate-x-1/2 z-10 w-max rounded-md bg-background-dark px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+                                            Anomaly: 120 kWh</div>
+                                        <div
+                                            class="h-[85%] w-full cursor-pointer rounded-t-sm border-2 border-primary bg-high-usage transition-all group-hover:opacity-80 glowing-anomaly">
+                                        </div>
+                                        <p class="text-center text-xs text-primary">A-05</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[65%] w-full cursor-pointer rounded-t-sm bg-high-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">B-01</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[50%] w-full cursor-pointer rounded-t-sm bg-medium-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">B-02</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[30%] w-full cursor-pointer rounded-t-sm bg-low-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">B-03</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[40%] w-full cursor-pointer rounded-t-sm bg-medium-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">B-04</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[20%] w-full cursor-pointer rounded-t-sm bg-low-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">B-05</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Cooling Load Chart -->
+                            <div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-container-dark p-6">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Cooling Load by Zone</h3>
+                                        <p class="text-sm text-text-muted-dark">BTU/hr consumption per zone</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-xs text-text-muted-dark">
+                                        <div class="flex items-center gap-1.5">
+                                            <div class="size-2.5 rounded-full bg-low-usage"></div>Low
+                                        </div>
+                                        <div class="flex items-center gap-1.5">
+                                            <div class="size-2.5 rounded-full bg-medium-usage"></div>Medium
+                                        </div>
+                                        <div class="flex items-center gap-1.5">
+                                            <div class="size-2.5 rounded-full bg-high-usage"></div>High
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex h-72 w-full items-end justify-around gap-2 pt-4">
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[40%] w-full cursor-pointer rounded-t-sm bg-medium-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">Zone 1</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[55%] w-full cursor-pointer rounded-t-sm bg-medium-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">Zone 2</p>
+                                    </div>
+                                    <div class="group relative flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="absolute -top-1 left-1/2 -translate-x-1/2 z-10 w-max rounded-md bg-background-dark px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+                                            Anomaly: 15k BTU/hr</div>
+                                        <div class="h-[75%] w-full cursor-pointer rounded-t-sm border-2 border-anomaly-green bg-high-usage transition-all group-hover:opacity-80 glowing-anomaly"
+                                            style="--tw-shadow-color: #39FF14; box-shadow: 0 0 5px var(--tw-shadow-color), 0 0 10px var(--tw-shadow-color), 0 0 15px var(--tw-shadow-color);">
+                                        </div>
+                                        <p class="text-center text-xs text-anomaly-green">Zone 3</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[65%] w-full cursor-pointer rounded-t-sm bg-high-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">Zone 4</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[30%] w-full cursor-pointer rounded-t-sm bg-low-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">Zone 5</p>
+                                    </div>
+                                    <div class="group flex h-full w-full flex-col-reverse gap-1">
+                                        <div
+                                            class="h-[35%] w-full cursor-pointer rounded-t-sm bg-low-usage transition-all group-hover:opacity-80">
+                                        </div>
+                                        <p class="text-center text-xs text-text-muted-dark">Zone 6</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

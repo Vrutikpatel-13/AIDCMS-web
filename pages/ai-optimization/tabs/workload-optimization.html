@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-Powered Workload Optimization</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+    <div class="flex min-h-screen">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-x-hidden">
+
+
+            <!-- Page Content -->
+            <div class="p-8 flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
+                    <p class="text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                        AI-Powered Workload Optimization
+                    </p>
+                </div>
+                <!-- Stats -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#316368] bg-[#102123]">
+                        <p class="text-white/90 text-base font-medium leading-normal">System Health Score</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">98.7%</p>
+                        <p class="text-[#0bda54] text-base font-medium leading-normal">+1.2%</p>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#316368] bg-[#102123]">
+                        <p class="text-white/90 text-base font-medium leading-normal">Identified Optimizations</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">24</p>
+                        <p class="text-[#0bda54] text-base font-medium leading-normal">+3</p>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#316368] bg-[#102123]">
+                        <p class="text-white/90 text-base font-medium leading-normal">Projected Monthly Savings</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">$12,450</p>
+                        <p class="text-[#0bda54] text-base font-medium leading-normal">+$500</p>
+                    </div>
+                    <div class="flex flex-1 flex-col gap-2 rounded-lg p-6 border border-[#316368] bg-[#102123]">
+                        <p class="text-white/90 text-base font-medium leading-normal">Avg. CPU Utilization</p>
+                        <p class="text-white tracking-light text-2xl font-bold leading-tight">62%</p>
+                        <p class="text-[#fa5c38] text-base font-medium leading-normal">-5%</p>
+                    </div>
+                </div>
+                <!-- Chips / Filters -->
+                <div class="flex gap-3 px-0 py-3 border-b border-t border-[#316368]">
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#183234] pl-4 pr-2 hover:bg-primary/20">
+                        <p class="text-white text-sm font-medium leading-normal">Filter by Status</p>
+                        <span class="material-symbols-outlined text-white">arrow_drop_down</span>
+                    </button>
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#183234] pl-4 pr-2 hover:bg-primary/20">
+                        <p class="text-white text-sm font-medium leading-normal">Priority</p>
+                        <span class="material-symbols-outlined text-white">arrow_drop_down</span>
+                    </button>
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#183234] pl-4 pr-2 hover:bg-primary/20">
+                        <p class="text-white text-sm font-medium leading-normal">Resource Type</p>
+                        <span class="material-symbols-outlined text-white">arrow_drop_down</span>
+                    </button>
+                    <button
+                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#183234] pl-4 pr-2 hover:bg-primary/20">
+                        <p class="text-white text-sm font-medium leading-normal">Data Center</p>
+                        <span class="material-symbols-outlined text-white">arrow_drop_down</span>
+                    </button>
+                </div>
+                <!-- Table -->
+                <div class="px-0 py-3 @container">
+                    <h3 class="text-xl font-bold text-primary mb-4">Active Recommendations</h3>
+                    <div class="flex overflow-hidden rounded-lg border border-[#316368] bg-[#102123]">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-[#183234]">
+                                    <th class="px-4 py-3 text-left text-white text-sm font-medium leading-normal w-2/5">
+                                        Recommendation</th>
+                                    <th class="px-4 py-3 text-left text-white text-sm font-medium leading-normal">
+                                        Priority</th>
+                                    <th class="px-4 py-3 text-left text-white text-sm font-medium leading-normal">Impact
+                                    </th>
+                                    <th class="px-4 py-3 text-left text-white text-sm font-medium leading-normal">
+                                        Potential Gain</th>
+                                    <th class="px-4 py-3 text-left text-white text-sm font-medium leading-normal">
+                                        Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-t-[#316368] hover:bg-primary/5">
+                                    <td class="h-[72px] px-4 py-2 text-white text-sm font-normal leading-normal">
+                                        Consolidate Low-Utilization VMs on Server X</td>
+                                    <td class="h-[72px] px-4 py-2">
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-red-500/20 px-2.5 py-1 text-xs font-medium text-red-400 ring-1 ring-inset ring-red-500/30">Critical</span>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#90c6cb] text-sm font-normal leading-normal">CPU
+                                        Usage</td>
+                                    <td class="h-[72px] px-4 py-2 text-[#90c6cb] text-sm font-normal leading-normal">
+                                        -15%</td>
+                                    <td class="h-[72px] px-4 py-2">
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="text-primary/90 hover:text-primary text-sm font-bold">Details</button>
+                                            <button
+                                                class="text-[#0bda54]/90 hover:text-[#0bda54] text-sm font-bold">Apply</button>
+                                            <button
+                                                class="text-white/50 hover:text-white/80 text-sm font-bold">Dismiss</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-t-[#316368] hover:bg-primary/5">
+                                    <td class="h-[72px] px-4 py-2 text-white text-sm font-normal leading-normal">
+                                        Reallocate Memory for Database Y</td>
+                                    <td class="h-[72px] px-4 py-2">
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-orange-500/20 px-2.5 py-1 text-xs font-medium text-orange-400 ring-1 ring-inset ring-orange-500/30">High</span>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#90c6cb] text-sm font-normal leading-normal">
+                                        Memory</td>
+                                    <td class="h-[72px] px-4 py-2 text-[#90c6cb] text-sm font-normal leading-normal">
+                                        -20%</td>
+                                    <td class="h-[72px] px-4 py-2">
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="text-primary/90 hover:text-primary text-sm font-bold">Details</button>
+                                            <button
+                                                class="text-[#0bda54]/90 hover:text-[#0bda54] text-sm font-bold">Apply</button>
+                                            <button
+                                                class="text-white/50 hover:text-white/80 text-sm font-bold">Dismiss</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-t-[#316368] hover:bg-primary/5">
+                                    <td class="h-[72px] px-4 py-2 text-white text-sm font-normal leading-normal">
+                                        Schedule Batch Job Z to Off-Peak Hours</td>
+                                    <td class="h-[72px] px-4 py-2">
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-yellow-500/20 px-2.5 py-1 text-xs font-medium text-yellow-400 ring-1 ring-inset ring-yellow-500/30">Medium</span>
+                                    </td>
+                                    <td class="h-[72px] px-4 py-2 text-[#90c6cb] text-sm font-normal leading-normal">
+                                        Cost</td>
+                                    <td class="h-[72px] px-4 py-2 text-[#90c6cb] text-sm font-normal leading-normal">
+                                        -$200/day</td>
+                                    <td class="h-[72px] px-4 py-2">
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="text-primary/90 hover:text-primary text-sm font-bold">Details</button>
+                                            <button
+                                                class="text-[#0bda54]/90 hover:text-[#0bda54] text-sm font-bold">Apply</button>
+                                            <button
+                                                class="text-white/50 hover:text-white/80 text-sm font-bold">Dismiss</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

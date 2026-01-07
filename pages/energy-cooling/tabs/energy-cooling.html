@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI Cooling Optimization Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex  min-w-0 flex-1">
+            <!-- SideNavBar -->
+            <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+            <!-- Main Content -->
+            <main class="flex min-w-0 flex-1 flex-col">
+                <div class="flex flex-col gap-6 p-6 lg:p-8">
+                    <!-- PageHeading -->
+                    <header class="flex flex-wrap items-center justify-between gap-4">
+                        <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">AI Cooling
+                            Optimization</p>
+                    </header>
+                    <!-- Stats -->
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-[#121820]/50 p-6">
+                            <p class="text-white/80 text-base font-medium leading-normal">Current PUE</p>
+                            <p class="text-white tracking-light text-2xl font-bold leading-tight">1.32</p>
+                            <p class="text-[#fa5c38] flex items-center gap-1 text-base font-medium leading-normal">
+                                <span class="material-symbols-outlined text-base">arrow_downward</span>
+                                <span>0.02%</span>
+                            </p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-[#121820]/50 p-6">
+                            <p class="text-white/80 text-base font-medium leading-normal">Total Power Load</p>
+                            <p class="text-white tracking-light text-2xl font-bold leading-tight">2.1 MW</p>
+                            <p class="text-[#39FF14] flex items-center gap-1 text-base font-medium leading-normal">
+                                <span class="material-symbols-outlined text-base">arrow_upward</span>
+                                <span>0.5%</span>
+                            </p>
+                        </div>
+                        <div
+                            class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg border border-white/10 bg-[#121820]/50 p-6">
+                            <p class="text-white/80 text-base font-medium leading-normal">Average Rack Temp</p>
+                            <p class="text-white tracking-light text-2xl font-bold leading-tight">23.5Â°C</p>
+                            <p class="text-[#fa5c38] flex items-center gap-1 text-base font-medium leading-normal">
+                                <span class="material-symbols-outlined text-base">arrow_downward</span>
+                                <span>1.2%</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+                        <!-- Main Recommendations Panel -->
+                        <div class="flex flex-col gap-4 lg:col-span-2">
+                            <div class="flex flex-col gap-4">
+                                <div class="flex flex-wrap items-center justify-between gap-4">
+                                    <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">AI
+                                        Recommendations</h2>
+                                    <!-- Chips -->
+                                    <div class="flex flex-wrap gap-3">
+                                        <button
+                                            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 pl-3 pr-2 text-primary hover:bg-primary/30">
+                                            <p class="text-sm font-medium leading-normal">Priority: All</p>
+                                            <span class="material-symbols-outlined text-base">expand_more</span>
+                                        </button>
+                                        <button
+                                            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-3 pr-2 text-white/80 hover:bg-white/20">
+                                            <p class="text-sm font-medium leading-normal">System Type</p>
+                                            <span class="material-symbols-outlined text-base">expand_more</span>
+                                        </button>
+                                        <button
+                                            class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-3 pr-2 text-white/80 hover:bg-white/20">
+                                            <p class="text-sm font-medium leading-normal">Status: New</p>
+                                            <span class="material-symbols-outlined text-base">expand_more</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Recommendation Cards List -->
+                                <div class="flex flex-col gap-4">
+                                    <!-- Card 1 -->
+                                    <div
+                                        class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#121820]/50 p-5">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="grid size-10 place-content-center rounded-lg bg-primary/20 text-primary">
+                                                    <span class="material-symbols-outlined">device_thermostat</span>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-white">Adjust CRAC Unit 7 Fan Speed</h3>
+                                                    <p class="text-sm text-white/60">Reduce speed by 15% to match
+                                                        current thermal load.</p>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="rounded-full bg-orange-500/20 px-3 py-1 text-xs font-medium text-orange-400">High
+                                                Priority</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4 border-y border-white/10 py-4">
+                                            <div class="flex flex-col gap-1">
+                                                <p class="text-sm text-white/60">Potential Energy Savings</p>
+                                                <p class="text-lg font-bold text-[#39FF14]">3.2 kWh</p>
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <p class="text-sm text-white/60">Predicted Temp Drop</p>
+                                                <p class="text-lg font-bold text-primary">1.5Â°C</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-end gap-3">
+                                            <button
+                                                class="rounded-lg px-4 py-2 text-sm font-medium text-white/70 hover:text-white">Learn
+                                                More</button>
+                                            <button
+                                                class="rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20">Dismiss</button>
+                                            <button
+                                                class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-background-dark hover:bg-opacity-80">Apply</button>
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 -->
+                                    <div
+                                        class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#121820]/50 p-5">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="grid size-10 place-content-center rounded-lg bg-primary/20 text-primary">
+                                                    <span class="material-symbols-outlined">air</span>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-white">Reroute Airflow at Rack C42</h3>
+                                                    <p class="text-sm text-white/60">Install blanking panels to prevent
+                                                        hot air recirculation.</p>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="rounded-full bg-yellow-500/20 px-3 py-1 text-xs font-medium text-yellow-400">Medium
+                                                Priority</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4 border-y border-white/10 py-4">
+                                            <div class="flex flex-col gap-1">
+                                                <p class="text-sm text-white/60">Potential Energy Savings</p>
+                                                <p class="text-lg font-bold text-[#39FF14]">1.8 kWh</p>
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <p class="text-sm text-white/60">Reduces Hotspot By</p>
+                                                <p class="text-lg font-bold text-primary">3.0Â°C</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-end gap-3">
+                                            <button
+                                                class="rounded-lg px-4 py-2 text-sm font-medium text-white/70 hover:text-white">Learn
+                                                More</button>
+                                            <button
+                                                class="rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20">Dismiss</button>
+                                            <button
+                                                class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-background-dark hover:bg-opacity-80">Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Predictive Insights Panel -->
+                        <aside class="flex flex-col gap-6">
+                            <div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#121820]/50 p-5">
+                                <h3 class="text-lg font-bold text-white">PUE Forecast</h3>
+                                <p class="text-sm text-white/60">Projected Power Usage Effectiveness with and without
+                                    applying new
+                                    recommendations.</p>
+                                <div class="h-48 w-full"
+                                    data-alt="A line chart showing two lines representing 'Current PUE' and 'Optimized PUE' over time. The Optimized line trends lower than the Current one.">
+                                    <img class="h-full w-full object-contain"
+                                        src="../.../../../../assets/images/image-1.png">
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#121820]/50 p-5">
+                                <h3 class="text-lg font-bold text-white">Thermal Hotspot Map</h3>
+                                <p class="text-sm text-white/60">Real-time heat map of the data center floor. Click a
+                                    zone to filter
+                                    recommendations.</p>
+                                <div class="aspect-video w-full"
+                                    data-alt="A simplified top-down view of a data center floor plan, displayed as a grid with various cells colored in shades of blue, green, yellow, and red to represent a heatmap of temperatures.">
+                                    <img class="h-full w-full object-contain"
+                                        src="../.../../../../assets/images/image-2.png" />
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM Server Threshold Configuration</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="flex flex-1">
+            <!-- SideNavBar -->
+            <aside
+                class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                            <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                            href="../../../dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10"
+                            href="../../../pages/servers/server-list.html">
+                            <span class="material-symbols-outlined">dns</span>
+                            <p class="text-sm font-medium leading-normal">Servers</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../network/topology-map.html">
+                            <span class="material-symbols-outlined">router</span>
+                            <p class="text-sm font-medium leading-normal">Network Management</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../storage-capacity/storage-clusters.html">
+                            <span class="material-symbols-outlined">storage</span>
+                            <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../energy-cooling/energy-dashboard.html">
+                            <span class="material-symbols-outlined">bolt</span>
+                            <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../ai-optimization/predictive-maintenance.html">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../alerts/alerts-centre.html">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../analytics/historical-trends.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../integrations/iot-sensors.html">
+                            <span class="material-symbols-outlined">sensors</span>
+                            <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                            href="../../administration/user-list.html">
+                            <span class="material-symbols-outlined">admin_panel_settings</span>
+                            <p class="text-sm font-medium leading-normal">Administration</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../governance/threshold-settings.html">
+                        <span class="material-symbols-outlined">settings</span>
+                        <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../index.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </aside>
+            <!-- Main Content -->
+            <main class="flex-1 p-8 grid grid-cols-12 gap-8">
+                <!-- Server Selection Panel -->
+                <div class="col-span-12 lg:col-span-3 flex flex-col gap-4">
+                    <h3 class="text-white text-lg font-bold">Servers</h3>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/50">search</span>
+                        <input
+                            class="w-full bg-[#101f22] border border-white/10 rounded-lg py-2 pl-10 pr-4 text-white focus:ring-primary focus:border-primary"
+                            placeholder="Find a server..." type="text" />
+                    </div>
+                    <div class="flex-1 flex flex-col gap-2 overflow-y-auto">
+                        <div
+                            class="p-3 bg-[#101f22] border border-white/10 rounded-lg flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                <span class="text-white text-sm">WEB-SRV-01</span>
+                            </div>
+                            <span class="material-symbols-outlined text-white/50">chevron_right</span>
+                        </div>
+                        <div
+                            class="p-3 bg-primary/20 border border-primary rounded-lg flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                <span class="text-white text-sm font-semibold">DB-SRV-PROD-A</span>
+                            </div>
+                            <span class="material-symbols-outlined text-white">chevron_right</span>
+                        </div>
+                        <div
+                            class="p-3 bg-[#101f22] border border-white/10 rounded-lg flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                <span class="text-white text-sm">APP-SRV-03</span>
+                            </div>
+                            <span class="material-symbols-outlined text-white/50">chevron_right</span>
+                        </div>
+                        <div
+                            class="p-3 bg-[#101f22] border border-white/10 rounded-lg flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                <span class="text-white text-sm">CACHE-EU-01</span>
+                            </div>
+                            <span class="material-symbols-outlined text-white/50">chevron_right</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Threshold Configuration Area -->
+                <div class="col-span-12 lg:col-span-9 flex flex-col gap-6">
+                    <!-- Header -->
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <a class="text-white/50 text-base font-medium leading-normal hover:text-primary"
+                                href="#">Dashboard</a>
+                            <span class="text-white/50 text-base font-medium leading-normal">/</span>
+                            <a class="text-white/50 text-base font-medium leading-normal hover:text-primary"
+                                href="#">Servers</a>
+                            <span class="text-white/50 text-base font-medium leading-normal">/</span>
+                            <a class="text-white/50 text-base font-medium leading-normal hover:text-primary"
+                                href="#">DB-SRV-PROD-A</a>
+                            <span class="text-white/50 text-base font-medium leading-normal">/</span>
+                            <span class="text-white text-base font-medium leading-normal">Thresholds</span>
+                        </div>
+                        <div class="flex flex-wrap justify-between items-center gap-4">
+                            <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Server
+                                Threshold
+                                Configuration</p>
+                            <div class="flex items-center gap-2">
+                                <button
+                                    class="px-4 py-2 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/10 text-sm font-semibold">Reset
+                                    to Defaults</button>
+                                <button
+                                    class="px-4 py-2 bg-primary text-[#101f22] rounded-lg hover:bg-primary/90 text-sm font-semibold">Save
+                                    Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Metric Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- CPU Utilization Card -->
+                        <div class="bg-[#101f22] border border-white/10 rounded-xl flex flex-col">
+                            <div class="p-4 border-b border-white/10">
+                                <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">CPU
+                                    Utilization (%)</h3>
+                            </div>
+                            <div class="p-4 flex flex-col gap-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-base font-medium">Enable Alerts</p>
+                                        <p class="text-white/50 text-sm font-normal">Toggle alerts for CPU utilization
+                                        </p>
+                                    </div>
+                                    <label
+                                        class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-white/10 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                        <div class="size-[20px] rounded-full bg-white transition-transform"></div>
+                                        <input checked="" class="invisible absolute" type="checkbox" />
+                                    </label>
+                                </div>
+                                <div class="flex items-end gap-4">
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-warning mb-1"
+                                            for="cpu-warn">Warning
+                                            Level</label>
+                                        <input
+                                            class="w-full bg-[#101f22] border border-accent-warning/50 rounded-lg text-white focus:ring-accent-warning focus:border-accent-warning"
+                                            id="cpu-warn" type="number" value="80" />
+                                    </div>
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-critical mb-1"
+                                            for="cpu-crit">Critical
+                                            Level</label>
+                                        <input
+                                            class="w-full bg-[#101f22] border border-accent-critical/50 rounded-lg text-white focus:ring-accent-critical focus:border-accent-critical"
+                                            id="cpu-crit" type="number" value="95" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Memory Usage Card -->
+                        <div class="bg-[#101f22] border border-white/10 rounded-xl flex flex-col">
+                            <div class="p-4 border-b border-white/10">
+                                <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Memory Usage
+                                    (%)</h3>
+                            </div>
+                            <div class="p-4 flex flex-col gap-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-base font-medium">Enable Alerts</p>
+                                        <p class="text-white/50 text-sm font-normal">Toggle alerts for memory usage</p>
+                                    </div>
+                                    <label
+                                        class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-white/10 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                        <div class="size-[20px] rounded-full bg-white transition-transform"></div>
+                                        <input checked="" class="invisible absolute" type="checkbox" />
+                                    </label>
+                                </div>
+                                <div class="flex items-end gap-4">
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-warning mb-1"
+                                            for="mem-warn">Warning
+                                            Level</label>
+                                        <input
+                                            class="w-full bg-[#101f22] border border-accent-warning/50 rounded-lg text-white focus:ring-accent-warning focus:border-accent-warning"
+                                            id="mem-warn" type="number" value="85" />
+                                    </div>
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-critical mb-1"
+                                            for="mem-crit">Critical
+                                            Level</label>
+                                        <input
+                                            class="w-full bg-[#101f22] border border-accent-critical/50 rounded-lg text-white focus:ring-accent-critical focus:border-accent-critical"
+                                            id="mem-crit" type="number" value="98" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Core Temperature Card -->
+                        <div class="bg-[#101f22] border border-white/10 rounded-xl flex flex-col">
+                            <div class="p-4 border-b border-white/10">
+                                <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Core
+                                    Temperature (Â°C)</h3>
+                            </div>
+                            <div class="p-4 flex flex-col gap-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-base font-medium">Enable Alerts</p>
+                                        <p class="text-white/50 text-sm font-normal">Toggle alerts for core temperature
+                                        </p>
+                                    </div>
+                                    <label
+                                        class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-white/10 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                        <div class="size-[20px] rounded-full bg-white transition-transform"></div>
+                                        <input class="invisible absolute" type="checkbox" />
+                                    </label>
+                                </div>
+                                <div class="flex items-end gap-4 opacity-40">
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-warning mb-1"
+                                            for="temp-warn">Warning
+                                            Level</label>
+                                        <input class="w-full bg-[#101f22] border border-white/10 rounded-lg text-white"
+                                            disabled="" id="temp-warn" type="number" value="80" />
+                                    </div>
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-critical mb-1"
+                                            for="temp-crit">Critical
+                                            Level</label>
+                                        <input class="w-full bg-[#101f22] border border-white/10 rounded-lg text-white"
+                                            disabled="" id="temp-crit" type="number" value="95" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Network Latency Card -->
+                        <div class="bg-[#101f22] border border-white/10 rounded-xl flex flex-col">
+                            <div class="p-4 border-b border-white/10">
+                                <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Network
+                                    Latency (ms)</h3>
+                            </div>
+                            <div class="p-4 flex flex-col gap-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-base font-medium">Enable Alerts</p>
+                                        <p class="text-white/50 text-sm font-normal">Toggle alerts for network latency
+                                        </p>
+                                    </div>
+                                    <label
+                                        class="relative flex h-[28px] w-[50px] cursor-pointer items-center rounded-full bg-white/10 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                        <div class="size-[20px] rounded-full bg-white transition-transform"></div>
+                                        <input checked="" class="invisible absolute" type="checkbox" />
+                                    </label>
+                                </div>
+                                <div class="flex items-end gap-4">
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-warning mb-1"
+                                            for="net-warn">Warning
+                                            Level</label>
+                                        <input
+                                            class="w-full bg-[#101f22] border border-accent-warning/50 rounded-lg text-white focus:ring-accent-warning focus:border-accent-warning"
+                                            id="net-warn" type="number" value="150" />
+                                    </div>
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-medium text-accent-critical mb-1"
+                                            for="net-crit">Critical
+                                            Level</label>
+                                        <input
+                                            class="w-full bg-[#101f22] border border-accent-critical/50 rounded-lg text-white focus:ring-accent-critical focus:border-accent-critical"
+                                            id="net-crit" type="number" value="300" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

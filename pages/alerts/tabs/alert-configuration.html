@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <link href="../../../assets/css/output.css" rel="stylesheet" />
+    <title>AI-DCIM - Alert Rules</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex h-screen min-h-[900px] w-64 flex-col justify-between bg-surface-dark p-4 sticky top-0 border-r border-border-dark">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 32px;">business_center</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold leading-tight">AI-DCIM</h1>
+                        <p class="text-text-medium text-xs font-normal">Infrastructure Management</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg text-text-light  px-3 py-2"
+                        href="../../../dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10"
+                        href="../../../pages/servers/server-list.html">
+                        <span class="material-symbols-outlined">dns</span>
+                        <p class="text-sm font-medium leading-normal">Servers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../network/topology-map.html">
+                        <span class="material-symbols-outlined">router</span>
+                        <p class="text-sm font-medium leading-normal">Network Management</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../storage-capacity/storage-clusters.html">
+                        <span class="material-symbols-outlined">storage</span>
+                        <p class="text-sm font-medium leading-normal">Storage & Capacity</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../energy-cooling/energy-dashboard.html">
+                        <span class="material-symbols-outlined">bolt</span>
+                        <p class="text-sm font-medium leading-normal">Energy Power & Cooling</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../ai-optimization/predictive-maintenance.html">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <p class="text-sm font-medium leading-normal">AI Predictive Optimization</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary hover:bg-white/10" href="../../alerts/alerts-centre.html">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <p class="text-sm font-medium leading-normal">Alerts & Notifications</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../analytics/historical-trends.html">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <p class="text-sm font-medium leading-normal">Analytics & Forecasting</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../integrations/iot-sensors.html">
+                        <span class="material-symbols-outlined">sensors</span>
+                        <p class="text-sm font-medium leading-normal">IOT & Integrations</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../administration/user-list.html">
+                        <span class="material-symbols-outlined">admin_panel_settings</span>
+                        <p class="text-sm font-medium leading-normal">Administration</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../governance/threshold-settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p class="text-sm font-medium leading-normal">Governance Settings</p>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light hover:bg-white/10" href="../../../index.html">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="p-8">
+                <!-- Page Heading -->
+                <div class="flex flex-wrap justify-between gap-3 mb-8">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Alert Rules</p>
+                        <p class="text-[#90c6cb] text-base font-normal leading-normal">Configure alert rules, trigger
+                            conditions,
+                            and notification channels.</p>
+                    </div>
+                </div>
+                <!-- 3-Column Layout -->
+                <div class="grid grid-cols-12 gap-6">
+                    <!-- Left Column: Rule List Panel -->
+                    <div
+                        class="col-span-12 lg:col-span-3 bg-[#102123] p-4 rounded-xl flex flex-col gap-4 h-[calc(100vh-12rem)]">
+                        <div class="flex px-1 py-1 justify-center">
+                            <button
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 flex-1 bg-primary text-[#102123] gap-2 pl-4 text-sm font-bold leading-normal tracking-[0.015em]">
+                                <span class="material-symbols-outlined text-[#102123] text-[20px]">add</span>
+                                <span class="truncate">Add New Rule</span>
+                            </button>
+                        </div>
+                        <div class="px-1 py-1">
+                            <label class="flex flex-col min-w-40 h-12 w-full">
+                                <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                    <div
+                                        class="text-[#90c6cb] flex bg-[#224649] items-center justify-center pl-4 rounded-l-lg">
+                                        <span class="material-symbols-outlined text-[24px]">search</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#224649] focus:border-none h-full placeholder:text-[#90c6cb] px-4 pl-2 text-base font-normal leading-normal"
+                                        placeholder="Find a rule..." value="" />
+                                </div>
+                            </label>
+                        </div>
+                        <div class="flex-1 overflow-y-auto pr-2 space-y-2">
+                            <!-- List Item - Active -->
+                            <div
+                                class="flex items-center gap-4 bg-[#224649] px-4 min-h-[72px] py-2 justify-between rounded-lg border-l-4 border-primary">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#3d6568] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-[24px]">device_thermostat</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">High CPU
+                                            Temperature</p>
+                                        <p class="text-[#e87979] text-sm font-normal leading-normal line-clamp-2">
+                                            Severity: Critical</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- List Item - Inactive -->
+                            <div
+                                class="flex items-center gap-4 bg-[#102123] hover:bg-[#1a3538] transition-colors cursor-pointer px-4 min-h-[72px] py-2 justify-between rounded-lg">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#224649] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-[24px]">power</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">Rack
+                                            Power Usage</p>
+                                        <p class="text-[#e8d579] text-sm font-normal leading-normal line-clamp-2">
+                                            Severity: Warning</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 bg-[#102123] hover:bg-[#1a3538] transition-colors cursor-pointer px-4 min-h-[72px] py-2 justify-between rounded-lg">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#224649] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-[24px]">memory</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">Memory
+                                            Utilization</p>
+                                        <p class="text-[#79e8b7] text-sm font-normal leading-normal line-clamp-2">
+                                            Severity: Info</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 bg-[#102123] hover:bg-[#1a3538] transition-colors cursor-pointer px-4 min-h-[72px] py-2 justify-between rounded-lg">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="text-white flex items-center justify-center rounded-lg bg-[#224649] shrink-0 size-12">
+                                        <span class="material-symbols-outlined text-[24px]">network_check</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <p class="text-white text-base font-medium leading-normal line-clamp-1">Network
+                                            Latency</p>
+                                        <p class="text-[#e8d579] text-sm font-normal leading-normal line-clamp-2">
+                                            Severity: Warning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Middle Column: Main Configuration Area -->
+                    <div
+                        class="col-span-12 lg:col-span-6 bg-[#102123] p-6 rounded-xl flex flex-col gap-6 h-[calc(100vh-12rem)] overflow-y-auto">
+                        <h2 class="text-2xl font-bold text-white">Rule Configuration</h2>
+                        <!-- General Section -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-primary">General</h3>
+                            <div class="flex items-center justify-between">
+                                <label class="text-sm font-medium text-[#90c6cb]">Rule Status</label>
+                                <label
+                                    class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#224649] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+                                    <div class="h-full w-[27px] rounded-full bg-white transition-transform"></div>
+                                    <input checked="" class="invisible absolute" type="checkbox" />
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-[#90c6cb] mb-1" for="rule-name">Rule
+                                    Name</label>
+                                <input
+                                    class="w-full bg-[#224649] border-none text-white rounded-lg focus:ring-2 focus:ring-primary h-12 px-4"
+                                    id="rule-name" type="text" value="High CPU Temperature - Core Routers" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-[#90c6cb] mb-1"
+                                    for="rule-desc">Description</label>
+                                <textarea
+                                    class="w-full bg-[#224649] border-none text-white rounded-lg focus:ring-2 focus:ring-primary p-4"
+                                    id="rule-desc" placeholder="Describe the purpose of this rule..."
+                                    rows="3">Monitors the CPU core temperature of all core routing devices and triggers a critical alert if thresholds are exceeded.</textarea>
+                            </div>
+                        </div>
+                        <!-- Conditions Section -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-primary">Conditions</h3>
+                            <p class="text-sm text-[#90c6cb]">Trigger an alert IF the following conditions are met:</p>
+                            <div class="bg-[#224649] p-4 rounded-lg space-y-3">
+                                <div class="grid grid-cols-1 md:grid-cols-10 gap-3 items-center">
+                                    <span class="text-white md:col-span-1">IF</span>
+                                    <select
+                                        class="md:col-span-3 bg-[#102123] text-white border-none rounded-lg h-10 focus:ring-2 focus:ring-primary">
+                                        <option>CPU Temp</option>
+                                        <option>Memory Usage</option>
+                                        <option>Power Draw</option>
+                                    </select>
+                                    <select
+                                        class="md:col-span-2 bg-[#102123] text-white border-none rounded-lg h-10 focus:ring-2 focus:ring-primary">
+                                        <option>is greater than</option>
+                                        <option>is less than</option>
+                                        <option>is equal to</option>
+                                    </select>
+                                    <input
+                                        class="md:col-span-2 bg-[#102123] border-none text-white rounded-lg focus:ring-2 focus:ring-primary h-10 px-3 text-center"
+                                        type="text" value="85" />
+                                    <span class="text-white md:col-span-1 text-center">Â°C</span>
+                                    <button
+                                        class="md:col-span-1 flex items-center justify-center text-[#90c6cb] hover:text-white">
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </button>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-10 gap-3 items-center">
+                                    <select
+                                        class="md:col-span-1 bg-[#102123] text-white border-none rounded-lg h-10 focus:ring-2 focus:ring-primary">
+                                        <option>AND</option>
+                                        <option>OR</option>
+                                    </select>
+                                    <select
+                                        class="md:col-span-3 bg-[#102123] text-white border-none rounded-lg h-10 focus:ring-2 focus:ring-primary">
+                                        <option selected="">Device Group</option>
+                                        <option>Datacenter Location</option>
+                                    </select>
+                                    <select
+                                        class="md:col-span-2 bg-[#102123] text-white border-none rounded-lg h-10 focus:ring-2 focus:ring-primary">
+                                        <option selected="">is equal to</option>
+                                        <option>is not equal to</option>
+                                    </select>
+                                    <input
+                                        class="md:col-span-3 bg-[#102123] border-none text-white rounded-lg focus:ring-2 focus:ring-primary h-10 px-3"
+                                        type="text" value="Core Routers" />
+                                    <button
+                                        class="md:col-span-1 flex items-center justify-center text-[#90c6cb] hover:text-white">
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button
+                                class="flex items-center gap-2 text-primary text-sm font-bold hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">add_circle</span>
+                                Add Condition
+                            </button>
+                        </div>
+                        <!-- Severity Section -->
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-semibold text-primary">Severity</h3>
+                            <div class="flex gap-4">
+                                <label class="flex items-center gap-2 text-white cursor-pointer"><input
+                                        class="form-radio bg-[#224649] border-none text-primary focus:ring-primary"
+                                        name="severity" type="radio" /> Info</label>
+                                <label class="flex items-center gap-2 text-white cursor-pointer"><input
+                                        class="form-radio bg-[#224649] border-none text-primary focus:ring-primary"
+                                        name="severity" type="radio" /> Warning</label>
+                                <label class="flex items-center gap-2 text-white cursor-pointer"><input checked=""
+                                        class="form-radio bg-[#224649] border-none text-primary focus:ring-primary"
+                                        name="severity" type="radio" /> Critical</label>
+                            </div>
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="mt-auto pt-6 flex justify-end gap-4 border-t border-[#224649]">
+                            <button class="text-red-400 hover:text-red-300 font-bold text-sm">Delete Rule</button>
+                            <button class="text-[#90c6cb] hover:text-white font-bold text-sm">Cancel</button>
+                            <button class="bg-primary text-[#102123] font-bold py-2 px-6 rounded-lg text-sm">Save
+                                Changes</button>
+                        </div>
+                    </div>
+                    <!-- Right Column: Notification Channels -->
+                    <div
+                        class="col-span-12 lg:col-span-3 bg-[#102123] p-6 rounded-xl flex flex-col gap-6 h-[calc(100vh-12rem)] overflow-y-auto">
+                        <h2 class="text-2xl font-bold text-white">Notifications</h2>
+                        <!-- Channels Section -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-primary">Channels</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center justify-between text-white bg-[#224649] p-3 rounded-lg">
+                                    <span>Email</span>
+                                    <input checked=""
+                                        class="form-checkbox h-5 w-5 rounded bg-[#102123] border-none text-primary focus:ring-primary focus:ring-offset-0"
+                                        type="checkbox" />
+                                </label>
+                                <label class="flex items-center justify-between text-white bg-[#224649] p-3 rounded-lg">
+                                    <span>Slack</span>
+                                    <input checked=""
+                                        class="form-checkbox h-5 w-5 rounded bg-[#102123] border-none text-primary focus:ring-primary focus:ring-offset-0"
+                                        type="checkbox" />
+                                </label>
+                                <label class="flex items-center justify-between text-white bg-[#224649] p-3 rounded-lg">
+                                    <span>PagerDuty</span>
+                                    <input
+                                        class="form-checkbox h-5 w-5 rounded bg-[#102123] border-none text-primary focus:ring-primary focus:ring-offset-0"
+                                        type="checkbox" />
+                                </label>
+                                <label class="flex items-center justify-between text-white bg-[#224649] p-3 rounded-lg">
+                                    <span>SMS</span>
+                                    <input
+                                        class="form-checkbox h-5 w-5 rounded bg-[#102123] border-none text-primary focus:ring-primary focus:ring-offset-0"
+                                        type="checkbox" />
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Recipients Section -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-primary">Recipients</h3>
+                            <div class="bg-[#224649] p-2 rounded-lg">
+                                <div class="flex flex-wrap gap-2 p-2">
+                                    <span
+                                        class="bg-[#3d6568] text-white text-sm font-medium px-3 py-1 rounded-full flex items-center gap-2">
+                                        SRE Team
+                                        <button class="text-[#90c6cb] hover:text-white">Ã—</button>
+                                    </span>
+                                    <span
+                                        class="bg-[#3d6568] text-white text-sm font-medium px-3 py-1 rounded-full flex items-center gap-2">
+                                        oncall-eng@ai-dcim.io
+                                        <button class="text-[#90c6cb] hover:text-white">Ã—</button>
+                                    </span>
+                                </div>
+                                <input
+                                    class="w-full bg-transparent border-none text-white focus:ring-0 placeholder:text-[#90c6cb] p-2"
+                                    placeholder="Add groups or emails..." type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+</html>
